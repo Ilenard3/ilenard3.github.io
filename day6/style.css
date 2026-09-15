@@ -4,3 +4,15 @@ body {
     background-color: #f4f4f9;
     color: #333333;
 }
+
+h1, h2, h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2c2c2c;
+}
+
+#main-header {
+    background-color: #1a252f;
+    color: white;
+    text-align: center;
+    border-bottom: 5px solid #000000;
+}
