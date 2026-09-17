@@ -1,24 +1,41 @@
-/* style.css */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
-    color: #333333;
+    background-color: antiquewhite;
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    color: grey;
 }
 
-h1, h2, h3 {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #2c2c2c;
-}
-
-#main-header {
-    background-color: #1a252f;
+h1 {background-color: dimgray;
     color: white;
+    padding: 20px;
+    border-radius: 15px;
     text-align: center;
-    border-bottom: 5px solid #000000;
 }
 
-.highlight {
-    background-color: rgba(255, 235, 59, 0.3);
+table {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 2px solid gray;
+}
+
+th, td {
+    border: 1px solid gray;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: darkgrey;
+}
+
+a {
+    color: skyblue;
+    text-decoration: none;
     font-weight: bold;
-    border-left: 4px solid #000000;
+}
+
+a:hover{
+    text-decoration: underline;
 }
