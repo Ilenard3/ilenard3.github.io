@@ -1,12 +1,13 @@
 body {
-    background-color: antiquewhite;
+    background-color: white;
     font-family: Arial, sans-serif;
     margin: 40px;
-    color: grey;
+    color: black;
 }
 
-h1 {background-color: dimgray;
-    color: white;
+h1 {
+    background-color: black;
+    color: gold;
     padding: 20px;
     border-radius: 15px;
     text-align: center;
@@ -17,25 +18,28 @@ table {
     max-width: 600px;
     margin: 20px auto;
     border-collapse: collapse;
-    border: 2px solid gray;
+    border: 2px solid black;
 }
 
-th, td {
-    border: 1px solid gray;
+th,
+td {
+    border: 1px solid black;
     padding: 12px;
     text-align: left;
 }
 
 th {
-    background-color: darkgrey;
+    background-color: black;
+    color: #d4af37;
 }
 
 a {
-    color: skyblue;
+    color: #b8860b;
     text-decoration: none;
     font-weight: bold;
 }
 
-a:hover{
+a:hover {
+    color: black;
     text-decoration: underline;
 }
