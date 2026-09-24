@@ -1,4 +1,4 @@
-let accountBalance = 50;
+let accountBalance = 100;
 const transactionAmount = 10;
 
 function depositAmount() {
@@ -6,55 +6,24 @@ function depositAmount() {
     
     const accountText = document.getElementById("Account-display");
     const despositText = document.getElementById("desposit-message");
-     if (accountBalance > 100) 
-    {
-        accountText.innerText  = accountBalance;
-        statusText.innerText = "You are rich";
-    }
-    
-    and ( accountBalance > 0 )
-    {
-        accountText.innerText  = accountBalance;
-        statusText.innerText = "Good job";
-    }
-    else
-    {
-        accountText.innerText = 0;
-        statusText.innerText = "No Money";
-        statusText.style.color = "#f9331d";
-        statusText.style.fontWeight = "bold";
 
-        document.body.style.backgroundColor = "#5a1a1a";
-        document.querySelector("button").disabled = true;
-        document.querySelector("button").innerText = "Dead";
-    }
-
-function withdrawAmount() { 
+function withdrawAmount() 
     accountBalance = accountBalance - transactionAmount;
     
     const accountText = document.getElementById("Account-display");
     const despositText = document.getElementById("withdraw-message");
 
- if (accountBalance > 100) 
-    {
-        accountText.innerText  = accountBalance;
-        statusText.innerText = "You are rich";
-    }
-    
-    and ( accountBalance > 0 )
-    {
-        accountText.innerText  = accountBalance;
-        statusText.innerText = "Good job";
-    }
-    else
-    {
+ if (accountBalance >= 100) {
+        statusText.innerText = message || "You are rich";
+        statusText.style.color = "";
+    } else if (accountBalance > 0) {
+        statusText.innerText = message "Good job";
+        statusText.style.color = "";
+    } else {
+        accountBalance = 0;
         accountText.innerText = 0;
         statusText.innerText = "No Money";
         statusText.style.color = "#f9331d";
         statusText.style.fontWeight = "bold";
-
-        document.body.style.backgroundColor = "#5a1a1a";
-        document.querySelector("button").disabled = true;
-        document.querySelector("button").innerText = "Dead";
-    }
+}
 }
