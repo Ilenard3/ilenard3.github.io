@@ -1,6 +1,5 @@
-let accountBalance = 100;
+let accountBalance = 50;
 const depositAmount = 10;
-const withdrawAmount = 10;
 
 function depositAmount() {
     accountBalance = accountBalance + depositAmount;
@@ -8,8 +7,8 @@ function depositAmount() {
     const accountText = document.getElementById("Account-display");
     const despositText = document.getElementById("desposit-message");
 
-function withdrawAmount() 
-    accountBalance = accountBalance - withdrawAmount;
+function withdrawAmount() {}
+    accountBalance = accountBalance - depositAmount;
     
     const accountText = document.getElementById("Account-display");
     const despositText = document.getElementById("withdraw-message");
@@ -20,14 +19,14 @@ function withdrawAmount()
         statusText.innerText = "You are rich";
     }
     
-    and (100 < accountBalance > 0 )
+    and ( accountBalance > 0 )
     {
-         accountText.innerText  = accountBalance;
+        accountText.innerText  = accountBalance;
         statusText.innerText = "Good job";
     }
     else
     {
-        healthText.innerText = 0;
+        accountText.innerText = 0;
         statusText.innerText = "No Money";
         statusText.style.color = "#f9331d";
         statusText.style.fontWeight = "bold";
