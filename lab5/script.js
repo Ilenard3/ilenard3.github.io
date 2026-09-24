@@ -40,3 +40,4 @@ function withdrawAmount() {
         document.querySelector("button").disabled = true;
         document.querySelector("button").innerText = "Dead";
 }
+}
