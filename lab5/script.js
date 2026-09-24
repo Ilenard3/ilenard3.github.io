@@ -13,7 +13,7 @@ function withdrawAmount() {
     
     const accountText = document.getElementById("Account-display");
     const despositText = document.getElementById("withdraw-message");
-}
+
  if (accountBalance > 100) 
     {
         healthText.innerText  = accountBalance;
@@ -30,3 +30,4 @@ function withdrawAmount() {
         document.querySelector("button").disabled = true;
         document.querySelector("button").innerText = "Dead";
     }
+}
