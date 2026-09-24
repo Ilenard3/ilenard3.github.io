@@ -5,25 +5,34 @@ function depositAmount() {
     accountBalance = accountBalance + transactionAmount;
     
     const accountText = document.getElementById("Account-display");
-    const despositText = document.getElementById("desposit-message");
+    const statusText = document.getElementById("desposit-message");
 
-function withdrawAmount() 
+    accountText.innerText = accountBalance;
+
+    if (accountBalance >= 100) {
+        statusText.innerText = "You are rich";
+    } else if (accountBalance > 0) {
+        statusText.innerText = "Good job";
+    }
+}
+
+function withdrawAmount() {
     accountBalance = accountBalance - transactionAmount;
     
     const accountText = document.getElementById("Account-display");
-    const despositText = document.getElementById("withdraw-message");
+    const statusText = document.getElementById("desposit-message");
 
- if (accountBalance >= 100) {
-        statusText.innerText = message || "You are rich";
-        statusText.style.color = "";
+    if (accountBalance >= 100) {
+        accountText.innerText = accountBalance;
+        statusText.innerText = "You are rich";
     } else if (accountBalance > 0) {
-        statusText.innerText = message "Good job";
-        statusText.style.color = "";
+        accountText.innerText = accountBalance;
+        statusText.innerText = "Good job";
     } else {
         accountBalance = 0;
         accountText.innerText = 0;
         statusText.innerText = "No Money";
         statusText.style.color = "#f9331d";
         statusText.style.fontWeight = "bold";
-}
+    }
 }
