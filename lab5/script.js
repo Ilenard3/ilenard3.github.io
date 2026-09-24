@@ -7,8 +7,8 @@ function depositAmount() {
     
     const accountText = document.getElementById("Account-display");
     const despositText = document.getElementById("desposit-message");
-}
-function withdrawAmount() {
+
+function withdrawAmount() 
     accountBalance = accountBalance - withdrawAmount;
     
     const accountText = document.getElementById("Account-display");
