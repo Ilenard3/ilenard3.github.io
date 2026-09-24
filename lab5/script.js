@@ -19,6 +19,12 @@ function withdrawAmount()
         accountText.innerText  = accountBalance;
         statusText.innerText = "You are rich";
     }
+    
+    and (100 < accountBalance > 0 )
+    {
+         accountText.innerText  = accountBalance;
+        statusText.innerText = "Good job";
+    }
     else
     {
         healthText.innerText = 0;
