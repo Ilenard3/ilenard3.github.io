@@ -1,14 +1,14 @@
 let accountBalance = 50;
-const depositAmount = 10;
+const transactionAmount = 10;
 
 function depositAmount() {
-    accountBalance = accountBalance + depositAmount;
+    accountBalance = accountBalance + transactionAmount;
     
     const accountText = document.getElementById("Account-display");
     const despositText = document.getElementById("desposit-message");
 
 function withdrawAmount() {}
-    accountBalance = accountBalance - depositAmount;
+    accountBalance = accountBalance - transactionAmount;
     
     const accountText = document.getElementById("Account-display");
     const despositText = document.getElementById("withdraw-message");
