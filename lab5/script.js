@@ -17,6 +17,7 @@ function depositAmount() {
 }
 
 function withdrawAmount() {
+
     accountBalance = accountBalance - transactionAmount;
     
     const accountText = document.getElementById("Account-display");
@@ -28,11 +29,14 @@ function withdrawAmount() {
     } else if (accountBalance > 0) {
         accountText.innerText = accountBalance;
         statusText.innerText = "Good job";
-    } else {
+    } else if {
         accountBalance = 0;
         accountText.innerText = 0;
         statusText.innerText = "No Money";
         statusText.style.color = "#f9331d";
         statusText.style.fontWeight = "bold";
-    }
+         
+        document.body.style.backgroundColor = "#5a1a1a";
+        document.querySelector("button").disabled = true;
+        document.querySelector("button").innerText = "Dead";
 }
