@@ -35,9 +35,5 @@ function withdrawAmount() {
         statusText.innerText = "No Money";
         statusText.style.color = "#f9331d";
         statusText.style.fontWeight = "bold";
-         
-        document.body.style.backgroundColor = "#5a1a1a";
-        document.querySelector("button").disabled = true;
-        document.querySelector("button").innerText = "Dead";
 }
 }
