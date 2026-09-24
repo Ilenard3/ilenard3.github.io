@@ -29,7 +29,7 @@ function withdrawAmount() {
     } else if (accountBalance > 0) {
         accountText.innerText = accountBalance;
         statusText.innerText = "Good job";
-    } else if {
+    } else {
         accountBalance = 0;
         accountText.innerText = 0;
         statusText.innerText = "No Money";
