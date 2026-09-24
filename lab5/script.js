@@ -1,13 +1,13 @@
 let accountBalance = 0;
-const DepositAmount = 30;
+const depositAmount = 10;
 
-function DepositAmount() {
-    accountBalance = accountBalance + DepositAmount;
+function depositAmount() {
+    accountBalance = accountBalance + depositAmount;
     
     const accountText = document.getElementById("Account-display");
     const despositText = document.getElementById("desposit-message");
 
-    if (playerHealth > 0) 
+    if (accountBalance > 0) 
     {
         healthText.innerText  = playerHealth;
         statusText.innerText = "You've been hit!";
