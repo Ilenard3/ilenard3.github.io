@@ -4,8 +4,8 @@ const DepositAmount = 30;
 function DepositAmount() {
     accountBalance = accountBalance + DepositAmount;
     
-    const healthText = document.getElementById("health-display");
-    const statusText = document.getElementById("status-message");
+    const accountText = document.getElementById("Account-display");
+    const despositText = document.getElementById("desposit-message");
 
     if (playerHealth > 0) 
     {
