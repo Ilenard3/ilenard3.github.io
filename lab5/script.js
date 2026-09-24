@@ -16,7 +16,7 @@ function withdrawAmount() {
 }
  if (accountBalance > 100) 
     {
-        healthText.innerText  = playerHealth;
+        healthText.innerText  = accountBalance;
         statusText.innerText = "You are rich";
     }
     else
