@@ -6,8 +6,30 @@ function depositAmount() {
     
     const accountText = document.getElementById("Account-display");
     const despositText = document.getElementById("desposit-message");
+     if (accountBalance > 100) 
+    {
+        accountText.innerText  = accountBalance;
+        statusText.innerText = "You are rich";
+    }
+    
+    and ( accountBalance > 0 )
+    {
+        accountText.innerText  = accountBalance;
+        statusText.innerText = "Good job";
+    }
+    else
+    {
+        accountText.innerText = 0;
+        statusText.innerText = "No Money";
+        statusText.style.color = "#f9331d";
+        statusText.style.fontWeight = "bold";
 
-function withdrawAmount() {}
+        document.body.style.backgroundColor = "#5a1a1a";
+        document.querySelector("button").disabled = true;
+        document.querySelector("button").innerText = "Dead";
+    }
+
+function withdrawAmount() { 
     accountBalance = accountBalance - transactionAmount;
     
     const accountText = document.getElementById("Account-display");
