@@ -14,5 +14,16 @@ function loadInventory() {
 
     listElement.innerHTML = "";
 
+    for(let i=0; i < contents.length; i++)
+    {
+        let currentItem = contents[i];
 
-};
+        let htmlToInject = "<li>" + currentItem + "</li>";
+
+        //listElement = listElement + htmlToInject
+        listElement += htmlToInject;
+    }
+
+    document.querySelector("buton").disabled = true;
+    document.querySelector("buton").innerText = "Backpack Full";
+}
