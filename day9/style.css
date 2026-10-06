@@ -1,72 +1,98 @@
+{
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #000000;
-    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    color: #1f1f1f;
     margin: 0;
 }
+
+/* Header */
 
 header {
     background-color: #73000a;
     color: white;
     text-align: center;
-    padding: 20px;
-    border-bottom: 5px solid black;
+    padding: 28px 20px;
+    border-bottom: 6px solid #000000;
 }
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+/* Main Checklist Card */
 
 main {
-    background-color: #73000a;
-    width: 600px;
-    margin: 40px auto;
-    padding: 25px;
-    border: 2px solid white;
-    border-radius: 8px;
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 650px;
+    margin: 45px auto;
+    padding: 30px;
+    border: 1px solid #dddddd;
+    border-top: 5px solid #73000a;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
 }
 
+/* Section Heading */
+
 h2 {
-    color: white;
-    border-bottom: 2px solid black;
-    padding-bottom: 10px;
+    color: #73000a;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 8px;
 }
 
 p {
-    font-size: 18px;
+    color: #555555;
+    margin-top: 0;
+    margin-bottom: 12px;
 }
+
+/* Add Item Area */
 
 input[type="text"] {
-    width: 65%;
-    padding: 10px;
-    border: 2px solid black;
-    border-radius: 5px;
+    width: 72%;
+    padding: 11px 12px;
+    font-size: 15px;
+    border: 1px solid #bbbbbb;
+    border-radius: 6px;
+    outline: none;
 }
 
+input[type="text"]:focus {
+    border-color: #73000a;
+    box-shadow: 0 0 0 2px rgba(115, 0, 10, 0.12);
+}
+
+/* Add Button */
+
 button {
-    background-color: black;
+    background-color: #73000a;
     color: white;
-    padding: 10px 15px;
-    border: 2px solid white;
-    border-radius: 5px;
+    padding: 11px 16px;
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #73000a;
+    border-radius: 6px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: white;
-    color: #73000a;
+    background-color: #570008;
+    border-color: #570008;
 }
+
+/* Checklist */
 
 ul {
     list-style-type: none;
     padding: 0;
-}
-
-li {
-    background-color: black;
-    color: white;
-    padding: 12px;
-    margin-top: 10px;
-    border: 1px solid white;
-    border-radius: 5px;
-}
-
-input[type="checkbox"] {
-    margin-right: 10px;
-}
+    margin-top: 28px;
+    border: }
