@@ -1,98 +1,86 @@
-{
+```css
+/* =========================================
+   🏈 CAROLINA GAME DAY CHECKLIST
+   Garnet + Black Game Day Theme
+   ========================================= */
+
+* {
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f4f4;
-    color: #1f1f1f;
-    margin: 0;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Header */
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background:
+        linear-gradient(
+            135deg,
+            #f7f7f7 0%,
+            #eeeeee 100%
+        );
+    color: #1c1c1c;
+}
+
+
+/* =========================================
+   🐔 HEADER
+   ========================================= */
 
 header {
-    background-color: #73000a;
+    position: relative;
+    background:
+        linear-gradient(
+            135deg,
+            #73000a 0%,
+            #570008 100%
+        );
     color: white;
     text-align: center;
-    padding: 28px 20px;
-    border-bottom: 6px solid #000000;
+    padding: 38px 20px;
+    border-bottom: 6px solid #111111;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+}
+
+header::before {
+    content: "🏈";
+    display: block;
+    font-size: 34px;
+    margin-bottom: 8px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 32px;
-    letter-spacing: 1px;
+    font-size: 34px;
+    font-weight: 750;
+    letter-spacing: 0.5px;
 }
 
-/* Main Checklist Card */
+
+/* =========================================
+   📋 MAIN CHECKLIST CARD
+   ========================================= */
 
 main {
-    background-color: #ffffff;
     width: 90%;
-    max-width: 650px;
-    margin: 45px auto;
-    padding: 30px;
-    border: 1px solid #dddddd;
-    border-top: 5px solid #73000a;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+    max-width: 680px;
+    margin: 50px auto;
+    padding: 32px;
+
+    background-color: #ffffff;
+
+    border: 1px solid #dedede;
+    border-top: 6px solid #73000a;
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.08),
+        0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Section Heading */
 
-h2 {
-    color: #73000a;
-    font-size: 24px;
-    margin-top: 0;
-    margin-bottom: 8px;
-}
-
-p {
-    color: #555555;
-    margin-top: 0;
-    margin-bottom: 12px;
-}
-
-/* Add Item Area */
-
-input[type="text"] {
-    width: 72%;
-    padding: 11px 12px;
-    font-size: 15px;
-    border: 1px solid #bbbbbb;
-    border-radius: 6px;
-    outline: none;
-}
-
-input[type="text"]:focus {
-    border-color: #73000a;
-    box-shadow: 0 0 0 2px rgba(115, 0, 10, 0.12);
-}
-
-/* Add Button */
-
-button {
-    background-color: #73000a;
-    color: white;
-    padding: 11px 16px;
-    margin-left: 5px;
-    font-size: 14px;
-    font-weight: bold;
-    border: 1px solid #73000a;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #570008;
-    border-color: #570008;
-}
-
-/* Checklist */
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 28px;
-    border: }
+/* =========================================
+   🎒 GAME DAY
