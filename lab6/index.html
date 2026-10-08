@@ -1,125 +1,364 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cool Reptiles</title>
+    <title>Reptilia | Wildlife Archive</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
     <aside class="sidebar">
-        <h1>Cool Reptiles</h1>
+
+        <header class="brand">
+            <span class="brand-symbol">✦</span>
+            <h1>REPTILIA<span>.</span></h1>
+            <p>THE WILDLIFE ARCHIVE</p>
+        </header>
 
         <nav aria-label="Reptile Navigation">
-            <ul>
-                <li>
-                    <button class="reptile-tab active" data-reptile="home">
-                        🐊 Home
-                    </button>
-                </li>
+            <p class="nav-heading">EXPLORE THE COLLECTION</p>
 
-                <li>
-                    <button class="reptile-tab" data-reptile="frilled">
-                        🦎 Frilled-Neck Lizard
-                    </button>
-                </li>
+            <button class="tab active"
+                    data-page="home"
+                    aria-controls="home"
+                    aria-pressed="true">
+                <span>00</span> Overview
+            </button>
 
-                <li>
-                    <button class="reptile-tab" data-reptile="snake">
-                        🐍 Flying Snake
-                    </button>
-                </li>
+            <button class="tab"
+                    data-page="frilled"
+                    aria-controls="frilled"
+                    aria-pressed="false">
+                <span>01</span> Frilled-Neck Lizard
+            </button>
 
-                <li>
-                    <button class="reptile-tab" data-reptile="chameleon">
-                        🦎 Chameleon
-                    </button>
-                </li>
-            </ul>
+            <button class="tab"
+                    data-page="snake"
+                    aria-controls="snake"
+                    aria-pressed="false">
+                <span>02</span> Flying Snake
+            </button>
+
+            <button class="tab"
+                    data-page="chameleon"
+                    aria-controls="chameleon"
+                    aria-pressed="false">
+                <span>03</span> Chameleon
+            </button>
         </nav>
+
+        <footer class="sidebar-footer">
+            <p>THE NATURAL WORLD</p>
+            <small>Discover. Explore. Understand.</small>
+        </footer>
+
     </aside>
 
 
     <main class="content">
 
-        <section id="home" class="reptile-section active-section">
-            <p class="label">REPTILE COLLECTION</p>
-            <h2>Welcome to Cool Reptiles</h2>
+        <!-- OVERVIEW -->
 
-            <p>
-                Explore some of the most unusual and fascinating reptiles
-                found around the world.
+        <section id="home" class="page active-page">
+
+            <p class="eyebrow">THE NATURAL WORLD / 000</p>
+
+            <h2>The art of <em>survival.</em></h2>
+
+            <p class="intro">
+                Discover the remarkable adaptations,
+                fascinating behaviors, and extraordinary
+                diversity of reptiles.
             </p>
 
-            <div class="fact-box">
-                <h3>Choose a Reptile</h3>
-                <p>
-                    Select one of the reptiles from the sidebar to learn
-                    more about it.
-                </p>
+            <img
+                class="hero-image"
+                src="images/reptiles.jpg"
+                alt="Reptile in its natural habitat"
+            >
+
+            <div class="article-heading">
+                <span>01 / INTRODUCTION</span>
+                <h3>Ancient and extraordinary.</h3>
             </div>
+
+            <p>
+                Reptiles are vertebrate animals with a long
+                evolutionary history. Modern reptiles include
+                lizards, snakes, turtles, crocodilians,
+                and the tuatara.
+            </p>
+
+            <p>
+                Most reptiles are ectothermic, meaning they
+                rely heavily on their surroundings to regulate
+                body temperature. Their scales help protect
+                their bodies and reduce water loss.
+            </p>
+
+            <p>
+                Different species have developed remarkable
+                survival strategies, including camouflage,
+                defensive displays, specialized hunting
+                techniques, and even gliding through the air.
+            </p>
+
+            <div class="quote">
+                Nature has produced an extraordinary variety
+                of solutions to the challenge of survival.
+            </div>
+
         </section>
 
 
-        <section id="frilled" class="reptile-section">
-            <p class="label">CHLAMYDOSAURUS KINGII</p>
-            <h2>Frilled-Neck Lizard</h2>
+        <!-- FRILLED-NECK LIZARD -->
 
-            <p>
-                The frilled-neck lizard is famous for the large fold of
-                skin around its neck. When threatened, it can open its
-                mouth and spread its frill to make itself appear much
-                larger.
+        <section id="frilled" class="page" hidden>
+
+            <p class="eyebrow">SPECIES PROFILE / 001</p>
+
+            <h2>Frilled-Neck <em>Lizard.</em></h2>
+
+            <p class="intro">
+                A remarkable reptile recognized for
+                its dramatic defensive display.
             </p>
 
-            <div class="fact-box">
-                <h3>Quick Facts</h3>
-                <p><strong>Location:</strong> Northern Australia and New Guinea</p>
-                <p><strong>Diet:</strong> Insects and small animals</p>
-                <p><strong>Known For:</strong> Its dramatic neck frill</p>
+            <img
+                class="hero-image"
+                src="images/frilled-lizard.jpg"
+                alt="Frilled-neck lizard displaying its frill"
+            >
+
+            <div class="species-info">
+                <div>
+                    <span>SCIENTIFIC NAME</span>
+                    <p>Chlamydosaurus kingii</p>
+                </div>
+
+                <div>
+                    <span>HABITAT</span>
+                    <p>Woodlands and tropical savannas</p>
+                </div>
+
+                <div>
+                    <span>LOCATION</span>
+                    <p>Northern Australia and New Guinea</p>
+                </div>
             </div>
+
+            <div class="article-heading">
+                <span>01 / THE SPECIES</span>
+                <h3>A dramatic defense.</h3>
+            </div>
+
+            <p>
+                The frilled-neck lizard is a tree-dwelling
+                reptile best known for the large fold of
+                skin surrounding its neck.
+            </p>
+
+            <p>
+                When threatened, the lizard can extend
+                its frill, open its mouth, and hiss.
+                This makes the animal appear larger
+                and may discourage predators.
+            </p>
+
+            <div class="article-heading">
+                <span>02 / BEHAVIOR</span>
+                <h3>Life among the trees.</h3>
+            </div>
+
+            <p>
+                Frilled-neck lizards spend much of their
+                time climbing trees and searching for food.
+                Their diet consists primarily of insects
+                and other small animals.
+            </p>
+
+            <p>
+                When escaping danger on the ground,
+                they may run on their hind legs for
+                short distances.
+            </p>
+
+            <p class="fact">
+                INTERESTING FACT: The frill is also used
+                in territorial displays and communication.
+            </p>
+
         </section>
 
 
-        <section id="snake" class="reptile-section">
-            <p class="label">CHRYSOPELEA</p>
-            <h2>Flying Snake</h2>
+        <!-- FLYING SNAKE -->
 
-            <p>
-                Flying snakes do not actually fly. Instead, they flatten
-                their bodies and glide through the air from tree to tree.
+        <section id="snake" class="page" hidden>
+
+            <p class="eyebrow">SPECIES PROFILE / 002</p>
+
+            <h2>Flying <em>Snake.</em></h2>
+
+            <p class="intro">
+                An extraordinary reptile capable of
+                gliding through the forest canopy.
             </p>
 
-            <div class="fact-box">
-                <h3>Quick Facts</h3>
-                <p><strong>Location:</strong> South and Southeast Asia</p>
-                <p><strong>Diet:</strong> Lizards, frogs and small animals</p>
-                <p><strong>Known For:</strong> Gliding between trees</p>
+            <img
+                class="hero-image"
+                src="images/flying-snake.jpg"
+                alt="Flying snake resting on a tree branch"
+            >
+
+            <div class="species-info">
+                <div>
+                    <span>SCIENTIFIC GROUP</span>
+                    <p>Chrysopelea</p>
+                </div>
+
+                <div>
+                    <span>HABITAT</span>
+                    <p>Tropical forests and wooded areas</p>
+                </div>
+
+                <div>
+                    <span>LOCATION</span>
+                    <p>South and Southeast Asia</p>
+                </div>
             </div>
+
+            <div class="article-heading">
+                <span>01 / THE SPECIES</span>
+                <h3>Flight without wings.</h3>
+            </div>
+
+            <p>
+                Flying snakes are a group of tree-dwelling
+                snakes known for their ability to glide
+                between elevated locations.
+            </p>
+
+            <p>
+                Although they cannot truly fly,
+                they can travel impressive distances
+                through the air by flattening their
+                bodies and controlling their movements.
+            </p>
+
+            <div class="article-heading">
+                <span>02 / ADAPTATIONS</span>
+                <h3>Built to glide.</h3>
+            </div>
+
+            <p>
+                When gliding, these snakes spread their
+                ribs outward to create a flattened,
+                curved body shape that generates
+                aerodynamic forces.
+            </p>
+
+            <p>
+                They also move from side to side while
+                airborne, helping maintain stability.
+                Their diet includes lizards, frogs,
+                and other small vertebrates.
+            </p>
+
+            <p class="fact">
+                INTERESTING FACT: Some flying snakes
+                can glide tens of meters between trees.
+            </p>
+
         </section>
 
 
-        <section id="chameleon" class="reptile-section">
-            <p class="label">CHAMAELEONIDAE</p>
-            <h2>Chameleon</h2>
+        <!-- CHAMELEON -->
 
-            <p>
-                Chameleons are known for their unusual eyes, long tongues
-                and ability to change their appearance.
+        <section id="chameleon" class="page" hidden>
+
+            <p class="eyebrow">SPECIES PROFILE / 003</p>
+
+            <h2>The <em>Chameleon.</em></h2>
+
+            <p class="intro">
+                A master of visual communication,
+                precise hunting, and adaptation.
             </p>
 
-            <div class="fact-box">
-                <h3>Quick Facts</h3>
-                <p><strong>Location:</strong> Africa, Madagascar, Asia and Europe</p>
-                <p><strong>Diet:</strong> Mostly insects</p>
-                <p><strong>Known For:</strong> Color changes and independent eyes</p>
+            <img
+                class="hero-image"
+                src="images/chameleon.jpg"
+                alt="Chameleon perched on a branch"
+            >
+
+            <div class="species-info">
+                <div>
+                    <span>SCIENTIFIC FAMILY</span>
+                    <p>Chamaeleonidae</p>
+                </div>
+
+                <div>
+                    <span>HABITAT</span>
+                    <p>Forests, shrublands, and grasslands</p>
+                </div>
+
+                <div>
+                    <span>LOCATION</span>
+                    <p>Primarily Africa and Madagascar</p>
+                </div>
             </div>
+
+            <div class="article-heading">
+                <span>01 / THE SPECIES</span>
+                <h3>Masters of adaptation.</h3>
+            </div>
+
+            <p>
+                Chameleons are specialized lizards known
+                for their unusual eyes, long tongues,
+                and ability to change color.
+            </p>
+
+            <p>
+                Many species live in trees and shrubs.
+                Their specialized feet help them grip
+                branches, while some species use
+                their tails for additional support.
+            </p>
+
+            <div class="article-heading">
+                <span>02 / UNIQUE ABILITIES</span>
+                <h3>Color and vision.</h3>
+            </div>
+
+            <p>
+                Chameleons change color for several
+                reasons, including communication
+                and temperature regulation.
+                They do not simply copy the colors
+                of every background.
+            </p>
+
+            <p>
+                Their eyes can move independently,
+                allowing them to observe different
+                directions. They also use rapidly
+                extending tongues to capture prey.
+            </p>
+
+            <p class="fact">
+                INTERESTING FACT: Chameleons can
+                coordinate both eyes to accurately
+                judge the distance to their prey.
+            </p>
+
         </section>
 
     </main>
 
-    <script src="script.js"></script>
 </body>
 </html>

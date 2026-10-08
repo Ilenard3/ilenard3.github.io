@@ -1,11 +1,18 @@
+
+/* GENERAL */
+
 * {
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
-    background-color: #0b0b0b;
-    color: #eeeeee;
+    background-color: #171719;
+    color: #eee8e1;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -13,73 +20,129 @@ body {
 /* SIDEBAR */
 
 .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
     width: 20%;
     height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
 
-    background-color: #111111;
-    border-right: 2px solid #c6a15b;
+    padding: 45px 25px;
 
-    padding: 35px 20px;
+    background-color: #211e22;
+    border-right: 1px solid #40343a;
+
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
 }
 
-.sidebar h1 {
-    color: #d4af67;
-    font-size: 27px;
-    margin: 0 0 40px 0;
-    padding-bottom: 20px;
 
-    border-bottom: 1px solid #4c4029;
+/* BRAND */
+
+.brand {
+    margin-bottom: 65px;
+}
+
+.brand-symbol {
+    font-size: 27px;
+    color: #a67a83;
+}
+
+.brand h1 {
+    font-family: Georgia, serif;
+    font-size: 29px;
+    font-weight: normal;
+    letter-spacing: 2px;
+
+    margin: 15px 0 10px;
+    color: #f2ebea;
+}
+
+.brand h1 span {
+    color: #a67a83;
+}
+
+.brand p {
+    color: #97888e;
+    font-size: 10px;
+    letter-spacing: 2px;
 }
 
 
 /* NAVIGATION */
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.nav-heading {
+    color: #a67a83;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
 }
 
-.sidebar li {
-    margin-bottom: 12px;
-}
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 
-.reptile-tab {
     width: 100%;
-    padding: 16px;
+    padding: 16px 12px;
 
-    background-color: transparent;
-    color: #cccccc;
+    background: transparent;
+    border: none;
+    border-left: 2px solid transparent;
 
-    border: 1px solid #333333;
-    border-radius: 5px;
+    color: #b9adb1;
 
+    font-size: 13px;
     text-align: left;
-    font-size: 15px;
 
     cursor: pointer;
-
-    transition: 0.25s;
+    transition: all 0.25s ease;
 }
 
-.reptile-tab:hover {
-    background-color: #1c1a16;
-    color: #e3c37d;
-    border-color: #9c7b3f;
-
-    transform: translateX(4px);
+.tab span {
+    font-size: 10px;
+    color: #846d76;
 }
 
-.reptile-tab.active {
-    background-color: #c6a15b;
-    color: #090909;
+.tab:hover {
+    background-color: #30262c;
+    color: #f3e9eb;
+}
 
-    border-color: #e0c17c;
+.tab.active {
+    background-color: #572d39;
+    color: #fff1f2;
+    border-left-color: #c49aa4;
+}
 
-    font-weight: bold;
+.tab.active span {
+    color: #e0bfc6;
+}
+
+.tab:focus-visible {
+    outline: 2px solid #c49aa4;
+    outline-offset: 3px;
+}
+
+
+/* SIDEBAR FOOTER */
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 35px;
+}
+
+.sidebar-footer p {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #a67a83;
+}
+
+.sidebar-footer small {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: #91858a;
 }
 
 
@@ -89,101 +152,257 @@ body {
     margin-left: 20%;
     min-height: 100vh;
 
-    padding: 70px 8%;
+    padding: 85px 8% 120px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #0b0b0b,
-            #12110e
-        );
+    background-color: #171719;
 }
 
 
-/* REPTILE SECTIONS */
+/* PAGES */
 
-.reptile-section {
+.page {
     display: none;
-    max-width: 850px;
+    max-width: 1050px;
+    margin: 0 auto;
 }
 
-.reptile-section.active-section {
+.page.active-page {
     display: block;
+    animation: fadeIn 0.3s ease;
 }
 
-.label {
-    color: #b89652;
+.page[hidden] {
+    display: none !important;
+}
 
-    font-size: 13px;
-    font-weight: bold;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
 
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* MAIN HEADINGS */
+
+.eyebrow {
+    font-size: 11px;
     letter-spacing: 3px;
+    color: #b98d98;
+
+    margin-bottom: 25px;
 }
 
-.reptile-section h2 {
-    color: #e0bd72;
+.page h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 5vw, 75px);
+    font-weight: normal;
+    letter-spacing: -1.5px;
+    line-height: 1.12;
 
-    font-size: 48px;
-
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin: 0 0 30px;
+    color: #f4eeea;
 }
 
-.reptile-section > p {
-    line-height: 1.8;
+.page h2 em {
+    color: #b98d98;
+    font-weight: normal;
+}
+
+.intro {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    line-height: 1.7;
+    color: #c7b9bd;
+
+    max-width: 750px;
+    margin-bottom: 45px;
+}
+
+
+/* REPTILE IMAGES */
+
+.hero-image {
+    display: block;
+    width: 100%;
+    height: 420px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 3px;
+
+    margin: 40px 0 65px;
+    filter: brightness(0.88);
+}
+
+
+/* SPECIES DETAILS */
+
+.species-info {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+
+    padding-bottom: 35px;
+    margin-bottom: 65px;
+
+    border-bottom: 1px solid #493940;
+}
+
+.species-info span {
+    display: block;
+    color: #b98d98;
+
+    font-size: 10px;
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.species-info p {
+    color: #e0d4d5;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* ARTICLE HEADINGS */
+
+.article-heading {
+    margin-top: 60px;
+    margin-bottom: 25px;
+}
+
+.article-heading span {
+    color: #ad7f8b;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.article-heading h3 {
+    font-family: Georgia, serif;
+    font-size: 35px;
+    font-weight: normal;
+    color: #f0e9e5;
+
+    margin: 15px 0 0;
+}
+
+
+/* BODY TEXT */
+
+.page > p:not(.eyebrow):not(.intro):not(.fact) {
+    color: #beb5b8;
+    font-size: 17px;
+    line-height: 1.9;
+
+    max-width: 760px;
+    margin-bottom: 25px;
+}
+
+
+/* FEATURED TEXT */
+
+.fact,
+.quote {
+    margin-top: 50px;
+    padding: 25px 0;
+
+    border-top: 1px solid #63434e;
+    border-bottom: 1px solid #63434e;
+
+    color: #d2a7b1;
+    font-family: Georgia, serif;
     font-size: 18px;
-
-    color: #c9c9c9;
+    line-height: 1.8;
 }
 
-
-/* FACT CARD */
-
-.fact-box {
-    margin-top: 40px;
-    padding: 25px 30px;
-
-    background-color: #151515;
-
-    border: 1px solid #393326;
-    border-left: 4px solid #c6a15b;
-
-    border-radius: 6px;
-}
-
-.fact-box h3 {
-    margin-top: 0;
-
-    color: #d6b66f;
-
+.quote {
+    font-style: italic;
     font-size: 22px;
 }
 
-.fact-box p {
-    color: #bbbbbb;
 
-    line-height: 1.6;
-}
+/* TABLET */
 
-.fact-box strong {
-    color: #e0bd72;
-}
-
-
-/* SMALLER SCREENS */
-
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
 
     .sidebar {
-        width: 30%;
+        width: 28%;
+        padding: 35px 18px;
     }
 
     .content {
-        margin-left: 30%;
-        padding: 50px 6%;
+        margin-left: 28%;
+        padding: 65px 6%;
     }
 
-    .reptile-section h2 {
-        font-size: 36px;
+    .hero-image {
+        height: 330px;
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 25px;
+    }
+
+    .brand {
+        margin-bottom: 30px;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 45px 24px 70px;
+    }
+
+    .page h2 {
+        font-size: 43px;
+    }
+
+    .intro {
+        font-size: 18px;
+    }
+
+    .hero-image {
+        height: 240px;
+        margin-bottom: 45px;
+    }
+
+    .species-info {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .article-heading h3 {
+        font-size: 29px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
