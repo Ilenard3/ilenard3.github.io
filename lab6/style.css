@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #0b0b0b;
+    color: #eeeeee;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* SIDEBAR */
+
+.sidebar {
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    background-color: #111111;
+    border-right: 2px solid #c6a15b;
+
+    padding: 35px 20px;
+}
+
+.sidebar h1 {
+    color: #d4af67;
+    font-size: 27px;
+    margin: 0 0 40px 0;
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #4c4029;
+}
+
+
+/* NAVIGATION */
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 12px;
+}
+
+.reptile-tab {
+    width: 100%;
+    padding: 16px;
+
+    background-color: transparent;
+    color: #cccccc;
+
+    border: 1px solid #333333;
+    border-radius: 5px;
+
+    text-align: left;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.reptile-tab:hover {
+    background-color: #1c1a16;
+    color: #e3c37d;
+    border-color: #9c7b3f;
+
+    transform: translateX(4px);
+}
+
+.reptile-tab.active {
+    background-color: #c6a15b;
+    color: #090909;
+
+    border-color: #e0c17c;
+
+    font-weight: bold;
+}
+
+
+/* MAIN CONTENT */
+
+.content {
+    margin-left: 20%;
+    min-height: 100vh;
+
+    padding: 70px 8%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0b0b0b,
+            #12110e
+        );
+}
+
+
+/* REPTILE SECTIONS */
+
+.reptile-section {
+    display: none;
+    max-width: 850px;
+}
+
+.reptile-section.active-section {
+    display: block;
+}
+
+.label {
+    color: #b89652;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.reptile-section h2 {
+    color: #e0bd72;
+
+    font-size: 48px;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.reptile-section > p {
+    line-height: 1.8;
+    font-size: 18px;
+
+    color: #c9c9c9;
+}
+
+
+/* FACT CARD */
+
+.fact-box {
+    margin-top: 40px;
+    padding: 25px 30px;
+
+    background-color: #151515;
+
+    border: 1px solid #393326;
+    border-left: 4px solid #c6a15b;
+
+    border-radius: 6px;
+}
+
+.fact-box h3 {
+    margin-top: 0;
+
+    color: #d6b66f;
+
+    font-size: 22px;
+}
+
+.fact-box p {
+    color: #bbbbbb;
+
+    line-height: 1.6;
+}
+
+.fact-box strong {
+    color: #e0bd72;
+}
+
+
+/* SMALLER SCREENS */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 30%;
+    }
+
+    .content {
+        margin-left: 30%;
+        padding: 50px 6%;
+    }
+
+    .reptile-section h2 {
+        font-size: 36px;
+    }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Reptiles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+        <h1>Cool Reptiles</h1>
+
+        <nav aria-label="Reptile Navigation">
+            <ul>
+                <li>
+                    <button class="reptile-tab active" data-reptile="home">
+                        🐊 Home
+                    </button>
+                </li>
+
+                <li>
+                    <button class="reptile-tab" data-reptile="frilled">
+                        🦎 Frilled-Neck Lizard
+                    </button>
+                </li>
+
+                <li>
+                    <button class="reptile-tab" data-reptile="snake">
+                        🐍 Flying Snake
+                    </button>
+                </li>
+
+                <li>
+                    <button class="reptile-tab" data-reptile="chameleon">
+                        🦎 Chameleon
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+
+    <main class="content">
+
+        <section id="home" class="reptile-section active-section">
+            <p class="label">REPTILE COLLECTION</p>
+            <h2>Welcome to Cool Reptiles</h2>
+
+            <p>
+                Explore some of the most unusual and fascinating reptiles
+                found around the world.
+            </p>
+
+            <div class="fact-box">
+                <h3>Choose a Reptile</h3>
+                <p>
+                    Select one of the reptiles from the sidebar to learn
+                    more about it.
+                </p>
+            </div>
+        </section>
+
+
+        <section id="frilled" class="reptile-section">
+            <p class="label">CHLAMYDOSAURUS KINGII</p>
+            <h2>Frilled-Neck Lizard</h2>
+
+            <p>
+                The frilled-neck lizard is famous for the large fold of
+                skin around its neck. When threatened, it can open its
+                mouth and spread its frill to make itself appear much
+                larger.
+            </p>
+
+            <div class="fact-box">
+                <h3>Quick Facts</h3>
+                <p><strong>Location:</strong> Northern Australia and New Guinea</p>
+                <p><strong>Diet:</strong> Insects and small animals</p>
+                <p><strong>Known For:</strong> Its dramatic neck frill</p>
+            </div>
+        </section>
+
+
+        <section id="snake" class="reptile-section">
+            <p class="label">CHRYSOPELEA</p>
+            <h2>Flying Snake</h2>
+
+            <p>
+                Flying snakes do not actually fly. Instead, they flatten
+                their bodies and glide through the air from tree to tree.
+            </p>
+
+            <div class="fact-box">
+                <h3>Quick Facts</h3>
+                <p><strong>Location:</strong> South and Southeast Asia</p>
+                <p><strong>Diet:</strong> Lizards, frogs and small animals</p>
+                <p><strong>Known For:</strong> Gliding between trees</p>
+            </div>
+        </section>
+
+
+        <section id="chameleon" class="reptile-section">
+            <p class="label">CHAMAELEONIDAE</p>
+            <h2>Chameleon</h2>
+
+            <p>
+                Chameleons are known for their unusual eyes, long tongues
+                and ability to change their appearance.
+            </p>
+
+            <div class="fact-box">
+                <h3>Quick Facts</h3>
+                <p><strong>Location:</strong> Africa, Madagascar, Asia and Europe</p>
+                <p><strong>Diet:</strong> Mostly insects</p>
+                <p><strong>Known For:</strong> Color changes and independent eyes</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
