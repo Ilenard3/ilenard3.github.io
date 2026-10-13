@@ -52,4 +52,6 @@ setInterval(function() {
     {
         linesOfCode = linesOfCode + interns;
     }
-}, 1000 interval);
+}, 
+1000 
+);
