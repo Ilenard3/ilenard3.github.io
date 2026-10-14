@@ -1,13 +1,13 @@
 body {
-    background-color: white;
+    background-color: #F7F3EA;
     font-family: Arial, sans-serif;
     margin: 40px;
-    color: black;
+    color: #24312B;
 }
 
 h1 {
-    background-color: black;
-    color: goldenrod;
+    background-color: #092820;
+    color: #D4AF37;
     padding: 20px;
     border-radius: 15px;
     text-align: center;
@@ -18,28 +18,33 @@ table {
     max-width: 600px;
     margin: 20px auto;
     border-collapse: collapse;
-    border: 2px solid black;
+    border: 2px solid #123D32;
 }
 
 th,
 td {
-    border: 1px solid black;
+    border: 1px solid #123D32;
     padding: 12px;
     text-align: left;
 }
 
 th {
-    background-color: black;
-    color: goldenrod;
+    background-color: #123D32;
+    color: #D4AF37;
+}
+
+td {
+    background-color: #FFFFFF;
+    color: #24312B;
 }
 
 a {
-    color: goldenrod;
+    color: #123D32;
     text-decoration: none;
     font-weight: bold;
 }
 
 a:hover {
-    color: black;
+    color: #8A6D16;
     text-decoration: underline;
 }

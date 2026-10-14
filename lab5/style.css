@@ -2,33 +2,33 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     margin-top: 50px;
-    background-color: #fffdf5; 
-    color: #111111;           
+    background-color: #F7F3EA;
+    color: #24312B;
     transition: background-color 0.3s;
 }
 
 #player-card {
-    background-color: #111111; 
-    border: 3px solid gold;   
+    background-color: #123D32;
+    border: 3px solid #D4AF37;
     border-radius: 10px;
     width: 300px;
-    padding: 20px;            
+    padding: 20px;
     margin: 0 auto;
-    color: gold;              
+    color: #F7F3EA;
 }
 
 button {
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
-    background-color: gold;   
-    color: #111111;           
-    border: 2px solid #111111;
+    background-color: #D4AF37;
+    color: #092820;
+    border: 2px solid #092820;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
 button:hover {
-    background-color: goldenrod;
+    background-color: #B89628;
 }

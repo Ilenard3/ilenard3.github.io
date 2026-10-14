@@ -11,8 +11,8 @@ html {
 
 body {
     margin: 0;
-    background-color: #171719;
-    color: #eee8e1;
+    background-color: #092820;
+    color: #F7F3EA;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -29,8 +29,8 @@ body {
 
     padding: 45px 25px;
 
-    background-color: #211e22;
-    border-right: 1px solid #40343a;
+    background-color: #092820;
+    border-right: 1px solid #426451;
 
     display: flex;
     flex-direction: column;
@@ -46,7 +46,7 @@ body {
 
 .brand-symbol {
     font-size: 27px;
-    color: #a67a83;
+    color: #D4AF37;
 }
 
 .brand h1 {
@@ -56,15 +56,15 @@ body {
     letter-spacing: 2px;
 
     margin: 15px 0 10px;
-    color: #f2ebea;
+    color: #F7F3EA;
 }
 
 .brand h1 span {
-    color: #a67a83;
+    color: #D4AF37;
 }
 
 .brand p {
-    color: #97888e;
+    color: #B9C9BD;
     font-size: 10px;
     letter-spacing: 2px;
 }
@@ -73,7 +73,7 @@ body {
 /* NAVIGATION */
 
 .nav-heading {
-    color: #a67a83;
+    color: #E4C65C;
     font-size: 10px;
     letter-spacing: 2px;
     margin-bottom: 25px;
@@ -91,7 +91,7 @@ body {
     border: none;
     border-left: 2px solid transparent;
 
-    color: #b9adb1;
+    color: #D8E3DA;
 
     font-size: 13px;
     text-align: left;
@@ -102,26 +102,26 @@ body {
 
 .tab span {
     font-size: 10px;
-    color: #846d76;
+    color: #B6C6B9;
 }
 
 .tab:hover {
-    background-color: #30262c;
-    color: #f3e9eb;
+    background-color: #1C493B;
+    color: #FFFFFF;
 }
 
 .tab.active {
-    background-color: #572d39;
-    color: #fff1f2;
-    border-left-color: #c49aa4;
+    background-color: #245544;
+    color: #FFFFFF;
+    border-left-color: #D4AF37;
 }
 
 .tab.active span {
-    color: #e0bfc6;
+    color: #E4C65C;
 }
 
 .tab:focus-visible {
-    outline: 2px solid #c49aa4;
+    outline: 2px solid #D4AF37;
     outline-offset: 3px;
 }
 
@@ -136,13 +136,13 @@ body {
 .sidebar-footer p {
     font-size: 10px;
     letter-spacing: 2px;
-    color: #a67a83;
+    color: #D4AF37;
 }
 
 .sidebar-footer small {
     font-family: Georgia, serif;
     font-style: italic;
-    color: #91858a;
+    color: #B9C9BD;
 }
 
 
@@ -154,7 +154,7 @@ body {
 
     padding: 85px 8% 120px;
 
-    background-color: #171719;
+    background-color: #123D32;
 }
 
 
@@ -193,7 +193,7 @@ body {
 .eyebrow {
     font-size: 11px;
     letter-spacing: 3px;
-    color: #b98d98;
+    color: #E4C65C;
 
     margin-bottom: 25px;
 }
@@ -206,11 +206,11 @@ body {
     line-height: 1.12;
 
     margin: 0 0 30px;
-    color: #f4eeea;
+    color: #F7F3EA;
 }
 
 .page h2 em {
-    color: #b98d98;
+    color: #E4C65C;
     font-weight: normal;
 }
 
@@ -218,7 +218,7 @@ body {
     font-family: Georgia, serif;
     font-size: 21px;
     line-height: 1.7;
-    color: #c7b9bd;
+    color: #E0E8DE;
 
     max-width: 750px;
     margin-bottom: 45px;
@@ -236,7 +236,7 @@ body {
     object-fit: contain;
     object-position: center;
 
-    background-color: #211e22;
+    background-color: #092820;
 
     border-radius: 6px;
     margin: 40px 0 65px;
@@ -253,12 +253,12 @@ body {
     padding-bottom: 35px;
     margin-bottom: 65px;
 
-    border-bottom: 1px solid #493940;
+    border-bottom: 1px solid #537262;
 }
 
 .species-info span {
     display: block;
-    color: #b98d98;
+    color: #E4C65C;
 
     font-size: 10px;
     letter-spacing: 2px;
@@ -267,7 +267,7 @@ body {
 }
 
 .species-info p {
-    color: #e0d4d5;
+    color: #F0F2EB;
     font-size: 14px;
     line-height: 1.6;
     margin: 0;
@@ -282,7 +282,7 @@ body {
 }
 
 .article-heading span {
-    color: #ad7f8b;
+    color: #E4C65C;
     font-size: 10px;
     letter-spacing: 2px;
 }
@@ -291,7 +291,7 @@ body {
     font-family: Georgia, serif;
     font-size: 35px;
     font-weight: normal;
-    color: #f0e9e5;
+    color: #F7F3EA;
 
     margin: 15px 0 0;
 }
@@ -300,7 +300,7 @@ body {
 /* BODY TEXT */
 
 .page > p:not(.eyebrow):not(.intro):not(.fact) {
-    color: #beb5b8;
+    color: #E0E8DE;
     font-size: 17px;
     line-height: 1.9;
 
@@ -316,10 +316,10 @@ body {
     margin-top: 50px;
     padding: 25px 0;
 
-    border-top: 1px solid #63434e;
-    border-bottom: 1px solid #63434e;
+    border-top: 1px solid #9B8130;
+    border-bottom: 1px solid #9B8130;
 
-    color: #d2a7b1;
+    color: #E4C65C;
     font-family: Georgia, serif;
     font-size: 18px;
     line-height: 1.8;

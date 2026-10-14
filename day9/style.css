@@ -1,4 +1,4 @@
-```css
+
 * {
     box-sizing: border-box;
 }
@@ -7,19 +7,19 @@ body {
     margin: 0;
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f3f4f6;
-    color: #181818;
+    background-color: #F7F3EA;
+    color: #24312B;
 }
 
 /* Header */
 
 header {
-    background-color: #73000a;
-    color: white;
+    background-color: #092820;
+    color: #F7F3EA;
     padding: 32px 20px;
     text-align: center;
-    border-bottom: 5px solid #111111;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+    border-bottom: 5px solid #D4AF37;
+    box-shadow: 0 3px 12px rgba(9, 40, 32, 0.18);
 }
 
 header h1 {
@@ -36,23 +36,23 @@ main {
     max-width: 680px;
     margin: 45px auto;
     padding: 32px;
-    background-color: white;
-    border: 1px solid #dddddd;
+    background-color: #FFFFFF;
+    border: 1px solid #D9E2D9;
     border-radius: 12px;
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 8px 28px rgba(9, 40, 32, 0.10);
 }
 
 /* Title */
 
 h2 {
     margin: 0 0 8px 0;
-    color: #73000a;
+    color: #123D32;
     font-size: 25px;
 }
 
 p {
     margin: 0 0 18px 0;
-    color: #666666;
+    color: #52665B;
     font-size: 15px;
 }
 
@@ -63,20 +63,21 @@ p {
     height: 44px;
     padding: 0 13px;
     font-size: 15px;
-    background-color: #ffffff;
-    border: 1px solid #bbbbbb;
+    background-color: #FFFFFF;
+    color: #24312B;
+    border: 1px solid #A8BBAE;
     border-radius: 7px;
     outline: none;
     transition: 0.2s;
 }
 
 #bagItem:hover {
-    border-color: #888888;
+    border-color: #123D32;
 }
 
 #bagItem:focus {
-    border-color: #73000a;
-    box-shadow: 0 0 0 3px rgba(115, 0, 10, 0.12);
+    border-color: #123D32;
+    box-shadow: 0 0 0 3px rgba(18, 61, 50, 0.15);
 }
 
 /* Button */
@@ -85,8 +86,8 @@ p {
     height: 44px;
     padding: 0 18px;
     margin-left: 6px;
-    background-color: #73000a;
-    color: white;
+    background-color: #123D32;
+    color: #FFFFFF;
     font-size: 14px;
     font-weight: bold;
     border: none;
@@ -96,14 +97,19 @@ p {
 }
 
 #addButton:hover {
-    background-color: #570008;
+    background-color: #092820;
     transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(115, 0, 10, 0.25);
+    box-shadow: 0 4px 10px rgba(9, 40, 32, 0.25);
 }
 
 #addButton:active {
     transform: translateY(0);
     box-shadow: none;
+}
+
+#addButton:focus-visible {
+    outline: 3px solid #D4AF37;
+    outline-offset: 3px;
 }
 
 /* Checklist */
@@ -112,7 +118,7 @@ p {
     list-style: none;
     padding: 0;
     margin: 28px 0 0 0;
-    border: 1px solid #dddddd;
+    border: 1px solid #D9E2D9;
     border-radius: 9px;
     overflow: hidden;
 }
@@ -124,9 +130,10 @@ p {
     align-items: center;
     min-height: 56px;
     padding: 14px 16px;
-    background-color: white;
-    border-bottom: 1px solid #e5e5e5;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E1E9E1;
     font-size: 16px;
+    color: #24312B;
     transition: background-color 0.2s;
 }
 
@@ -135,5 +142,25 @@ p {
 }
 
 #gameDayList li:hover {
-    background-color: #faf5
+    background-color: #F0F5ED;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    main {
+        width: 92%;
+        padding: 22px;
+        margin: 25px auto;
+    }
+
+    #bagItem {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #addButton {
+        width: 100%;
+        margin-left: 0;
+    }
 }
