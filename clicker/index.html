@@ -12,18 +12,29 @@
                 <button id="main-button" onclick="writeCode()">Write Code</button>
             </header>
             
-            <main id="shop">
-                <h3>Hardware Store (Manual Upgrade)</h3>
-                <p>Current Click Power: <span id="power-display">1</span></p>
-                <button id="upgrade-button" onClick="buyKeyboard()">
+                    <main id="shop">
+                    <h3>Hardware Store (Manual Upgrade)</h3>
+                    <p>Current Click Power: <span id="power-display">1</span></p>
+                    <button id="upgrade-button" onClick="buyKeyboard()">
                     Buy Mechanical Keyboard (Cost: <span id="cost-display">50</span>)
-                </button>
+                    </button>
                  
+                    <br></br>
+
+                    <button id="mouse-button" onclick="buyMouse()">
+                        Buy Gaming Mouse (Cost: <span id="mouse-cost-display">200</span>)
+                    </button>
+
                 <h3>Hiring Department (Auto Clicking)</h3>
                 <p>Active Interns: <span id="intern-display">0</span></p>
                 <button id="intern-button" onClick="buyIntern()">
                     Hire Intern (Cost: <span id="cost-intern-display">100</span>)
                 </button>
+
+                <button id="developer-button" onclick="buyDeveloper()">
+                    Hire Developer (Cost: <span id="developer-cost-display">500</span>)
+                </button>
+
             </main>
         </div>
 

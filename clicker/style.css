@@ -1,32 +1,45 @@
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
     background-color: #F7F3EA;
+    font-family: Arial, sans-serif;
+    margin: 40px;
     color: #24312B;
     text-align: center;
-    margin-top: 40px;
+}
+
+h1 {
+    background-color: #092820;
+    color: #D4AF37;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
 }
 
 #game-container {
     background-color: #123D32;
     color: #F7F3EA;
     max-width: 450px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 30px;
-    border: 2px solid #D4AF37;
-    border-radius: 12px;
+    border: 2px solid #092820;
+    border-radius: 15px;
     box-shadow: 0 8px 16px rgba(9, 40, 32, 0.25);
 }
 
+#score-display {
+    color: #D4AF37;
+    font-size: 26px;
+}
+
 #main-button {
-    font-size: 24px;
-    padding: 20px 0;
     background-color: #D4AF37;
     color: #092820;
-    border: none;
-    border-radius: 8px;
+    font-size: 24px;
     font-weight: bold;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.2s;
 }
 
 #main-button:hover {
@@ -34,10 +47,38 @@ body {
 }
 
 #shop {
-    margin-top: 30px;
     background-color: #092820;
     color: #F7F3EA;
+    margin-top: 30px;
     padding: 20px;
-    border: 1px solid #D4AF37;
+    border: 2px solid #D4AF37;
+    border-radius: 15px;
+}
+
+#shop h3 {
+    background-color: #123D32;
+    color: #D4AF37;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+#shop p {
+    color: #F7F3EA;
+    font-size: 16px;
+}
+
+#shop button {
+    background-color: #D4AF37;
+    color: #092820;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 12px;
+    margin: 5px;
+    border: none;
     border-radius: 8px;
+    cursor: pointer;
+}
+
+#shop button:hover {
+    background-color: #B89628;
 }
