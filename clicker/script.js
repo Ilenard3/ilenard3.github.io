@@ -41,6 +41,7 @@ function buyMouse()
     }
 }
 
+
 function buyIntern()
 {
     if(linesOfCode >= internCost)
@@ -62,6 +63,7 @@ function buyDeveloper()
         updateScreen();
     }
 }
+
 
 function updateScreen()
 {
