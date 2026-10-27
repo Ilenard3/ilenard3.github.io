@@ -11,29 +11,15 @@ header {
     margin-bottom: 20px;
 }
 
-h1 {
-    background-color: #092820;
-    color: #D4AF37;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-}
-
 .hud {
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin: 20px auto;
-    padding: 15px;
-    background-color: #FFFFFF;
-    border: 2px solid #123D32;
-    border-radius: 10px;
-    max-width: 600px;
+    margin-bottom: 15px;
 }
 
 span {
-    color: #8A6D16;
-    font-weight: bold;
+    color: #D4AF37;
 }
 
 button {
@@ -43,32 +29,26 @@ button {
     font-weight: bold;
     padding: 10px 20px;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 button:hover {
     background-color: #092820;
-    color: #F7F3EA;
 }
 
 button:disabled {
     background-color: #A5AAA5;
-    color: #FFFFFF;
     cursor: not-allowed;
 }
 
 #game-board {
-    background-color: #FFFFFF;
+    background-color: #092820;
     width: 600px;
-    max-width: 100%;
     height: 400px;
-    margin: 20px auto;
-    border: 5px solid #123D32;
-    border-radius: 15px;
-    box-sizing: border-box;
+    margin: 0 auto;
+    border: 5px solid #D4AF37;
     position: relative;
-    box-shadow: 0 8px 16px #C9C5BA;
 }
 
 #target {
