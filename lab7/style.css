@@ -1,0 +1,64 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f0e9;
+    color: #123524;
+    padding: 20px;
+}
+
+header {
+    background-color: #064e3b;
+    color: #ffd700;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px #a3b8a8;
+    text-align: center;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #064e3b;
+}
+
+p {
+    font-weight: bold;
+    color: #245c46;
+    height: 20px; /* Keeps the card layout from jumping */
+}
+
+button {
+    background-color: #087f5b;
+    color: #ffd700;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #065f46;
+}
+
+/* This triggers automatically when the JS successfully runs btn.disabled = true */
+button:disabled {
+    background-color: #d4af37;
+    color: #064e3b;
+    cursor: not-allowed;
+}
