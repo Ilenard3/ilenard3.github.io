@@ -1,5 +1,7 @@
 
-/* NEON EMPIRE - FINAL PROJECT SUMMARY */
+/* FINAL PROJECT SUMMARY HOMEPAGE */
+
+/* GENERAL PAGE STYLING */
 
 * {
     box-sizing: border-box;
@@ -7,20 +9,11 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #100719;
-    background-image:
-        linear-gradient(
-            rgba(12, 4, 22, 0.65),
-            rgba(12, 4, 22, 0.88)
-        ),
-        url("final_project/images/casino-background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: linear-gradient(135deg, #100719, #241039, #160923);
     color: #f5e8ff;
-    min-height: 100vh;
     margin: 0;
     padding: 50px 20px;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,36 +22,36 @@ body {
 /* MAIN SUMMARY CONTAINER */
 
 .summary-container {
-    background: rgba(24, 8, 40, 0.94);
-    border: 2px solid #e34bd1;
-    border-radius: 20px;
-    box-shadow:
-        0 0 25px rgba(226, 48, 205, 0.45),
-        0 15px 50px rgba(0, 0, 0, 0.65);
-    max-width: 750px;
+    background: linear-gradient(145deg, #251238, #190d2b);
+    max-width: 800px;
     width: 100%;
-    padding: 45px;
+    padding: 45px 50px;
+    border: 1px solid #9c46b3;
+    border-radius: 16px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
 }
 
-/* CASINO LOGO */
+/* PROJECT LOGO */
 
 .casino-logo {
     font-family: Georgia, 'Times New Roman', serif;
     color: #ffd36d;
-    font-size: 32px;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
     letter-spacing: 3px;
-    text-shadow: 0 0 15px #e43bca;
+    margin-bottom: 5px;
 }
 
+/* SUBTITLE */
+
 .subtitle {
-    color: #f19de9;
+    color: #e8a2e5;
     font-size: 11px;
     font-weight: bold;
-    letter-spacing: 4px;
     text-align: center;
-    margin-top: 5px;
+    letter-spacing: 4px;
+    margin-top: 0;
     margin-bottom: 35px;
 }
 
@@ -67,24 +60,24 @@ body {
 h1 {
     font-family: Georgia, 'Times New Roman', serif;
     color: #ffe09a;
-    font-size: 29px;
+    font-size: 30px;
     margin-top: 0;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #ac3bb5;
-    text-shadow: 0 0 12px rgba(255, 211, 109, 0.3);
+    margin-bottom: 25px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #8c3aa3;
 }
 
-/* DEVELOPER INFORMATION */
+/* DEVELOPER AND COURSE INFORMATION */
 
 .metadata {
-    background: rgba(73, 28, 91, 0.4);
+    background-color: #321b45;
+    color: #ead6f0;
+    padding: 18px 22px;
     border-left: 4px solid #ffd36d;
     border-radius: 6px;
-    color: #e8c9ed;
     font-size: 14px;
     font-weight: bold;
     line-height: 2;
-    padding: 15px 20px;
     margin-bottom: 30px;
 }
 
@@ -101,47 +94,46 @@ h1 {
 /* PARAGRAPHS */
 
 p {
-    color: #e9d9ef;
+    color: #e4d2ed;
     font-size: 15px;
     line-height: 1.8;
 }
 
-/* LAUNCH BUTTON */
+/* LAUNCH PROJECT BUTTON */
 
 .launch-btn {
     display: block;
-    text-align: center;
-    background: linear-gradient(135deg, #8819b1, #e832ce);
+    background: linear-gradient(135deg, #7921a3, #d32abb);
     color: white;
-    padding: 18px 25px;
     text-decoration: none;
+    text-align: center;
     font-size: 17px;
     font-weight: bold;
     letter-spacing: 1px;
-    border: 2px solid #ff9bea;
-    border-radius: 12px;
+    padding: 18px 25px;
+    border: 1px solid #ed79dd;
+    border-radius: 10px;
     margin-top: 35px;
-    box-shadow: 0 0 20px rgba(239, 50, 215, 0.5);
     transition: 0.3s;
 }
 
 .launch-btn:hover {
-    background: linear-gradient(135deg, #b12de0, #ff59df);
-    box-shadow: 0 0 30px rgba(255, 65, 222, 0.85);
+    background: linear-gradient(135deg, #a02bd0, #f044d4);
+    box-shadow: 0 0 22px rgba(240, 68, 212, 0.5);
     transform: translateY(-3px);
 }
 
 /* FOOTER NOTE */
 
 .footer-note {
-    color: #bda3c9;
+    color: #a994b8;
     font-size: 12px;
     text-align: center;
     margin-top: 25px;
     margin-bottom: 0;
 }
 
-/* MOBILE DESIGN */
+/* MOBILE AND SMALL SCREEN STYLING */
 
 @media (max-width: 600px) {
 
@@ -150,7 +142,7 @@ p {
     }
 
     .summary-container {
-        padding: 25px 20px;
+        padding: 30px 22px;
     }
 
     .casino-logo {
@@ -158,19 +150,20 @@ p {
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 25px;
     }
 
     .section-title {
         font-size: 19px;
     }
 
-    .launch-btn {
-        font-size: 14px;
+    .metadata {
+        font-size: 12px;
         padding: 15px;
     }
 
-    .metadata {
-        font-size: 12px;
+    .launch-btn {
+        font-size: 14px;
+        padding: 15px;
     }
 }
