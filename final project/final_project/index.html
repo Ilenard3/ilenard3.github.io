@@ -1,0 +1,319 @@
+<!--Welcome screen, balance, game selection, casino statistics-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Neon Empire | Ultimate Casino</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Casino Header -->
+    <header class="site-header">
+
+        <div class="header-content">
+
+            <div class="logo">
+                <h1>♛ NEON EMPIRE</h1>
+                <p>THE ULTIMATE CASINO</p>
+            </div>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#games">Casino Games</a>
+                <a href="#statistics">Statistics</a>
+                <a href="#about">About</a>
+            </nav>
+
+            <div class="wallet">
+                <span>💰 BALANCE</span>
+                <strong id="header-balance">5,000 CR</strong>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- Welcome Section -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="hero-label">
+                    ✦ WELCOME TO NEON EMPIRE ✦
+                </p>
+
+                <h2>
+                    YOUR FORTUNE
+                    <span>AWAITS</span>
+                </h2>
+
+                <p class="hero-description">
+                    Step into the ultimate Vegas Neon Casino.
+                    Experience exciting casino games, chase
+                    jackpots, and build your fortune with
+                    virtual credits.
+                </p>
+
+                <a href="#games" class="main-button">
+                    🎰 EXPLORE THE CASINO
+                </a>
+
+                <p class="hero-note">
+                    ✨ 100% Virtual Credits • Just for Fun ✨
+                </p>
+
+            </div>
+
+            <div class="hero-decoration">
+                <div class="decoration-title">JACKPOT</div>
+                <div class="decoration-slots">
+                    <span>7</span>
+                    <span>7</span>
+                    <span>7</span>
+                </div>
+                <div class="decoration-bottom">
+                    ★ WIN BIG ★
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Statistics Dashboard -->
+        <section id="statistics" class="dashboard">
+
+            <div class="section-heading">
+                <p>YOUR PLAYER PROFILE</p>
+                <h2>Casino Dashboard</h2>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <p>AVAILABLE CREDITS</p>
+                    <h3 id="balance">5,000</h3>
+                    <span>Your casino wallet</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🎮</div>
+                    <p>GAMES PLAYED</p>
+                    <h3 id="games-played">0</h3>
+                    <span>Total games completed</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🏆</div>
+                    <p>TOTAL WINS</p>
+                    <h3 id="wins">0</h3>
+                    <span>Your winning games</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <p>PLAYER LEVEL</p>
+                    <h3 id="player-level">1</h3>
+                    <span>Level up every 10 games</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Casino Game Selection -->
+        <section id="games" class="casino-games">
+
+            <div class="section-heading">
+                <p>CHOOSE YOUR DESTINY</p>
+                <h2>Explore the Casino Floor</h2>
+                <span>
+                    Two exciting casino games.
+                    One shared virtual balance.
+                </span>
+            </div>
+
+            <div class="game-grid">
+
+                <!-- Coin Flip Card -->
+                <article class="game-card">
+
+                    <div class="game-banner coin-banner">
+                        <div class="banner-glow"></div>
+                        <div class="coin-art">🪙</div>
+                        <span class="game-tag">CLASSIC GAME</span>
+                    </div>
+
+                    <div class="game-info">
+
+                        <h3>Coin Flip</h3>
+
+                        <p>
+                            Heads or tails? Make your prediction,
+                            flip the coin, and see if luck is
+                            on your side.
+                        </p>
+
+                        <div class="game-details">
+                            <span>⚡ Quick Rounds</span>
+                            <span>💰 2x Payout</span>
+                        </div>
+
+                        <div class="game-actions">
+
+                            <a href="coinflip/game.html"
+                               class="play-button">
+                                PLAY NOW
+                            </a>
+
+                            <a href="coinflip/instructions.html"
+                               class="info-button">
+                                HOW TO PLAY
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- Slots Card -->
+                <article class="game-card">
+
+                    <div class="game-banner slots-banner">
+                        <div class="banner-glow"></div>
+
+                        <div class="slot-art">
+                            <span>7</span>
+                            <span>7</span>
+                            <span>7</span>
+                        </div>
+
+                        <span class="game-tag">JACKPOT GAME</span>
+                    </div>
+
+                    <div class="game-info">
+
+                        <h3>Neon Slot Machines</h3>
+
+                        <p>
+                            Spin three glowing reels, match
+                            symbols, and chase the ultimate
+                            neon jackpot.
+                        </p>
+
+                        <div class="game-details">
+                            <span>🎰 3 Reels</span>
+                            <span>💎 Up to 10x</span>
+                        </div>
+
+                        <div class="game-actions">
+
+                            <a href="slots/game.html"
+                               class="play-button">
+                                PLAY NOW
+                            </a>
+
+                            <a href="slots/instructions.html"
+                               class="info-button">
+                                HOW TO PLAY
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Casino Information -->
+        <section id="about" class="about-section">
+
+            <div class="section-heading">
+                <p>THE NEON EXPERIENCE</p>
+                <h2>Welcome to the Empire</h2>
+            </div>
+
+            <div class="features-grid">
+
+                <div class="feature">
+                    <div class="feature-icon">💎</div>
+                    <h3>Virtual Fortune</h3>
+                    <p>
+                        Start with 5,000 virtual credits
+                        and use them across casino games.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🎰</div>
+                    <h3>Casino Games</h3>
+                    <p>
+                        Experience Coin Flip and Slots,
+                        each with unique rules and payouts.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Track Your Progress</h3>
+                    <p>
+                        Monitor your games, total wins,
+                        balance, and player level.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Reset Progress -->
+        <section class="account-section">
+            <h2>Player Account</h2>
+
+            <p>
+                Your virtual credits and statistics
+                are saved in this browser.
+            </p>
+
+            <button onclick="resetProgress()" class="reset-button">
+                Reset Casino Progress
+            </button>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>♛ NEON EMPIRE</h3>
+
+        <p>
+            The Ultimate Virtual Casino Experience
+        </p>
+
+        <p>
+            For entertainment and educational purposes only.
+            No real money or prizes.
+        </p>
+
+        <p class="copyright">
+            © 2026 Neon Empire Casino | Final Web Design Project
+        </p>
+
+    </footer>
+
+</body>
+</html>

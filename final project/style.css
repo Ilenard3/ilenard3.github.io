@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Project Summary</title>
-    <style>
-        body {
+body {
             font-family: Arial, sans-serif;
             background-color: lightgray;
             color: black;
@@ -58,26 +51,3 @@
         .launch-btn:hover {
             background-color: darkred;
         }
-    </style>
-</head>
-<body>
-
-    <div class="summary-container">
-        <h1>Final Project: [Project Title]</h1>
-        
-        <div class="metadata">
-            Developer: [Your Name]<br>
-            Course: Web Design and Development using AI Tools
-        </div>
-
-        <h3 class="section-title">Project Overview</h3>
-        <p>[Students write a 3-4 sentence description of what the app does, who it is for, and how they came up with the idea.]</p>
-
-        <h3 class="section-title">AI Audit & Development Notes</h3>
-        <p>[Students write a brief reflection on how they used AI. What prompts did they use? What bugs did the AI introduce that they had to manually fix using their knowledge of loops, and variables?]</p>
-
-        <a href="final_project/index.html" class="launch-btn">Launch Project</a>
-    </div>
-
-</body>
-</html>
