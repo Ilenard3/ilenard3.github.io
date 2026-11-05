@@ -1,53 +1,176 @@
+
+/* NEON EMPIRE - FINAL PROJECT SUMMARY */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-            font-family: Arial, sans-serif;
-            background-color: lightgray;
-            color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .summary-container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px dimgray;
-            max-width: 600px;
-            width: 100%;
-        }
-        h1 {
-            color: darkred; /* Garnet-adjacent */
-            margin-top: 0;
-            border-bottom: 2px solid black;
-            padding-bottom: 10px;
-        }
-        .metadata {
-            font-weight: bold;
-            color: dimgray;
-            margin-bottom: 20px;
-        }
-        .section-title {
-            color: darkred;
-            margin-top: 25px;
-            margin-bottom: 5px;
-        }
-        p {
-            line-height: 1.6;
-        }
-        .launch-btn {
-            display: block;
-            text-align: center;
-            background-color: black;
-            color: white;
-            padding: 15px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 8px;
-            margin-top: 30px;
-            transition: background-color 0.2s;
-        }
-        .launch-btn:hover {
-            background-color: darkred;
-        }
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #100719;
+    background-image:
+        linear-gradient(
+            rgba(12, 4, 22, 0.65),
+            rgba(12, 4, 22, 0.88)
+        ),
+        url("final_project/images/casino-background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #f5e8ff;
+    min-height: 100vh;
+    margin: 0;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MAIN SUMMARY CONTAINER */
+
+.summary-container {
+    background: rgba(24, 8, 40, 0.94);
+    border: 2px solid #e34bd1;
+    border-radius: 20px;
+    box-shadow:
+        0 0 25px rgba(226, 48, 205, 0.45),
+        0 15px 50px rgba(0, 0, 0, 0.65);
+    max-width: 750px;
+    width: 100%;
+    padding: 45px;
+}
+
+/* CASINO LOGO */
+
+.casino-logo {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #ffd36d;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px #e43bca;
+}
+
+.subtitle {
+    color: #f19de9;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 35px;
+}
+
+/* MAIN TITLE */
+
+h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #ffe09a;
+    font-size: 29px;
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ac3bb5;
+    text-shadow: 0 0 12px rgba(255, 211, 109, 0.3);
+}
+
+/* DEVELOPER INFORMATION */
+
+.metadata {
+    background: rgba(73, 28, 91, 0.4);
+    border-left: 4px solid #ffd36d;
+    border-radius: 6px;
+    color: #e8c9ed;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 2;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+}
+
+/* SECTION HEADINGS */
+
+.section-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #ff9bea;
+    font-size: 21px;
+    margin-top: 30px;
+    margin-bottom: 12px;
+}
+
+/* PARAGRAPHS */
+
+p {
+    color: #e9d9ef;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* LAUNCH BUTTON */
+
+.launch-btn {
+    display: block;
+    text-align: center;
+    background: linear-gradient(135deg, #8819b1, #e832ce);
+    color: white;
+    padding: 18px 25px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 2px solid #ff9bea;
+    border-radius: 12px;
+    margin-top: 35px;
+    box-shadow: 0 0 20px rgba(239, 50, 215, 0.5);
+    transition: 0.3s;
+}
+
+.launch-btn:hover {
+    background: linear-gradient(135deg, #b12de0, #ff59df);
+    box-shadow: 0 0 30px rgba(255, 65, 222, 0.85);
+    transform: translateY(-3px);
+}
+
+/* FOOTER NOTE */
+
+.footer-note {
+    color: #bda3c9;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+/* MOBILE DESIGN */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 12px;
+    }
+
+    .summary-container {
+        padding: 25px 20px;
+    }
+
+    .casino-logo {
+        font-size: 25px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .section-title {
+        font-size: 19px;
+    }
+
+    .launch-btn {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .metadata {
+        font-size: 12px;
+    }
+}
