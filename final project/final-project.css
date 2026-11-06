@@ -1,10 +1,14 @@
 
 /* FINAL PROJECT SUMMARY HOMEPAGE */
 
-/* GENERAL PAGE STYLING */
+/* GENERAL STYLING */
 
 * {
     box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
 }
 
 body {
@@ -92,7 +96,7 @@ h1 {
     margin-bottom: 12px;
 }
 
-/* PARAGRAPH TEXT */
+/* PARAGRAPHS */
 
 p {
     color: #e4d2ed;
@@ -168,7 +172,4 @@ p {
         font-size: 14px;
         padding: 15px;
     }
-}
-body {
-    background: red;
 }
