@@ -1,1 +1,300 @@
-<!--	Interactive slot machine with three reels and a Spin button-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Play Neon Slots | Neon Empire</title>
+
+    <link rel="stylesheet" href="slots.css">
+
+    <!-- Shared casino wallet and statistics -->
+    <script src="../script.js" defer></script>
+
+    <!-- Slot machine game logic -->
+    <script src="slots.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CASINO HEADER -->
+    <header class="slots-header">
+
+        <div class="slots-header-content">
+
+            <a href="../index.html" class="slots-logo">
+                <span>♛ NEON EMPIRE</span>
+                <small>THE ULTIMATE CASINO</small>
+            </a>
+
+            <nav class="slots-nav">
+                <a href="../index.html">Lobby</a>
+                <a href="../index.html#games">Casino Floor</a>
+                <a href="instructions.html">Instructions</a>
+                <a href="game.html" class="active">Neon Slots</a>
+            </nav>
+
+            <div class="slots-wallet">
+                <span>💰 YOUR BALANCE</span>
+                <strong id="header-balance">5,000 CR</strong>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="slots-container">
+
+        <!-- GAME INTRODUCTION -->
+        <section class="slots-game-hero">
+
+            <p class="slots-eyebrow">
+                ✦ NEON EMPIRE JACKPOT GAMES ✦
+            </p>
+
+            <h1>🎰 NEON SLOT MACHINES</h1>
+
+            <p>
+                Spin the reels, match the symbols,
+                and see what fortune awaits!
+            </p>
+
+            <a href="instructions.html" class="slots-guide">
+                📖 VIEW GAME INSTRUCTIONS
+            </a>
+
+        </section>
+
+        <!-- MAIN SLOT MACHINE -->
+        <section class="slot-game">
+
+            <!-- TOP STATISTICS -->
+            <div class="slot-top-stats">
+
+                <div class="slot-stat">
+                    <span>💰 AVAILABLE CREDITS</span>
+                    <strong id="balance">5,000</strong>
+                </div>
+
+                <div class="slot-stat">
+                    <span>🏆 TOTAL WINS</span>
+                    <strong id="wins">0</strong>
+                </div>
+
+            </div>
+
+            <!-- SLOT MACHINE DISPLAY -->
+            <div class="machine-heading">
+
+                <p>★ THE NEON EMPIRE ★</p>
+
+                <h2>JACKPOT SLOTS</h2>
+
+            </div>
+
+            <div class="machine-frame">
+
+                <div class="machine-top">
+                    ★ LUCKY REELS ★
+                </div>
+
+                <div class="reel-container">
+
+                    <div class="reel" id="reel1">
+                        <span id="slot1">7️⃣</span>
+                    </div>
+
+                    <div class="reel" id="reel2">
+                        <span id="slot2">💎</span>
+                    </div>
+
+                    <div class="reel" id="reel3">
+                        <span id="slot3">⭐</span>
+                    </div>
+
+                </div>
+
+                <div class="machine-bottom">
+                    ★ MATCH THE SYMBOLS ★
+                </div>
+
+            </div>
+
+            <!-- BETTING CONTROLS -->
+            <div class="slot-betting">
+
+                <h3>💰 PLACE YOUR BET</h3>
+
+                <label for="bet">
+                    Choose Your Wager
+                </label>
+
+                <div class="slot-bet-input">
+
+                    <span>CR</span>
+
+                    <input
+                        type="number"
+                        id="bet"
+                        value="100"
+                        min="1"
+                        step="1"
+                    >
+
+                </div>
+
+                <div class="slot-bet-options">
+
+                    <button type="button" onclick="setBet(50)">
+                        50
+                    </button>
+
+                    <button type="button" onclick="setBet(100)">
+                        100
+                    </button>
+
+                    <button type="button" onclick="setBet(250)">
+                        250
+                    </button>
+
+                    <button type="button" onclick="setBet(500)">
+                        500
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- SPIN BUTTON -->
+            <div class="spin-area">
+
+                <button
+                    type="button"
+                    id="spin-button"
+                    onclick="spinSlots()">
+
+                    🎰 SPIN THE REELS
+
+                </button>
+
+                <p>
+                    Match symbols to win up to 10x your bet!
+                </p>
+
+            </div>
+
+            <!-- RESULT DISPLAY -->
+            <div class="slot-result" aria-live="polite">
+
+                <p>✦ LATEST SPIN ✦</p>
+
+                <h2 id="slot-result">
+                    READY TO SPIN?
+                </h2>
+
+                <span id="slot-winnings">
+                    Place your bet and try your luck!
+                </span>
+
+            </div>
+
+        </section>
+
+        <!-- PAYOUT REMINDER -->
+        <section class="quick-payouts">
+
+            <h2>🏆 Quick Payout Guide</h2>
+
+            <div class="quick-payout-grid">
+
+                <div>
+                    <strong>💎💎💎</strong>
+                    <span>10x</span>
+                </div>
+
+                <div>
+                    <strong>7️⃣7️⃣7️⃣</strong>
+                    <span>7x</span>
+                </div>
+
+                <div>
+                    <strong>⭐⭐⭐</strong>
+                    <span>5x</span>
+                </div>
+
+                <div>
+                    <strong>🍒🍒⭐</strong>
+                    <span>2x</span>
+                </div>
+
+            </div>
+
+            <a href="instructions.html">
+                View Complete Payout Table →
+            </a>
+
+        </section>
+
+        <!-- PLAYER STATISTICS -->
+        <section class="slots-statistics">
+
+            <div class="statistics-heading">
+
+                <p>✦ YOUR CASINO PROGRESS ✦</p>
+
+                <h2>Player Statistics</h2>
+
+            </div>
+
+            <div class="slots-stat-grid">
+
+                <div class="slots-stat-card">
+                    <span>🎮</span>
+                    <h3 id="games-played">0</h3>
+                    <p>Games Played</p>
+                </div>
+
+                <div class="slots-stat-card">
+                    <span>⭐</span>
+                    <h3 id="player-level">1</h3>
+                    <p>Player Level</p>
+                </div>
+
+            </div>
+
+            <p class="statistics-note">
+                Statistics are shared across all Neon Empire games.
+            </p>
+
+        </section>
+
+        <!-- PAGE NAVIGATION -->
+        <section class="slots-navigation">
+
+            <a href="instructions.html">
+                📖 Game Instructions
+            </a>
+
+            <a href="../index.html">
+                ← Back to Casino Lobby
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="slots-footer">
+
+        <h3>♛ NEON EMPIRE</h3>
+
+        <p>THE ULTIMATE VIRTUAL CASINO</p>
+
+        <p>Fictional Credits Only • No Real Money or Prizes</p>
+
+    </footer>
+
+</body>
+</html>

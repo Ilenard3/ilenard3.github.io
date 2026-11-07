@@ -1,0 +1,1121 @@
+
+/* =========================================
+   NEON EMPIRE CASINO
+   SLOT MACHINE STYLESHEET
+   VEGAS NEON THEME
+   ========================================= */
+
+/* GENERAL STYLING */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff2e8;
+    line-height: 1.6;
+
+    background:
+        linear-gradient(
+            rgba(12, 5, 24, 0.86),
+            rgba(17, 5, 29, 0.95)
+        ),
+        url("../images/casino-background.jpg");
+
+    background-color: #100719;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =========================================
+   HEADER AND NAVIGATION
+   ========================================= */
+
+.slots-header {
+    background: rgba(15, 5, 28, 0.97);
+    border-bottom: 2px solid #e93bd1;
+    box-shadow: 0 5px 25px rgba(211, 38, 201, 0.3);
+    padding: 18px 25px;
+}
+
+.slots-header-content {
+    max-width: 1250px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* LOGO */
+
+.slots-logo {
+    display: block;
+    color: #ffd36d;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.slots-logo span {
+    display: block;
+}
+
+.slots-logo small {
+    display: block;
+    color: #e9a4e6;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+/* NAVIGATION */
+
+.slots-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.slots-nav a {
+    color: #e9d8ef;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px 14px;
+    border-radius: 7px;
+    transition: 0.3s;
+}
+
+.slots-nav a:hover,
+.slots-nav a.active {
+    color: white;
+    background: linear-gradient(135deg, #75209e, #d12abb);
+    box-shadow: 0 0 14px rgba(233, 59, 209, 0.4);
+}
+
+/* WALLET */
+
+.slots-wallet {
+    background: #2b1740;
+    border: 2px solid #d9ad5c;
+    border-radius: 10px;
+    padding: 8px 17px;
+    text-align: center;
+}
+
+.slots-wallet span {
+    display: block;
+    color: #e6c2e8;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.slots-wallet strong {
+    color: #ffda80;
+    font-size: 19px;
+}
+
+/* =========================================
+   MAIN CONTAINER
+   ========================================= */
+
+.slots-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 20px;
+}
+
+/* =========================================
+   PAGE INTRODUCTION
+   ========================================= */
+
+.slots-hero,
+.slots-game-hero {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(49, 17, 71, 0.94),
+            rgba(23, 7, 39, 0.94)
+        );
+
+    border: 1px solid #a94dbb;
+    border-radius: 18px;
+    padding: 45px 25px;
+    margin-bottom: 35px;
+
+    box-shadow: 0 0 25px rgba(193, 44, 202, 0.25);
+}
+
+.slots-eyebrow {
+    color: #ff9bea;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.slots-hero h1,
+.slots-game-hero h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #ffd36d;
+    font-size: 43px;
+    margin: 12px 0;
+    text-shadow: 0 0 18px rgba(230, 72, 205, 0.5);
+}
+
+.slots-hero > p:not(.slots-eyebrow),
+.slots-game-hero > p:not(.slots-eyebrow) {
+    color: #ead8ef;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.jackpot-badge {
+    display: inline-block;
+    background: #452050;
+    border: 1px solid #d8a758;
+    border-radius: 25px;
+    color: #ffda80;
+    padding: 9px 18px;
+    margin-top: 18px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.slots-guide {
+    display: inline-block;
+    color: #ffe09a;
+    border: 1px solid #b97cbd;
+    border-radius: 8px;
+    padding: 10px 18px;
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.slots-guide:hover {
+    background: #662678;
+    box-shadow: 0 0 15px #a93bca;
+}
+
+/* =========================================
+   INSTRUCTIONS SECTIONS
+   ========================================= */
+
+.slots-section {
+    background: rgba(22, 6, 38, 0.96);
+    border: 1px solid #8943a2;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 28px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.slots-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.slots-section-heading > span {
+    background: linear-gradient(135deg, #8622a9, #e238c9);
+    color: white;
+    border: 1px solid #ff9bea;
+    border-radius: 10px;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.slots-section-heading p {
+    color: #e998e8;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.slots-section-heading h2 {
+    color: #ffd36d;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 27px;
+    margin: 3px 0;
+}
+
+/* =========================================
+   HOW TO PLAY
+   ========================================= */
+
+.slots-steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.slots-step {
+    background: linear-gradient(145deg, #311747, #21102f);
+    border: 1px solid #82439d;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.slots-step:hover {
+    border-color: #ed72df;
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(221, 60, 208, 0.25);
+}
+
+.step-icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.slots-step > span {
+    display: block;
+    color: #f09ce7;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.slots-step h3 {
+    color: #ffda80;
+    font-size: 19px;
+}
+
+.slots-step p {
+    color: #ddc9e7;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   SYMBOL GUIDE
+   ========================================= */
+
+.symbol-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.symbol-card {
+    background: linear-gradient(145deg, #371950, #1e0d31);
+    border: 1px solid #a65ab9;
+    border-radius: 12px;
+    padding: 18px 8px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.symbol-card:hover {
+    transform: translateY(-4px);
+    border-color: #ffb5ee;
+    box-shadow: 0 0 15px rgba(234, 80, 217, 0.4);
+}
+
+.symbol-art {
+    font-size: 43px;
+    min-height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.symbol-card h3 {
+    color: #ffd36d;
+    font-size: 14px;
+}
+
+.symbol-card p {
+    color: #d9bee6;
+    font-size: 10px;
+}
+
+/* =========================================
+   PAYOUT TABLE
+   ========================================= */
+
+.payout-table-wrapper {
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+.payout-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #28143b;
+    font-size: 14px;
+}
+
+.payout-table th {
+    background: #55226e;
+    color: #ffe09a;
+    padding: 16px 12px;
+    text-align: left;
+}
+
+.payout-table td {
+    color: #ead8ef;
+    border-bottom: 1px solid #593366;
+    padding: 13px 12px;
+}
+
+.payout-table tbody tr:hover {
+    background: #3a1b50;
+}
+
+.payout-table td:first-child {
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.jackpot-row {
+    background: rgba(143, 90, 25, 0.25);
+}
+
+.jackpot-row td {
+    color: #ffda80;
+    font-weight: bold;
+}
+
+.loss-row td {
+    color: #f0adb5;
+}
+
+.payout-note {
+    background: #28143b;
+    border-left: 4px solid #ffd36d;
+    border-radius: 9px;
+    padding: 22px;
+    margin-top: 22px;
+}
+
+.payout-note h3 {
+    color: #ffd36d;
+}
+
+.payout-note p {
+    color: #e8d4ed;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.payout-note small {
+    display: block;
+    color: #c7afd4;
+    font-size: 11px;
+    line-height: 1.7;
+    margin-top: 15px;
+}
+
+/* =========================================
+   GAME RULES
+   ========================================= */
+
+.slots-rules {
+    background: #29143b;
+    border-radius: 10px;
+    padding: 12px 22px;
+}
+
+.slots-rules p {
+    color: #e9d6ee;
+    font-size: 14px;
+    line-height: 1.8;
+    border-bottom: 1px solid #50305f;
+    padding: 8px 0;
+    margin: 0;
+}
+
+.slots-rules p:last-child {
+    border-bottom: none;
+}
+
+/* =========================================
+   INSTRUCTIONS BUTTONS
+   ========================================= */
+
+.slots-actions,
+.slots-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 35px 0;
+}
+
+.slots-primary-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #8e20b8, #e438ce);
+    border: 2px solid #ff9bea;
+    border-radius: 10px;
+    color: white;
+    padding: 16px 28px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 0 17px rgba(228, 56, 206, 0.4);
+    transition: 0.3s;
+}
+
+.slots-primary-button:hover {
+    background: #e942d5;
+    box-shadow: 0 0 25px #e942d5;
+    transform: translateY(-3px);
+}
+
+.slots-secondary-button,
+.slots-navigation a {
+    display: inline-block;
+    background: #251134;
+    border: 1px solid #b77ab9;
+    border-radius: 9px;
+    color: #ffda80;
+    padding: 13px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.slots-secondary-button:hover,
+.slots-navigation a:hover {
+    background: #642673;
+    box-shadow: 0 0 15px #a93bca;
+}
+
+/* =========================================
+   SLOT GAME CONTAINER
+   ========================================= */
+
+.slot-game {
+    background: rgba(21, 6, 37, 0.96);
+    border: 2px solid #d84ed3;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow:
+        0 0 25px rgba(225, 45, 205, 0.3),
+        inset 0 0 25px rgba(92, 19, 125, 0.15);
+}
+
+/* TOP STATISTICS */
+
+.slot-top-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 650px;
+    margin: 0 auto 30px;
+}
+
+.slot-stat {
+    background: #32194a;
+    border: 1px solid #a45dbb;
+    border-radius: 12px;
+    padding: 17px;
+    text-align: center;
+}
+
+.slot-stat span {
+    display: block;
+    color: #e3c4eb;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.slot-stat strong {
+    display: block;
+    color: #ffd36d;
+    font-size: 29px;
+    margin-top: 7px;
+}
+
+/* MACHINE HEADING */
+
+.machine-heading {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.machine-heading p {
+    color: #ff9bea;
+    font-weight: bold;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.machine-heading h2 {
+    color: #ffd36d;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 30px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(255, 183, 60, 0.4);
+}
+
+/* =========================================
+   SLOT MACHINE
+   ========================================= */
+
+.machine-frame {
+    max-width: 620px;
+    margin: 30px auto;
+    padding: 22px;
+
+    background: linear-gradient(145deg, #572064, #241036);
+    border: 5px solid #d9ad5c;
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 30px rgba(239, 63, 215, 0.45),
+        inset 0 0 25px rgba(11, 4, 25, 0.7);
+}
+
+.machine-top,
+.machine-bottom {
+    color: #ffd36d;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 3px;
+    padding: 10px;
+}
+
+.reel-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 13px;
+    padding: 20px;
+    background: #100719;
+    border: 3px solid #a77a3f;
+    border-radius: 12px;
+}
+
+/* INDIVIDUAL REELS */
+
+.reel {
+    height: 145px;
+    background: linear-gradient(#fff8e7, #e9cf9d);
+    border: 4px solid #d8ac5a;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    box-shadow:
+        0 0 15px rgba(255, 204, 93, 0.4),
+        inset 0 0 15px rgba(111, 66, 10, 0.2);
+}
+
+.reel span {
+    font-size: clamp(36px, 7vw, 65px);
+    font-weight: bold;
+}
+
+/* SPINNING EFFECT */
+
+.reel.spinning span {
+    animation: reelSpin 0.12s linear infinite;
+    filter: blur(1px);
+}
+
+@keyframes reelSpin {
+
+    0% {
+        transform: translateY(-12px);
+        opacity: 0.65;
+    }
+
+    50% {
+        transform: translateY(12px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-12px);
+        opacity: 0.65;
+    }
+}
+
+/* =========================================
+   BETTING AREA
+   ========================================= */
+
+.slot-betting {
+    max-width: 520px;
+    margin: 30px auto;
+    background: #2a153f;
+    border: 1px solid #8c45a9;
+    border-radius: 13px;
+    padding: 25px;
+    text-align: center;
+}
+
+.slot-betting h3 {
+    color: #ffd36d;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.slot-betting label {
+    display: block;
+    color: #e8d0ee;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.slot-bet-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.slot-bet-input span {
+    color: #ffd36d;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.slot-bet-input input {
+    width: 190px;
+    max-width: 70%;
+    background: #140a25;
+    border: 2px solid #e65bd6;
+    border-radius: 8px;
+    color: #ffd36d;
+    font-size: 22px;
+    text-align: center;
+    padding: 11px;
+}
+
+.slot-bet-input input:focus {
+    outline: 2px solid #ffd36d;
+}
+
+.slot-bet-input input:disabled {
+    opacity: 0.6;
+}
+
+.slot-bet-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 17px;
+}
+
+.slot-bet-options button {
+    background: #49235e;
+    border: 1px solid #b45dc3;
+    border-radius: 7px;
+    color: #ffda80;
+    padding: 9px 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.slot-bet-options button:hover {
+    background: #902bb3;
+    box-shadow: 0 0 12px #bb42d1;
+}
+
+.slot-bet-options button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   SPIN BUTTON
+   ========================================= */
+
+.spin-area {
+    text-align: center;
+    margin: 35px 0;
+}
+
+#spin-button {
+    background: linear-gradient(135deg, #8e20b8, #e438ce);
+    color: white;
+    border: 3px solid #ffd36d;
+    border-radius: 14px;
+    padding: 18px 50px;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow:
+        0 0 20px rgba(228, 56, 206, 0.5),
+        0 0 35px rgba(255, 191, 66, 0.15);
+    transition: 0.3s;
+}
+
+#spin-button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #ad35dc, #f34cda);
+    box-shadow: 0 0 30px #ef49da;
+    transform: translateY(-3px);
+}
+
+#spin-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.spin-area p {
+    color: #cfb8dd;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/* =========================================
+   GAME RESULT
+   ========================================= */
+
+.slot-result {
+    background: #2a153f;
+    border: 1px solid #a755b8;
+    border-radius: 12px;
+    padding: 23px;
+    text-align: center;
+    min-height: 135px;
+}
+
+.slot-result > p {
+    color: #f29be9;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.slot-result h2 {
+    color: #ffd36d;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+}
+
+.slot-result span {
+    color: #e9d4ed;
+    font-size: 13px;
+}
+
+/* =========================================
+   QUICK PAYOUT GUIDE
+   ========================================= */
+
+.quick-payouts {
+    background: rgba(22, 6, 38, 0.96);
+    border: 1px solid #8943a2;
+    border-radius: 15px;
+    margin-top: 35px;
+    padding: 25px;
+    text-align: center;
+}
+
+.quick-payouts h2 {
+    color: #ffd36d;
+    font-size: 24px;
+}
+
+.quick-payout-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.quick-payout-grid > div {
+    background: #301642;
+    border: 1px solid #9752ab;
+    border-radius: 10px;
+    padding: 15px 5px;
+}
+
+.quick-payout-grid strong {
+    display: block;
+    font-size: 18px;
+}
+
+.quick-payout-grid span {
+    display: block;
+    color: #ffda80;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.quick-payouts > a {
+    color: #f4a1e9;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* =========================================
+   PLAYER STATISTICS
+   ========================================= */
+
+.slots-statistics {
+    margin-top: 70px;
+}
+
+.statistics-heading {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.statistics-heading > p {
+    color: #ff9bea;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.statistics-heading h2 {
+    color: #ffd36d;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 32px;
+}
+
+.slots-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.slots-stat-card {
+    background: #251137;
+    border: 1px solid #a854b9;
+    border-radius: 13px;
+    padding: 22px;
+    text-align: center;
+}
+
+.slots-stat-card span {
+    font-size: 35px;
+}
+
+.slots-stat-card h3 {
+    color: #ffd36d;
+    font-size: 31px;
+    margin: 6px 0;
+}
+
+.slots-stat-card p {
+    color: #d8c2e2;
+    font-size: 13px;
+}
+
+.statistics-note {
+    color: #c9afd5;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.slots-footer {
+    background: rgba(14, 4, 25, 0.98);
+    border-top: 2px solid #a13bb1;
+    padding: 35px 20px;
+    text-align: center;
+    margin-top: 55px;
+}
+
+.slots-footer h3 {
+    color: #ffd36d;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px;
+}
+
+.slots-footer p {
+    color: #c9afd5;
+    font-size: 12px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .slots-header-content {
+        justify-content: center;
+    }
+
+    .slots-nav {
+        order: 3;
+        width: 100%;
+    }
+
+    .symbol-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+
+    .slots-container {
+        padding: 22px 12px;
+    }
+
+    .slots-hero,
+    .slots-game-hero {
+        padding: 32px 18px;
+    }
+
+    .slots-hero h1,
+    .slots-game-hero h1 {
+        font-size: 32px;
+    }
+
+    .slots-section {
+        padding: 20px 15px;
+    }
+
+    .slots-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .machine-frame {
+        padding: 12px;
+    }
+
+    .reel-container {
+        gap: 7px;
+        padding: 10px;
+    }
+
+    .reel {
+        height: 105px;
+    }
+
+    .game-top-stats {
+        gap: 10px;
+    }
+
+    .slot-game {
+        padding: 20px 12px;
+    }
+
+    .quick-payout-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .statistics-heading h2 {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .slots-logo {
+        text-align: center;
+        font-size: 23px;
+    }
+
+    .slots-wallet {
+        width: 100%;
+    }
+
+    .slots-nav {
+        gap: 2px;
+    }
+
+    .slots-nav a {
+        padding: 8px;
+        font-size: 11px;
+    }
+
+    .symbol-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reel {
+        height: 85px;
+    }
+
+    .reel span {
+        font-size: 35px;
+    }
+
+    #spin-button {
+        width: 100%;
+        padding: 16px 10px;
+        font-size: 17px;
+    }
+
+    .slot-stat {
+        padding: 12px 5px;
+    }
+
+    .slot-stat span {
+        font-size: 9px;
+    }
+
+    .slot-stat strong {
+        font-size: 23px;
+    }
+
+    .payout-table {
+        font-size: 11px;
+    }
+
+    .payout-table th,
+    .payout-table td {
+        padding: 10px 7px;
+    }
+}
+
+/* RESPECT REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .reel.spinning span {
+        animation: none;
+    }
+
+    * {
+        transition-duration: 0.01ms !important;
+    }
+}
