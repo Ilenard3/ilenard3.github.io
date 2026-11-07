@@ -8,19 +8,21 @@
 
     <title>Coin Flip Instructions | Neon Empire</title>
 
+    <!-- Coin Flip stylesheet -->
     <link rel="stylesheet" href="coinflip.css">
 
+    <!-- Shared casino balance and statistics -->
     <script src="../script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- CASINO HEADER -->
+    <!-- HEADER -->
     <header class="coin-header">
 
-        <div class="coin-header-content">
+        <div class="coin-header-inner">
 
-            <a href="../index.html" class="casino-logo">
+            <a href="../index.html" class="coin-logo">
                 <span>♛ NEON EMPIRE</span>
                 <small>THE ULTIMATE CASINO</small>
             </a>
@@ -43,175 +45,222 @@
 
     <main class="coin-container">
 
-        <!-- PAGE INTRODUCTION -->
+        <!-- HERO SECTION -->
         <section class="coin-hero">
 
-            <p class="eyebrow">✦ NEON EMPIRE ORIGINALS ✦</p>
+            <p class="coin-eyebrow">
+                ✦ NEON EMPIRE ORIGINALS ✦
+            </p>
 
             <h1>🪙 COIN FLIP</h1>
 
-            <p class="hero-description">
+            <p class="coin-hero-description">
                 One coin. Two choices. One chance to win.
-                Choose Heads or Tails and test your luck
-                in this classic casino game.
+
+                Choose Heads or Tails, place your wager,
+                and see if luck is on your side.
             </p>
 
-            <div class="hero-badge">
-                50% CHANCE FOR EACH SIDE
+            <div class="coin-highlight">
+                ★ 50/50 CHANCE ★
+                <span>2X WINNING PAYOUT</span>
             </div>
 
         </section>
 
         <!-- HOW TO PLAY -->
-        <section class="instruction-section">
+        <section class="coin-section">
 
-            <div class="section-title">
+            <div class="coin-section-title">
                 <span>01</span>
+
                 <div>
-                    <p>LEARN THE GAME</p>
+                    <p>GETTING STARTED</p>
                     <h2>How to Play</h2>
                 </div>
             </div>
 
-            <div class="step-grid">
+            <div class="coin-steps">
 
-                <article class="step-card">
+                <article class="coin-step">
+
                     <div class="step-icon">💰</div>
-                    <span class="step-number">STEP 01</span>
+
+                    <span>STEP 01</span>
+
                     <h3>Place Your Bet</h3>
+
                     <p>
                         Enter the amount of virtual credits
-                        you want to wager. Your bet cannot
+                        you want to wager. Your bet must be
+                        at least one credit and cannot
                         exceed your available balance.
                     </p>
+
                 </article>
 
-                <article class="step-card">
+                <article class="coin-step">
+
                     <div class="step-icon">👑</div>
-                    <span class="step-number">STEP 02</span>
-                    <h3>Choose Your Side</h3>
+
+                    <span>STEP 02</span>
+
+                    <h3>Choose a Side</h3>
+
                     <p>
-                        Select either Heads or Tails.
-                        Both choices have an equal
-                        chance of winning.
+                        Pick either Heads or Tails.
+                        Both sides have an equal 50%
+                        probability of winning.
                     </p>
+
                 </article>
 
-                <article class="step-card">
+                <article class="coin-step">
+
                     <div class="step-icon">🪙</div>
-                    <span class="step-number">STEP 03</span>
+
+                    <span>STEP 03</span>
+
                     <h3>Flip the Coin</h3>
+
                     <p>
-                        Watch the coin spin and reveal
-                        its randomly generated result.
+                        Press your selected side and watch
+                        the animated golden coin flip
+                        before revealing the result.
                     </p>
+
                 </article>
 
-                <article class="step-card">
+                <article class="coin-step">
+
                     <div class="step-icon">🏆</div>
-                    <span class="step-number">STEP 04</span>
-                    <h3>Collect Your Payout</h3>
+
+                    <span>STEP 04</span>
+
+                    <h3>Collect Your Winnings</h3>
+
                     <p>
                         Guess correctly to receive twice
-                        your bet. Guess incorrectly and
-                        your wager is lost.
+                        your original bet. An incorrect
+                        prediction loses your wager.
                     </p>
+
                 </article>
 
             </div>
 
         </section>
 
-        <!-- ODDS AND PAYOUTS -->
-        <section class="instruction-section">
+        <!-- ODDS -->
+        <section class="coin-section">
 
-            <div class="section-title">
+            <div class="coin-section-title">
                 <span>02</span>
+
                 <div>
-                    <p>UNDERSTAND YOUR BET</p>
+                    <p>UNDERSTAND THE GAME</p>
                     <h2>Odds and Payouts</h2>
                 </div>
             </div>
 
-            <div class="odds-grid">
+            <div class="coin-odds-grid">
 
-                <article class="odds-card">
-                    <div class="odds-symbol">👑</div>
+                <article class="coin-odds-card">
+
+                    <div class="odds-icon">👑</div>
+
                     <h3>HEADS</h3>
-                    <p class="odds-chance">50% CHANCE</p>
-                    <div class="odds-divider"></div>
-                    <strong>2x PAYOUT</strong>
+
+                    <p class="odds-percent">50% CHANCE</p>
+
+                    <div class="odds-line"></div>
+
+                    <strong>2X PAYOUT</strong>
+
                     <p>Correct prediction wins.</p>
+
                 </article>
 
-                <article class="odds-card">
-                    <div class="odds-symbol">🪙</div>
+                <article class="coin-odds-card">
+
+                    <div class="odds-icon">🪙</div>
+
                     <h3>TAILS</h3>
-                    <p class="odds-chance">50% CHANCE</p>
-                    <div class="odds-divider"></div>
-                    <strong>2x PAYOUT</strong>
+
+                    <p class="odds-percent">50% CHANCE</p>
+
+                    <div class="odds-line"></div>
+
+                    <strong>2X PAYOUT</strong>
+
                     <p>Correct prediction wins.</p>
+
                 </article>
 
             </div>
 
-            <!-- PAYOUT EXAMPLE -->
-            <div class="payout-example">
+            <!-- EXAMPLE -->
+            <div class="coin-example">
 
-                <h3>💎 Example: A 100 Credit Bet</h3>
+                <h3>💎 Example: Betting 100 Credits</h3>
 
-                <div class="payout-row">
+                <div class="example-row">
                     <span>Starting Balance</span>
                     <strong>5,000 CR</strong>
                 </div>
 
-                <div class="payout-row">
-                    <span>Bet Amount</span>
+                <div class="example-row">
+                    <span>Your Bet</span>
                     <strong>100 CR</strong>
                 </div>
 
-                <div class="payout-row winning-row">
-                    <span>Winning Payout</span>
+                <div class="example-row winning">
+                    <span>Winning Total Payout</span>
                     <strong>200 CR</strong>
                 </div>
 
-                <div class="payout-row losing-row">
+                <div class="example-row losing">
                     <span>Losing Payout</span>
                     <strong>0 CR</strong>
                 </div>
 
-                <p class="payout-note">
-                    A winning payout includes your original
-                    bet and 100 credits in profit. A losing
-                    bet deducts 100 credits from your balance.
+                <p>
+                    A winning bet earns 100 credits in profit.
+                    Your original 100-credit wager is returned
+                    as part of the 200-credit payout.
                 </p>
 
             </div>
 
         </section>
 
-        <!-- GAME RULES -->
-        <section class="instruction-section">
+        <!-- RULES -->
+        <section class="coin-section">
 
-            <div class="section-title">
+            <div class="coin-section-title">
                 <span>03</span>
+
                 <div>
                     <p>BEFORE YOU PLAY</p>
                     <h2>Game Rules</h2>
                 </div>
             </div>
 
-            <div class="rules-list">
+            <div class="coin-rules">
 
-                <p>✓ Both Heads and Tails have a 50% chance.</p>
+                <p>✓ Heads and Tails each have a 50% chance.</p>
 
-                <p>✓ Each coin flip is independent of previous flips.</p>
+                <p>✓ Every coin flip is independent of previous results.</p>
 
-                <p>✓ You must place a valid bet before playing.</p>
+                <p>✓ You must enter a valid whole-number bet.</p>
 
-                <p>✓ You cannot bet more credits than you have.</p>
+                <p>✓ You cannot wager more credits than you have.</p>
 
-                <p>✓ Your credits and casino statistics are saved in your browser.</p>
+                <p>✓ A correct prediction pays 2x your original bet.</p>
+
+                <p>✓ An incorrect prediction loses your wager.</p>
+
+                <p>✓ Your wallet and statistics are shared with the casino lobby.</p>
 
                 <p>✓ All credits are fictional and have no real monetary value.</p>
 
@@ -219,15 +268,15 @@
 
         </section>
 
-        <!-- PLAY BUTTONS -->
-        <section class="instructions-actions">
+        <!-- NAVIGATION -->
+        <section class="coin-actions">
 
-            <a href="game.html" class="coin-primary-button">
+            <a href="game.html" class="coin-play-link">
                 🪙 PLAY COIN FLIP
                 <span>→</span>
             </a>
 
-            <a href="../index.html" class="coin-secondary-button">
+            <a href="../index.html" class="coin-lobby-link">
                 ← RETURN TO CASINO LOBBY
             </a>
 

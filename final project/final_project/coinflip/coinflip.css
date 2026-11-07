@@ -1,11 +1,14 @@
 
-/* =========================================
+/* ==========================================
    NEON EMPIRE CASINO
-   COIN FLIP STYLESHEET
-   VEGAS NEON DESIGN
-   ========================================= */
+   COIN FLIP COMPLETE STYLESHEET
+   VEGAS NEON THEME
+   ========================================== */
 
-/* GENERAL STYLING */
+
+/* ==========================================
+   1. GENERAL STYLING
+   ========================================== */
 
 * {
     box-sizing: border-box;
@@ -24,8 +27,8 @@ body {
 
     background:
         linear-gradient(
-            rgba(12, 5, 24, 0.88),
-            rgba(17, 5, 29, 0.95)
+            rgba(12, 5, 24, 0.84),
+            rgba(17, 5, 29, 0.94)
         ),
         url("../images/casino-background.jpg");
 
@@ -39,9 +42,10 @@ a {
     text-decoration: none;
 }
 
-/* =========================================
-   HEADER AND NAVIGATION
-   ========================================= */
+
+/* ==========================================
+   2. HEADER AND NAVIGATION
+   ========================================== */
 
 .coin-header {
     background: rgba(15, 5, 28, 0.97);
@@ -50,7 +54,7 @@ a {
     padding: 18px 25px;
 }
 
-.coin-header-content {
+.coin-header-inner {
     max-width: 1250px;
     margin: auto;
 
@@ -63,7 +67,7 @@ a {
 
 /* LOGO */
 
-.casino-logo {
+.coin-logo {
     display: block;
     color: #ffd36d;
     font-family: Georgia, 'Times New Roman', serif;
@@ -72,12 +76,12 @@ a {
     letter-spacing: 2px;
 }
 
-.casino-logo span {
+.coin-logo span {
     display: block;
     text-shadow: 0 0 12px rgba(255, 193, 75, 0.35);
 }
 
-.casino-logo small {
+.coin-logo small {
     display: block;
     color: #e9a4e6;
     font-family: Arial, sans-serif;
@@ -134,9 +138,10 @@ a {
     font-size: 19px;
 }
 
-/* =========================================
-   MAIN PAGE CONTAINER
-   ========================================= */
+
+/* ==========================================
+   3. MAIN CONTAINER
+   ========================================== */
 
 .coin-container {
     max-width: 1100px;
@@ -144,26 +149,30 @@ a {
     padding: 35px 20px;
 }
 
-/* =========================================
-   PAGE INTRODUCTION
-   ========================================= */
+
+/* ==========================================
+   4. HERO AND INTRODUCTION
+   ========================================== */
 
 .coin-hero,
-.game-intro {
-    text-align: center;
-    background: linear-gradient(
-        135deg,
-        rgba(49, 17, 71, 0.94),
-        rgba(23, 7, 39, 0.94)
-    );
+.coin-game-hero {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(49, 17, 71, 0.95),
+            rgba(23, 7, 39, 0.91)
+        );
+
     border: 1px solid #a94dbb;
     border-radius: 18px;
     padding: 45px 25px;
     margin-bottom: 35px;
+    text-align: center;
+
     box-shadow: 0 0 25px rgba(193, 44, 202, 0.25);
 }
 
-.eyebrow {
+.coin-eyebrow {
     color: #ff9bea;
     font-size: 11px;
     font-weight: bold;
@@ -171,7 +180,7 @@ a {
 }
 
 .coin-hero h1,
-.game-intro h1 {
+.coin-game-hero h1 {
     color: #ffd36d;
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 45px;
@@ -179,86 +188,98 @@ a {
     text-shadow: 0 0 18px rgba(230, 72, 205, 0.5);
 }
 
-.coin-hero > p:not(.eyebrow),
-.game-intro > p:not(.eyebrow) {
+.coin-hero-description,
+.coin-game-hero > p:not(.coin-eyebrow) {
     color: #ead8ef;
     font-size: 15px;
-    line-height: 1.8;
-}
-
-.hero-description {
+    line-height: 1.9;
     max-width: 650px;
-    margin: auto;
+    margin: 15px auto;
 }
 
-.hero-badge {
+/* HERO BADGE */
+
+.coin-highlight {
     display: inline-block;
     background: #452050;
     border: 1px solid #d8a758;
     border-radius: 25px;
     color: #ffda80;
-    padding: 8px 18px;
+    padding: 9px 18px;
     margin-top: 18px;
     font-size: 11px;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
-.small-guide {
+.coin-highlight span {
+    margin-left: 10px;
+    padding-left: 12px;
+    border-left: 1px solid #b98d4b;
+}
+
+/* GAME GUIDE BUTTON */
+
+.coin-guide {
     display: inline-block;
     color: #ffe09a;
     border: 1px solid #b97cbd;
     border-radius: 8px;
-    padding: 10px 18px;
+    padding: 11px 19px;
     margin-top: 15px;
     font-size: 12px;
     font-weight: bold;
     transition: 0.3s;
 }
 
-.small-guide:hover {
+.coin-guide:hover {
     background: #662678;
     box-shadow: 0 0 15px #a93bca;
 }
 
-/* =========================================
-   INSTRUCTION SECTIONS
-   ========================================= */
 
-.instruction-section {
+/* ==========================================
+   5. INSTRUCTION SECTIONS
+   ========================================== */
+
+.coin-section {
     background: rgba(22, 6, 38, 0.96);
     border: 1px solid #8943a2;
     border-radius: 16px;
     padding: 30px;
     margin-bottom: 28px;
+
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* SECTION TITLE */
+/* SECTION HEADINGS */
 
-.section-title {
+.coin-section-title {
     display: flex;
     align-items: center;
     gap: 16px;
     margin-bottom: 25px;
 }
 
-.section-title > span {
-    background: linear-gradient(135deg, #8622a9, #e238c8);
+.coin-section-title > span {
+    background: linear-gradient(135deg, #8622a9, #e238c9);
     color: white;
     border: 1px solid #ff9bea;
     border-radius: 10px;
+
     width: 48px;
     height: 48px;
     flex-shrink: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 16px;
     font-weight: bold;
 }
 
-.section-title p {
+.coin-section-title p {
     color: #e998e8;
     font-size: 10px;
     letter-spacing: 2px;
@@ -266,24 +287,25 @@ a {
     margin: 0;
 }
 
-.section-title h2 {
+.coin-section-title h2 {
     color: #ffd36d;
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 27px;
     margin: 3px 0;
 }
 
-/* =========================================
-   HOW TO PLAY CARDS
-   ========================================= */
 
-.step-grid {
+/* ==========================================
+   6. HOW TO PLAY CARDS
+   ========================================== */
+
+.coin-steps {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
 }
 
-.step-card {
+.coin-step {
     background: linear-gradient(145deg, #311747, #21102f);
     border: 1px solid #82439d;
     border-radius: 12px;
@@ -292,7 +314,7 @@ a {
     transition: 0.3s;
 }
 
-.step-card:hover {
+.coin-step:hover {
     border-color: #ed72df;
     transform: translateY(-3px);
     box-shadow: 0 0 18px rgba(221, 60, 208, 0.25);
@@ -303,7 +325,7 @@ a {
     margin-bottom: 10px;
 }
 
-.step-number {
+.coin-step > span {
     display: block;
     color: #f09ce7;
     font-size: 10px;
@@ -311,76 +333,78 @@ a {
     letter-spacing: 2px;
 }
 
-.step-card h3 {
+.coin-step h3 {
     color: #ffda80;
     font-size: 19px;
     margin: 8px 0;
 }
 
-.step-card p {
+.coin-step p {
     color: #ddc9e7;
     font-size: 13px;
     line-height: 1.8;
     margin-bottom: 0;
 }
 
-/* =========================================
-   ODDS AND PAYOUTS
-   ========================================= */
 
-.odds-grid {
+/* ==========================================
+   7. ODDS AND PAYOUTS
+   ========================================== */
+
+.coin-odds-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
 }
 
-.odds-card {
+.coin-odds-card {
     background: linear-gradient(145deg, #391b53, #1c0c30);
     border: 2px solid #d8aa57;
     border-radius: 14px;
     padding: 25px;
     text-align: center;
+
     box-shadow: 0 0 15px rgba(217, 166, 70, 0.18);
 }
 
-.odds-symbol {
+.odds-icon {
     font-size: 55px;
 }
 
-.odds-card h3 {
+.coin-odds-card h3 {
     color: #ffd36d;
     font-size: 24px;
     margin: 8px 0;
 }
 
-.odds-chance {
+.odds-percent {
     color: #e9bee8;
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 2px;
 }
 
-.odds-divider {
+.odds-line {
     width: 65%;
     height: 1px;
     background: #9860a4;
     margin: 15px auto;
 }
 
-.odds-card strong {
+.coin-odds-card strong {
     display: block;
     color: #ff9bea;
     font-size: 25px;
 }
 
-.odds-card > p:last-child {
+.coin-odds-card > p:last-child {
     color: #d8c2e0;
     font-size: 12px;
 }
 
 /* PAYOUT EXAMPLE */
 
-.payout-example {
+.coin-example {
     background: #28143b;
     border: 1px solid #82509a;
     border-left: 4px solid #ffd36d;
@@ -389,13 +413,13 @@ a {
     margin-top: 25px;
 }
 
-.payout-example h3 {
+.coin-example h3 {
     color: #ffd36d;
     font-size: 20px;
     margin-top: 0;
 }
 
-.payout-row {
+.example-row {
     display: flex;
     justify-content: space-between;
     gap: 15px;
@@ -404,40 +428,41 @@ a {
     font-size: 14px;
 }
 
-.payout-row span {
+.example-row span {
     color: #e4cde9;
 }
 
-.payout-row strong {
+.example-row strong {
     color: #ffda80;
 }
 
-.winning-row strong {
+.example-row.winning strong {
     color: #82e6a5;
 }
 
-.losing-row strong {
+.example-row.losing strong {
     color: #ff929e;
 }
 
-.payout-note {
+.coin-example > p {
     color: #cdb5d9;
     font-size: 12px;
     line-height: 1.8;
     margin-bottom: 0;
 }
 
-/* =========================================
-   GAME RULES
-   ========================================= */
 
-.rules-list {
+/* ==========================================
+   8. GAME RULES
+   ========================================== */
+
+.coin-rules {
     background: #29143b;
     border-radius: 10px;
     padding: 12px 22px;
 }
 
-.rules-list p {
+.coin-rules p {
     color: #e9d6ee;
     font-size: 14px;
     line-height: 1.8;
@@ -446,16 +471,17 @@ a {
     margin: 0;
 }
 
-.rules-list p:last-child {
+.coin-rules p:last-child {
     border-bottom: none;
 }
 
-/* =========================================
-   INSTRUCTIONS NAVIGATION
-   ========================================= */
 
-.instructions-actions,
-.game-navigation {
+/* ==========================================
+   9. INSTRUCTION PAGE BUTTONS
+   ========================================== */
+
+.coin-actions,
+.coin-bottom-navigation {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -464,10 +490,12 @@ a {
     margin: 35px 0;
 }
 
-.coin-primary-button {
-    display: flex;
+.coin-play-link {
+    display: inline-flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
+
     background: linear-gradient(135deg, #8e20b8, #e438ce);
     border: 2px solid #ff9bea;
     border-radius: 10px;
@@ -475,22 +503,23 @@ a {
     padding: 16px 28px;
     font-size: 14px;
     font-weight: bold;
+
     box-shadow: 0 0 17px rgba(228, 56, 206, 0.4);
     transition: 0.3s;
 }
 
-.coin-primary-button:hover {
+.coin-play-link:hover {
     background: #e942d5;
     box-shadow: 0 0 25px #e942d5;
     transform: translateY(-3px);
 }
 
-.coin-primary-button span {
+.coin-play-link span {
     font-size: 18px;
 }
 
-.coin-secondary-button,
-.game-navigation a {
+.coin-lobby-link,
+.coin-bottom-navigation a {
     display: inline-block;
     background: #251134;
     border: 1px solid #b77ab9;
@@ -502,27 +531,31 @@ a {
     transition: 0.3s;
 }
 
-.coin-secondary-button:hover,
-.game-navigation a:hover {
+.coin-lobby-link:hover,
+.coin-bottom-navigation a:hover {
     background: #642673;
     box-shadow: 0 0 15px #a93bca;
 }
 
-/* =========================================
-   GAME STATISTICS
-   ========================================= */
 
-.coin-game-container {
+/* ==========================================
+   10. MAIN GAME CONTAINER
+   ========================================== */
+
+.coin-game {
     background: rgba(21, 6, 37, 0.96);
     border: 2px solid #d84ed3;
     border-radius: 20px;
     padding: 30px;
+
     box-shadow:
         0 0 25px rgba(225, 45, 205, 0.3),
         inset 0 0 25px rgba(92, 19, 125, 0.15);
 }
 
-.game-top-stats {
+/* TOP STATS */
+
+.coin-top-stats {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
@@ -530,7 +563,7 @@ a {
     margin: 0 auto;
 }
 
-.game-stat {
+.coin-stat-box {
     background: #32194a;
     border: 1px solid #a45dbb;
     border-radius: 12px;
@@ -538,30 +571,31 @@ a {
     text-align: center;
 }
 
-.game-stat span {
+.coin-stat-box span {
     display: block;
     color: #e3c4eb;
     font-size: 11px;
     letter-spacing: 1px;
 }
 
-.game-stat strong {
+.coin-stat-box strong {
     display: block;
     color: #ffd36d;
     font-size: 29px;
     margin-top: 7px;
 }
 
-/* =========================================
-   COIN DISPLAY
-   ========================================= */
 
-.coin-display-area {
+/* ==========================================
+   11. GOLDEN COIN DISPLAY
+   ========================================== */
+
+.coin-stage {
     text-align: center;
-    padding: 35px 10px 20px;
+    padding: 35px 10px 25px;
 }
 
-.display-label {
+.coin-label {
     color: #f49ae9;
     font-size: 11px;
     font-weight: bold;
@@ -570,13 +604,15 @@ a {
 
 .coin-scene {
     perspective: 1000px;
-    padding: 20px 0;
+    padding: 22px 0;
 }
+
+/* COIN BODY */
 
 .coin {
     width: 185px;
     height: 185px;
-    margin: auto;
+    margin: 0 auto;
 
     border-radius: 50%;
 
@@ -596,9 +632,13 @@ a {
     box-shadow:
         0 0 35px rgba(255, 204, 75, 0.55),
         inset 0 0 25px rgba(111, 66, 10, 0.4);
+
+    transform-style: preserve-3d;
 }
 
-.coin-inner {
+/* INNER COIN */
+
+.coin-face {
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -610,10 +650,13 @@ a {
     border: 3px solid rgba(130, 79, 17, 0.4);
 }
 
-.coin-inner span {
-    font-size: 78px;
+.coin-face span {
     color: #713e0e;
+    font-size: 78px;
+    font-weight: bold;
 }
+
+/* COIN STATUS */
 
 #coin-status {
     color: #ffd36d;
@@ -627,7 +670,10 @@ a {
     font-size: 13px;
 }
 
-/* COIN ANIMATION */
+
+/* ==========================================
+   12. COIN ANIMATION
+   ========================================== */
 
 .coin.flipping {
     animation: coinFlip 1.1s ease-in-out;
@@ -643,12 +689,12 @@ a {
         transform: rotateY(360deg) translateY(-30px);
     }
 
-    50% {
-        transform: rotateY(1080deg) translateY(-55px);
+    45% {
+        transform: rotateY(900deg) translateY(-55px);
     }
 
-    80% {
-        transform: rotateY(1800deg) translateY(-20px);
+    70% {
+        transform: rotateY(1440deg) translateY(-30px);
     }
 
     100% {
@@ -656,49 +702,52 @@ a {
     }
 }
 
-/* =========================================
-   BETTING AREA
-   ========================================= */
 
-.betting-area {
+/* ==========================================
+   13. BETTING AREA
+   ========================================== */
+
+.coin-betting {
     max-width: 520px;
     margin: 10px auto 30px;
+
     background: #2a153f;
     border: 1px solid #8c45a9;
     border-radius: 13px;
+
     padding: 25px;
     text-align: center;
 }
 
-.betting-area h3 {
+.coin-betting h3 {
     color: #ffd36d;
     font-size: 20px;
     margin-top: 0;
 }
 
-.betting-area label {
+.coin-betting label {
     display: block;
     color: #e8d0ee;
     font-size: 13px;
     margin-bottom: 12px;
 }
 
-.bet-input-area {
+.bet-input-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
-.bet-input-area span {
+.bet-input-wrapper span {
     color: #ffd36d;
     font-size: 14px;
     font-weight: bold;
 }
 
-.bet-input-area input {
+.bet-input-wrapper input {
     width: 190px;
-    max-width: 70%;
+    max-width: 75%;
     background: #140a25;
     border: 2px solid #e65bd6;
     border-radius: 8px;
@@ -708,15 +757,17 @@ a {
     padding: 11px;
 }
 
-.bet-input-area input:focus {
+.bet-input-wrapper input:focus {
     outline: 2px solid #ffd36d;
 }
 
-.bet-input-area input:disabled {
+.bet-input-wrapper input:disabled {
     opacity: 0.6;
 }
 
-.bet-suggestions {
+/* QUICK BETS */
+
+.quick-bets {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -724,7 +775,7 @@ a {
     margin-top: 17px;
 }
 
-.bet-suggestions button {
+.quick-bets button {
     background: #49235e;
     border: 1px solid #b45dc3;
     border-radius: 7px;
@@ -735,31 +786,32 @@ a {
     transition: 0.2s;
 }
 
-.bet-suggestions button:hover {
+.quick-bets button:hover:not(:disabled) {
     background: #902bb3;
     box-shadow: 0 0 12px #bb42d1;
 }
 
-.bet-suggestions button:disabled {
+.quick-bets button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
 
-/* =========================================
-   HEADS AND TAILS BUTTONS
-   ========================================= */
 
-.choice-area {
+/* ==========================================
+   14. HEADS AND TAILS CHOICES
+   ========================================== */
+
+.coin-choice-area {
     text-align: center;
 }
 
-.choice-area > h3 {
+.coin-choice-area > h3 {
     color: #ffd36d;
     font-size: 19px;
     letter-spacing: 1px;
 }
 
-.choice-buttons {
+.coin-choice-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
@@ -772,12 +824,15 @@ a {
     border: 2px solid #e66cdd;
     border-radius: 14px;
     color: white;
+
     padding: 20px 12px;
+
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.25s;
+
     box-shadow: 0 0 15px rgba(218, 57, 204, 0.25);
+    transition: 0.25s;
 }
 
 .coin-choice span {
@@ -813,19 +868,18 @@ a {
     transform: none;
 }
 
-/* =========================================
-   GAME RESULT
-   ========================================= */
 
-.result-box {
-    max-width: 650px;
-    margin: 0 auto;
+/* ==========================================
+   15. GAME RESULT
+   ========================================== */
+
+.coin-result {
     background: #2a153f;
     border: 1px solid #a755b8;
     border-radius: 12px;
-    padding: 22px;
+    padding: 23px;
     text-align: center;
-    min-height: 125px;
+    min-height: 130px;
 }
 
 .result-label {
@@ -835,44 +889,45 @@ a {
     letter-spacing: 2px;
 }
 
-.result-box h2 {
+.coin-result h2 {
     color: #ffd36d;
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 24px;
 }
 
-.result-box p:last-child {
+.coin-result p:last-child {
     color: #e9d4ed;
     font-size: 13px;
 }
 
-/* =========================================
-   PLAYER STATISTICS
-   ========================================= */
+
+/* ==========================================
+   16. PLAYER STATISTICS
+   ========================================== */
 
 .coin-statistics {
     margin-top: 70px;
 }
 
-.statistics-heading {
+.coin-section-heading {
     text-align: center;
     margin-bottom: 25px;
 }
 
-.statistics-heading > p {
+.coin-section-heading > p {
     color: #ff9bea;
     font-size: 11px;
     font-weight: bold;
     letter-spacing: 3px;
 }
 
-.statistics-heading h2 {
+.coin-section-heading h2 {
     color: #ffd36d;
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 32px;
 }
 
-.coin-stat-grid {
+.coin-statistics-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
@@ -903,9 +958,17 @@ a {
     font-size: 13px;
 }
 
-/* =========================================
-   FOOTER
-   ========================================= */
+.statistics-note {
+    color: #c9afd5;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* ==========================================
+   17. FOOTER
+   ========================================== */
 
 .coin-footer {
     background: rgba(14, 4, 25, 0.98);
@@ -927,24 +990,20 @@ a {
     font-size: 12px;
 }
 
-/* =========================================
-   RESPONSIVE DESIGN
-   ========================================= */
 
-@media (max-width: 900px) {
+/* ==========================================
+   18. RESPONSIVE DESIGN
+   ========================================== */
 
-    .coin-header-content {
+@media (max-width: 950px) {
+
+    .coin-header-inner {
         justify-content: center;
     }
 
     .coin-nav {
         order: 3;
         width: 100%;
-    }
-
-    .coin-hero h1,
-    .game-intro h1 {
-        font-size: 38px;
     }
 }
 
@@ -955,33 +1014,38 @@ a {
     }
 
     .coin-hero,
-    .game-intro {
+    .coin-game-hero {
         padding: 32px 18px;
     }
 
     .coin-hero h1,
-    .game-intro h1 {
-        font-size: 32px;
+    .coin-game-hero h1 {
+        font-size: 33px;
     }
 
-    .instruction-section {
+    .coin-section {
         padding: 20px 15px;
     }
 
-    .step-grid,
-    .odds-grid {
+    .coin-steps,
+    .coin-odds-grid {
         grid-template-columns: 1fr;
     }
 
-    .game-top-stats {
-        gap: 10px;
+    .coin-game {
+        padding: 20px 12px;
     }
 
-    .game-stat {
-        padding: 13px 5px;
+    .coin {
+        width: 155px;
+        height: 155px;
     }
 
-    .choice-buttons {
+    .coin-face span {
+        font-size: 65px;
+    }
+
+    .coin-choice-grid {
         gap: 10px;
     }
 
@@ -990,23 +1054,14 @@ a {
         font-size: 15px;
     }
 
-    .coin {
-        width: 155px;
-        height: 155px;
-    }
-
-    .coin-inner span {
-        font-size: 65px;
-    }
-
-    .coin-game-container {
-        padding: 20px 12px;
+    .coin-section-title h2 {
+        font-size: 23px;
     }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 430px) {
 
-    .casino-logo {
+    .coin-logo {
         text-align: center;
         font-size: 23px;
     }
@@ -1024,7 +1079,37 @@ a {
         font-size: 11px;
     }
 
-    .coin-stat-grid {
+    .coin-top-stats {
+        gap: 9px;
+    }
+
+    .coin-stat-box {
+        padding: 12px 5px;
+    }
+
+    .coin-stat-box span {
+        font-size: 9px;
+    }
+
+    .coin-stat-box strong {
+        font-size: 23px;
+    }
+
+    .coin-choice span {
+        font-size: 32px;
+    }
+
+    .coin-highlight {
+        font-size: 9px;
+        padding: 8px 10px;
+    }
+
+    .coin-highlight span {
+        margin-left: 5px;
+        padding-left: 7px;
+    }
+
+    .coin-statistics-grid {
         gap: 10px;
     }
 
@@ -1032,16 +1117,19 @@ a {
         padding: 15px 8px;
     }
 
-    .section-title h2 {
-        font-size: 22px;
+    .coin-section-heading h2 {
+        font-size: 27px;
     }
 
-    .payout-row {
+    .example-row {
         font-size: 12px;
     }
 }
 
-/* RESPECT REDUCED MOTION */
+
+/* ==========================================
+   19. REDUCED MOTION
+   ========================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
