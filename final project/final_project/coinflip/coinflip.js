@@ -1,11 +1,11 @@
 
 // ==========================================
 // NEON EMPIRE CASINO
-// COIN FLIP GAME JAVASCRIPT
+// COIN FLIP 2.0
 // ==========================================
 
 
-// Track whether a coin flip is happening
+// Tracks whether a coin flip is happening
 let isFlipping = false;
 
 
@@ -15,7 +15,7 @@ let isFlipping = false;
 
 function setBet(amount) {
 
-    // Prevent changing bets during a flip
+    // Do not change the bet during a flip
     if (isFlipping === true) {
         return;
     }
@@ -36,15 +36,31 @@ function flipCoin(choice) {
         return;
     }
 
-    // Check the player's bet
+    // Check the player's available credits
     let bet = getBet();
 
-    // Stop if the bet is invalid
     if (bet === 0) {
         return;
     }
 
-    // Generate a random result
+    // Require bets in increments of 10
+    if (bet % 10 !== 0) {
+
+        alert("Please enter a bet in increments of 10 credits.");
+
+        return;
+    }
+
+    // Make sure the selected side is valid
+    if (choice !== "heads" && choice !== "tails") {
+        return;
+    }
+
+
+    // =====================================
+    // GENERATE THE RANDOM COIN RESULT
+    // =====================================
+
     let randomNumber = Math.floor(Math.random() * 2);
 
     let result;
@@ -56,7 +72,11 @@ function flipCoin(choice) {
         result = "tails";
     }
 
-    // Find HTML elements
+
+    // =====================================
+    // FIND THE HTML ELEMENTS
+    // =====================================
+
     let coin = document.getElementById("coin-disc");
 
     let coinFace = document.getElementById("coin-face-symbol");
@@ -75,23 +95,29 @@ function flipCoin(choice) {
 
     let betInput = document.getElementById("bet");
 
-    let quickBetButtons = document.querySelectorAll(".quick-bets button");
+    let quickBetButtons = document.querySelectorAll(
+        ".quick-bets button"
+    );
 
 
-    // Start the game
+    // =====================================
+    // START THE COIN FLIP
+    // =====================================
+
     isFlipping = true;
 
-    // Disable controls during the flip
     headsButton.disabled = true;
     tailsButton.disabled = true;
     betInput.disabled = true;
 
+    // Disable all quick bet buttons
     for (let i = 0; i < quickBetButtons.length; i++) {
+
         quickBetButtons[i].disabled = true;
+
     }
 
-
-    // Update the messages
+    // Update the display
     status.textContent = "THE COIN IS FLIPPING...";
 
     substatus.textContent = "Good luck!";
@@ -101,12 +127,10 @@ function flipCoin(choice) {
     winningsDisplay.textContent =
         "Your wager: " + bet.toLocaleString() + " credits.";
 
-
-    // Clear the previous coin result
     coinFace.textContent = "?";
 
 
-    // Restart the coin animation
+    // Restart the animation
     coin.classList.remove("flipping");
 
     void coin.offsetWidth;
@@ -114,7 +138,10 @@ function flipCoin(choice) {
     coin.classList.add("flipping");
 
 
-    // Reveal the result when the animation finishes
+    // =====================================
+    // REVEAL THE RESULT
+    // =====================================
+
     setTimeout(function() {
 
         let payout = 0;
@@ -122,37 +149,50 @@ function flipCoin(choice) {
         let message = "";
 
 
-        // Show which side the coin landed on
+        // Display the coin result
         if (result === "heads") {
 
             coinFace.textContent = "👑";
+
         }
         else {
 
             coinFace.textContent = "🪙";
+
         }
 
 
         // Check the player's prediction
         if (choice === result) {
 
-            payout = bet * 2;
+            // Return 1.9 times the original bet
+            // This includes the original wager
+            payout = bet * 1.9;
 
             message = "🎉 YOU WIN!";
+
         }
         else {
 
+            // No payout on an incorrect prediction
             payout = 0;
 
             message = "BETTER LUCK NEXT TIME!";
+
         }
 
 
-        // Update the shared casino account
+        // =====================================
+        // UPDATE THE SHARED CASINO WALLET
+        // =====================================
+
         finishGame(bet, payout);
 
 
-        // Display the result
+        // =====================================
+        // DISPLAY THE RESULT
+        // =====================================
+
         status.textContent =
             "THE COIN LANDED ON " + result.toUpperCase() + "!";
 
@@ -162,14 +202,16 @@ function flipCoin(choice) {
         resultDisplay.textContent = message;
 
 
-        // Display winnings or losses
+        // Show the correct payout and profit
         if (payout > 0) {
 
             let profit = payout - bet;
 
             winningsDisplay.textContent =
-                "Total payout: " + payout.toLocaleString() +
-                " credits. Profit: " + profit.toLocaleString() +
+                "Total payout: " +
+                payout.toLocaleString() +
+                " credits | Profit: +" +
+                profit.toLocaleString() +
                 " credits.";
 
         }
@@ -177,26 +219,29 @@ function flipCoin(choice) {
 
             winningsDisplay.textContent =
                 "You lost " + bet.toLocaleString() +
-                " credits. Try again!";
+                " credits. No payout this round.";
 
         }
 
 
-        // Remove the animation class
+        // =====================================
+        // RESET THE GAME CONTROLS
+        // =====================================
+
         coin.classList.remove("flipping");
 
-
-        // Re-enable game controls
         headsButton.disabled = false;
         tailsButton.disabled = false;
+
         betInput.disabled = false;
 
+        // Re-enable quick bet buttons
         for (let i = 0; i < quickBetButtons.length; i++) {
+
             quickBetButtons[i].disabled = false;
+
         }
 
-
-        // Allow another coin flip
         isFlipping = false;
 
     }, 1100);

@@ -1,14 +1,12 @@
 
 /* ==========================================
    NEON EMPIRE CASINO
-   COIN FLIP COMPLETE STYLESHEET
+   COIN FLIP 2.0 STYLESHEET
    VEGAS NEON THEME
    ========================================== */
 
 
-/* ==========================================
-   1. GENERAL STYLING
-   ========================================== */
+/* GENERAL STYLING */
 
 * {
     box-sizing: border-box;
@@ -27,7 +25,7 @@ body {
 
     background:
         linear-gradient(
-            rgba(12, 5, 24, 0.84),
+            rgba(12, 5, 24, 0.85),
             rgba(17, 5, 29, 0.94)
         ),
         url("../images/casino-background.jpg");
@@ -44,7 +42,7 @@ a {
 
 
 /* ==========================================
-   2. HEADER AND NAVIGATION
+   HEADER AND NAVIGATION
    ========================================== */
 
 .coin-header {
@@ -140,7 +138,7 @@ a {
 
 
 /* ==========================================
-   3. MAIN CONTAINER
+   MAIN CONTAINER
    ========================================== */
 
 .coin-container {
@@ -151,17 +149,16 @@ a {
 
 
 /* ==========================================
-   4. HERO AND INTRODUCTION
+   HERO SECTION
    ========================================== */
 
 .coin-hero,
 .coin-game-hero {
-    background:
-        linear-gradient(
-            135deg,
-            rgba(49, 17, 71, 0.95),
-            rgba(23, 7, 39, 0.91)
-        );
+    background: linear-gradient(
+        135deg,
+        rgba(49, 17, 71, 0.95),
+        rgba(23, 7, 39, 0.91)
+    );
 
     border: 1px solid #a94dbb;
     border-radius: 18px;
@@ -197,10 +194,12 @@ a {
     margin: 15px auto;
 }
 
-/* HERO BADGE */
+/* HERO HIGHLIGHT */
 
 .coin-highlight {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
     background: #452050;
     border: 1px solid #d8a758;
     border-radius: 25px;
@@ -212,13 +211,13 @@ a {
     letter-spacing: 1px;
 }
 
-.coin-highlight span {
-    margin-left: 10px;
-    padding-left: 12px;
+.coin-highlight span + span {
     border-left: 1px solid #b98d4b;
+    margin-left: 10px;
+    padding-left: 10px;
 }
 
-/* GAME GUIDE BUTTON */
+/* GAME GUIDE */
 
 .coin-guide {
     display: inline-block;
@@ -239,7 +238,7 @@ a {
 
 
 /* ==========================================
-   5. INSTRUCTION SECTIONS
+   INSTRUCTIONS SECTIONS
    ========================================== */
 
 .coin-section {
@@ -296,7 +295,7 @@ a {
 
 
 /* ==========================================
-   6. HOW TO PLAY CARDS
+   HOW TO PLAY
    ========================================== */
 
 .coin-steps {
@@ -348,7 +347,7 @@ a {
 
 
 /* ==========================================
-   7. ODDS AND PAYOUTS
+   ODDS AND PAYOUTS
    ========================================== */
 
 .coin-odds-grid {
@@ -402,7 +401,10 @@ a {
     font-size: 12px;
 }
 
-/* PAYOUT EXAMPLE */
+
+/* ==========================================
+   PAYOUT EXAMPLE
+   ========================================== */
 
 .coin-example {
     background: #28143b;
@@ -453,7 +455,86 @@ a {
 
 
 /* ==========================================
-   8. GAME RULES
+   CASINO ADVANTAGE
+   ========================================== */
+
+.casino-odds {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.casino-odds-card {
+    background: linear-gradient(145deg, #391b53, #1c0c30);
+    border: 1px solid #d8aa57;
+    border-radius: 12px;
+    padding: 22px 10px;
+    text-align: center;
+}
+
+.casino-odds-card span {
+    display: block;
+    color: #ffd36d;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.casino-odds-card p {
+    color: #e6c9eb;
+    font-size: 12px;
+}
+
+.odds-explanation {
+    background: #28143b;
+    border-left: 4px solid #e45bdd;
+    border-radius: 9px;
+    padding: 22px;
+    margin-top: 22px;
+}
+
+.odds-explanation h3 {
+    color: #ffd36d;
+    font-size: 19px;
+    margin-top: 0;
+}
+
+.odds-explanation p {
+    color: #e4d0eb;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   BETTING OPTIONS
+   ========================================== */
+
+.bet-options-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.bet-options-grid div {
+    background: #301642;
+    border: 1px solid #9752ab;
+    border-radius: 10px;
+    padding: 18px 8px;
+    color: #ffd36d;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bet-note {
+    color: #cdb5d9;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+
+/* ==========================================
+   GAME RULES
    ========================================== */
 
 .coin-rules {
@@ -477,7 +558,7 @@ a {
 
 
 /* ==========================================
-   9. INSTRUCTION PAGE BUTTONS
+   INSTRUCTIONS BUTTONS
    ========================================== */
 
 .coin-actions,
@@ -514,10 +595,6 @@ a {
     transform: translateY(-3px);
 }
 
-.coin-play-link span {
-    font-size: 18px;
-}
-
 .coin-lobby-link,
 .coin-bottom-navigation a {
     display: inline-block;
@@ -539,7 +616,7 @@ a {
 
 
 /* ==========================================
-   10. MAIN GAME CONTAINER
+   GAME CONTAINER
    ========================================== */
 
 .coin-game {
@@ -553,7 +630,10 @@ a {
         inset 0 0 25px rgba(92, 19, 125, 0.15);
 }
 
-/* TOP STATS */
+
+/* ==========================================
+   PLAYER BALANCE
+   ========================================== */
 
 .coin-top-stats {
     display: grid;
@@ -587,7 +667,7 @@ a {
 
 
 /* ==========================================
-   11. GOLDEN COIN DISPLAY
+   GOLDEN COIN
    ========================================== */
 
 .coin-stage {
@@ -636,8 +716,6 @@ a {
     transform-style: preserve-3d;
 }
 
-/* INNER COIN */
-
 .coin-face {
     width: 100%;
     height: 100%;
@@ -672,7 +750,7 @@ a {
 
 
 /* ==========================================
-   12. COIN ANIMATION
+   COIN ANIMATION
    ========================================== */
 
 .coin.flipping {
@@ -704,11 +782,11 @@ a {
 
 
 /* ==========================================
-   13. BETTING AREA
+   BETTING AREA
    ========================================== */
 
 .coin-betting {
-    max-width: 520px;
+    max-width: 550px;
     margin: 10px auto 30px;
 
     background: #2a153f;
@@ -796,9 +874,15 @@ a {
     cursor: not-allowed;
 }
 
+.bet-help {
+    color: #cdb5d9;
+    font-size: 11px;
+    margin-bottom: 0;
+}
+
 
 /* ==========================================
-   14. HEADS AND TAILS CHOICES
+   COIN CHOICES
    ========================================== */
 
 .coin-choice-area {
@@ -809,6 +893,11 @@ a {
     color: #ffd36d;
     font-size: 19px;
     letter-spacing: 1px;
+}
+
+.choice-description {
+    color: #cfb8dd;
+    font-size: 12px;
 }
 
 .coin-choice-grid {
@@ -870,7 +959,7 @@ a {
 
 
 /* ==========================================
-   15. GAME RESULT
+   GAME RESULTS
    ========================================== */
 
 .coin-result {
@@ -902,7 +991,7 @@ a {
 
 
 /* ==========================================
-   16. PLAYER STATISTICS
+   PLAYER STATISTICS
    ========================================== */
 
 .coin-statistics {
@@ -967,7 +1056,7 @@ a {
 
 
 /* ==========================================
-   17. FOOTER
+   FOOTER
    ========================================== */
 
 .coin-footer {
@@ -992,7 +1081,7 @@ a {
 
 
 /* ==========================================
-   18. RESPONSIVE DESIGN
+   RESPONSIVE DESIGN
    ========================================== */
 
 @media (max-width: 950px) {
@@ -1032,17 +1121,28 @@ a {
         grid-template-columns: 1fr;
     }
 
+    .casino-odds {
+        gap: 8px;
+    }
+
+    .casino-odds-card {
+        padding: 16px 5px;
+    }
+
+    .casino-odds-card span {
+        font-size: 25px;
+    }
+
+    .casino-odds-card p {
+        font-size: 10px;
+    }
+
+    .bet-options-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .coin-game {
         padding: 20px 12px;
-    }
-
-    .coin {
-        width: 155px;
-        height: 155px;
-    }
-
-    .coin-face span {
-        font-size: 65px;
     }
 
     .coin-choice-grid {
@@ -1104,7 +1204,7 @@ a {
         padding: 8px 10px;
     }
 
-    .coin-highlight span {
+    .coin-highlight span + span {
         margin-left: 5px;
         padding-left: 7px;
     }
@@ -1124,11 +1224,15 @@ a {
     .example-row {
         font-size: 12px;
     }
+
+    .coin-face span {
+        font-size: 65px;
+    }
 }
 
 
 /* ==========================================
-   19. REDUCED MOTION
+   REDUCED MOTION
    ========================================== */
 
 @media (prefers-reduced-motion: reduce) {
