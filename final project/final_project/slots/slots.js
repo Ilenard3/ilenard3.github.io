@@ -1,18 +1,105 @@
 
-// =====================================
-// NEON EMPIRE - SLOT MACHINE GAME
-// =====================================
+// ==========================================
+// NEON EMPIRE CASINO
+// ADVANCED SLOT MACHINE GAME
+// ==========================================
+
 
 // Track whether the machine is spinning
 let isSpinning = false;
 
-// Available slot machine symbols
-let symbols = ["🍒", "🔔", "💎", "7️⃣", "⭐"];
+
+// ==========================================
+// SLOT MACHINE SYMBOLS
+// ==========================================
+
+let symbols = [
+
+    {
+        id: "diamond",
+        image: "💎",
+        name: "Diamond",
+        triplePayout: 12,
+        pairPayout: 4
+    },
+
+    {
+        id: "seven",
+        image: "7️⃣",
+        name: "Lucky Seven",
+        triplePayout: 8,
+        pairPayout: 3
+    },
+
+    {
+        id: "crown",
+        image: "👑",
+        name: "Royal Crown",
+        triplePayout: 6,
+        pairPayout: 3
+    },
+
+    {
+        id: "money",
+        image: "💰",
+        name: "Money Bag",
+        triplePayout: 5,
+        pairPayout: 2
+    },
+
+    {
+        id: "clover",
+        image: "🍀",
+        name: "Lucky Clover",
+        triplePayout: 4,
+        pairPayout: 2
+    },
+
+    {
+        id: "star",
+        image: "⭐",
+        name: "Golden Star",
+        triplePayout: 4,
+        pairPayout: 2
+    },
+
+    {
+        id: "bell",
+        image: "🔔",
+        name: "Golden Bell",
+        triplePayout: 3,
+        pairPayout: 2
+    },
+
+    {
+        id: "cherry",
+        image: "🍒",
+        name: "Cherry",
+        triplePayout: 3,
+        pairPayout: 2
+    }
+
+];
 
 
-// =====================================
-// SET A BET AMOUNT
-// =====================================
+// ==========================================
+// RANDOM SYMBOL GENERATOR
+// ==========================================
+
+function getRandomSymbol() {
+
+    let randomNumber = Math.floor(
+        Math.random() * symbols.length
+    );
+
+    return symbols[randomNumber];
+
+}
+
+
+// ==========================================
+// QUICK BET BUTTONS
+// ==========================================
 
 function setBet(amount) {
 
@@ -21,16 +108,17 @@ function setBet(amount) {
     }
 
     document.getElementById("bet").value = amount;
+
 }
 
 
-// =====================================
-// SPIN THE SLOT MACHINE
-// =====================================
+// ==========================================
+// MAIN SLOT MACHINE FUNCTION
+// ==========================================
 
 function spinSlots() {
 
-    // Prevent multiple spins at once
+    // Prevent multiple spins
     if (isSpinning === true) {
         return;
     }
@@ -42,20 +130,14 @@ function spinSlots() {
         return;
     }
 
-    // Generate three random symbols
-    let first = symbols[
-        Math.floor(Math.random() * symbols.length)
-    ];
 
-    let second = symbols[
-        Math.floor(Math.random() * symbols.length)
-    ];
+    // Generate the three final symbols
+    let first = getRandomSymbol();
+    let second = getRandomSymbol();
+    let third = getRandomSymbol();
 
-    let third = symbols[
-        Math.floor(Math.random() * symbols.length)
-    ];
 
-    // Find the reel elements
+    // Get reel elements
     let reel1 = document.getElementById("slot1");
     let reel2 = document.getElementById("slot2");
     let reel3 = document.getElementById("slot3");
@@ -65,141 +147,245 @@ function spinSlots() {
     let reelBox3 = document.getElementById("reel3");
 
     let spinButton = document.getElementById("spin-button");
+
     let betInput = document.getElementById("bet");
 
     let resultDisplay = document.getElementById("slot-result");
+
     let winningsDisplay = document.getElementById("slot-winnings");
 
-    // Start the spinning animation
+    let quickBetButtons = document.querySelectorAll(
+        ".slot-bet-options button"
+    );
+
+
+    // Start spinning
     isSpinning = true;
 
     spinButton.disabled = true;
     betInput.disabled = true;
 
+    // Disable quick bet buttons
+    for (let i = 0; i < quickBetButtons.length; i++) {
+
+        quickBetButtons[i].disabled = true;
+
+    }
+
+
+    // Update the message
     spinButton.textContent = "🎰 SPINNING...";
 
     resultDisplay.textContent = "GOOD LUCK!";
 
     winningsDisplay.textContent =
-        "Your wager: " + bet + " credits.";
+        "Your wager: " + bet.toLocaleString() + " credits.";
 
-    // Add spinning classes
+
+    // Start reel animations
     reelBox1.classList.add("spinning");
     reelBox2.classList.add("spinning");
     reelBox3.classList.add("spinning");
 
-    // Temporarily cycle through random symbols
+
+    // Temporarily cycle through symbols
     let spinAnimation = setInterval(function() {
 
-        reel1.textContent =
-            symbols[Math.floor(Math.random() * symbols.length)];
+        reel1.textContent = getRandomSymbol().image;
 
-        reel2.textContent =
-            symbols[Math.floor(Math.random() * symbols.length)];
+        reel2.textContent = getRandomSymbol().image;
 
-        reel3.textContent =
-            symbols[Math.floor(Math.random() * symbols.length)];
+        reel3.textContent = getRandomSymbol().image;
 
     }, 90);
 
-    // Stop the reels and reveal the final result
+
+    // Stop the reels after the animation
     setTimeout(function() {
 
         clearInterval(spinAnimation);
 
-        reel1.textContent = first;
-        reel2.textContent = second;
-        reel3.textContent = third;
 
-        // Calculate the player's payout
+        // Show final symbols
+        reel1.textContent = first.image;
+
+        reel2.textContent = second.image;
+
+        reel3.textContent = third.image;
+
+
+        // Payout variables
         let payout = 0;
+
+        let multiplier = 0;
+
         let message = "";
 
-        // Diamond jackpot
+        let winningSymbol = null;
+
+
+        // =====================================
+        // CHECK FOR THREE MATCHING SYMBOLS
+        // =====================================
+
         if (
-            first === "💎" &&
-            second === "💎" &&
-            third === "💎"
+            first.id === second.id &&
+            second.id === third.id
         ) {
 
-            payout = bet * 10;
-            message = "💎 DIAMOND JACKPOT!";
+            winningSymbol = first;
+
+            multiplier = first.triplePayout;
+
+            payout = bet * multiplier;
+
+
+            // Diamond jackpot
+            if (first.id === "diamond") {
+
+                message = "💎 DIAMOND JACKPOT!";
+
+            }
+
+            // Lucky seven jackpot
+            else if (first.id === "seven") {
+
+                message = "🎰 TRIPLE SEVENS!";
+
+            }
+
+            // Other triple matches
+            else {
+
+                message =
+                    "🏆 THREE " +
+                    first.name.toUpperCase() +
+                    " SYMBOLS!";
+
+            }
+
         }
 
-        // Triple sevens
+
+        // =====================================
+        // CHECK FOR EXACTLY TWO MATCHING SYMBOLS
+        // =====================================
+
         else if (
-            first === "7️⃣" &&
-            second === "7️⃣" &&
-            third === "7️⃣"
+            first.id === second.id ||
+            first.id === third.id ||
+            second.id === third.id
         ) {
 
-            payout = bet * 7;
-            message = "🎰 TRIPLE SEVENS!";
+            // Identify which symbol matches
+            if (first.id === second.id) {
+
+                winningSymbol = first;
+
+            }
+            else if (first.id === third.id) {
+
+                winningSymbol = first;
+
+            }
+            else {
+
+                winningSymbol = second;
+
+            }
+
+
+            multiplier = winningSymbol.pairPayout;
+
+            payout = bet * multiplier;
+
+            message =
+                "✨ " +
+                winningSymbol.name.toUpperCase() +
+                " PAIR!";
+
         }
 
-        // Any other three matching symbols
-        else if (
-            first === second &&
-            second === third
-        ) {
 
-            payout = bet * 5;
-            message = "🏆 THREE MATCHING SYMBOLS!";
-        }
+        // =====================================
+        // NO MATCHING SYMBOLS
+        // =====================================
 
-        // Exactly two matching symbols
-        else if (
-            first === second ||
-            first === third ||
-            second === third
-        ) {
-
-            payout = bet * 2;
-            message = "✨ TWO MATCHING SYMBOLS!";
-        }
-
-        // No matching symbols
         else {
 
             payout = 0;
-            message = "NO MATCH. TRY AGAIN!";
+
+            multiplier = 0;
+
+            message = "NO MATCH. BETTER LUCK NEXT TIME!";
+
         }
 
-        // Update the shared casino wallet
+
+        // =====================================
+        // UPDATE SHARED CASINO BALANCE
+        // =====================================
+
         finishGame(bet, payout);
 
-        // Display the result
+
+        // Display game result
         resultDisplay.textContent = message;
 
+
+        // Display payout and profit
         if (payout > 0) {
 
             let profit = payout - bet;
 
             winningsDisplay.textContent =
-                "Payout: " + payout.toLocaleString() +
+                "Total payout: " +
+                payout.toLocaleString() +
                 " credits | Profit: " +
-                profit.toLocaleString() + " credits.";
+                profit.toLocaleString() +
+                " credits | " +
+                multiplier +
+                "x multiplier.";
+
         }
 
         else {
 
             winningsDisplay.textContent =
-                "You lost " + bet.toLocaleString() +
-                " credits. Better luck next spin!";
+                "You lost " +
+                bet.toLocaleString() +
+                " credits. No payout this spin.";
+
         }
 
-        // End the reel animations
+
+        // Stop reel animations
         reelBox1.classList.remove("spinning");
+
         reelBox2.classList.remove("spinning");
+
         reelBox3.classList.remove("spinning");
 
-        // Allow another spin
+
+        // Re-enable controls
         spinButton.disabled = false;
+
         betInput.disabled = false;
+
+
+        for (let i = 0; i < quickBetButtons.length; i++) {
+
+            quickBetButtons[i].disabled = false;
+
+        }
+
+
+        // Allow another spin
+        isSpinning = false;
 
         spinButton.textContent = "🎰 SPIN THE REELS";
 
-        isSpinning = false;
 
-    }, 1300);
+    }, 1400);
+
 }

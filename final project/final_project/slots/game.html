@@ -6,23 +6,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Play Neon Slots | Neon Empire</title>
+    <title>Neon Slots | Neon Empire Casino</title>
 
+    <!-- Slots stylesheet -->
     <link rel="stylesheet" href="slots.css">
 
     <!-- Shared casino wallet and statistics -->
     <script src="../script.js" defer></script>
 
-    <!-- Slot machine game logic -->
+    <!-- Slot machine gameplay -->
     <script src="slots.js" defer></script>
 </head>
 
 <body>
 
-    <!-- CASINO HEADER -->
+    <!-- HEADER -->
     <header class="slots-header">
 
-        <div class="slots-header-content">
+        <div class="slots-header-inner">
 
             <a href="../index.html" class="slots-logo">
                 <span>♛ NEON EMPIRE</span>
@@ -47,7 +48,7 @@
 
     <main class="slots-container">
 
-        <!-- GAME INTRODUCTION -->
+        <!-- INTRODUCTION -->
         <section class="slots-game-hero">
 
             <p class="slots-eyebrow">
@@ -57,8 +58,8 @@
             <h1>🎰 NEON SLOT MACHINES</h1>
 
             <p>
-                Spin the reels, match the symbols,
-                and see what fortune awaits!
+                Spin the reels, discover rare combinations,
+                and chase the Diamond Jackpot.
             </p>
 
             <a href="instructions.html" class="slots-guide">
@@ -67,10 +68,10 @@
 
         </section>
 
-        <!-- MAIN SLOT MACHINE -->
+        <!-- MAIN MACHINE -->
         <section class="slot-game">
 
-            <!-- TOP STATISTICS -->
+            <!-- PLAYER INFORMATION -->
             <div class="slot-top-stats">
 
                 <div class="slot-stat">
@@ -85,50 +86,73 @@
 
             </div>
 
-            <!-- SLOT MACHINE DISPLAY -->
+            <!-- MACHINE TITLE -->
             <div class="machine-heading">
 
-                <p>★ THE NEON EMPIRE ★</p>
+                <p>★ NEON EMPIRE ★</p>
 
-                <h2>JACKPOT SLOTS</h2>
+                <h2>PREMIUM SLOT MACHINE</h2>
+
+                <span>8 SYMBOLS • 3 REELS • 1 JACKPOT</span>
 
             </div>
 
+            <!-- SLOT MACHINE -->
             <div class="machine-frame">
 
                 <div class="machine-top">
                     ★ LUCKY REELS ★
                 </div>
 
-                <div class="reel-container">
+                <div class="machine-reels">
 
                     <div class="reel" id="reel1">
-                        <span id="slot1">7️⃣</span>
+                        <span id="slot1">💎</span>
                     </div>
 
                     <div class="reel" id="reel2">
-                        <span id="slot2">💎</span>
+                        <span id="slot2">7️⃣</span>
                     </div>
 
                     <div class="reel" id="reel3">
-                        <span id="slot3">⭐</span>
+                        <span id="slot3">👑</span>
                     </div>
 
                 </div>
 
-                <div class="machine-bottom">
-                    ★ MATCH THE SYMBOLS ★
+                <div class="machine-indicator">
+                    ★ MATCH THREE SYMBOLS TO WIN ★
                 </div>
 
             </div>
 
-            <!-- BETTING CONTROLS -->
+            <!-- SYMBOL KEY -->
+            <div class="machine-symbols">
+
+                <p>AVAILABLE SYMBOLS</p>
+
+                <div class="mini-symbol-grid">
+
+                    <span>💎</span>
+                    <span>7️⃣</span>
+                    <span>👑</span>
+                    <span>💰</span>
+                    <span>🍀</span>
+                    <span>⭐</span>
+                    <span>🔔</span>
+                    <span>🍒</span>
+
+                </div>
+
+            </div>
+
+            <!-- BETTING -->
             <div class="slot-betting">
 
                 <h3>💰 PLACE YOUR BET</h3>
 
                 <label for="bet">
-                    Choose Your Wager
+                    Select Your Wager in Credits
                 </label>
 
                 <div class="slot-bet-input">
@@ -147,6 +171,10 @@
 
                 <div class="slot-bet-options">
 
+                    <button type="button" onclick="setBet(25)">
+                        25
+                    </button>
+
                     <button type="button" onclick="setBet(50)">
                         50
                     </button>
@@ -161,6 +189,10 @@
 
                     <button type="button" onclick="setBet(500)">
                         500
+                    </button>
+
+                    <button type="button" onclick="setBet(1000)">
+                        1,000
                     </button>
 
                 </div>
@@ -180,15 +212,18 @@
                 </button>
 
                 <p>
-                    Match symbols to win up to 10x your bet!
+                    Match symbols and see what the machine
+                    has in store for you.
                 </p>
 
             </div>
 
-            <!-- RESULT DISPLAY -->
+            <!-- RESULT -->
             <div class="slot-result" aria-live="polite">
 
-                <p>✦ LATEST SPIN ✦</p>
+                <p class="result-label">
+                    ✦ LATEST SPIN ✦
+                </p>
 
                 <h2 id="slot-result">
                     READY TO SPIN?
@@ -202,7 +237,7 @@
 
         </section>
 
-        <!-- PAYOUT REMINDER -->
+        <!-- QUICK PAYOUT GUIDE -->
         <section class="quick-payouts">
 
             <h2>🏆 Quick Payout Guide</h2>
@@ -211,38 +246,58 @@
 
                 <div>
                     <strong>💎💎💎</strong>
-                    <span>10x</span>
+                    <span>12x</span>
                 </div>
 
                 <div>
                     <strong>7️⃣7️⃣7️⃣</strong>
-                    <span>7x</span>
+                    <span>8x</span>
                 </div>
 
                 <div>
-                    <strong>⭐⭐⭐</strong>
+                    <strong>👑👑👑</strong>
+                    <span>6x</span>
+                </div>
+
+                <div>
+                    <strong>💰💰💰</strong>
                     <span>5x</span>
                 </div>
 
                 <div>
-                    <strong>🍒🍒⭐</strong>
-                    <span>2x</span>
+                    <strong>🍀🍀🍀</strong>
+                    <span>4x</span>
+                </div>
+
+                <div>
+                    <strong>⭐⭐⭐</strong>
+                    <span>4x</span>
+                </div>
+
+                <div>
+                    <strong>🔔🔔🔔</strong>
+                    <span>3x</span>
+                </div>
+
+                <div>
+                    <strong>🍒🍒🍒</strong>
+                    <span>3x</span>
                 </div>
 
             </div>
 
             <a href="instructions.html">
-                View Complete Payout Table →
+                VIEW ALL PAYOUTS AND PAIR COMBINATIONS →
             </a>
 
         </section>
 
-        <!-- PLAYER STATISTICS -->
+        <!-- STATISTICS -->
         <section class="slots-statistics">
 
             <div class="statistics-heading">
 
-                <p>✦ YOUR CASINO PROGRESS ✦</p>
+                <p>✦ YOUR CASINO JOURNEY ✦</p>
 
                 <h2>Player Statistics</h2>
 
@@ -270,7 +325,7 @@
 
         </section>
 
-        <!-- PAGE NAVIGATION -->
+        <!-- NAVIGATION -->
         <section class="slots-navigation">
 
             <a href="instructions.html">
@@ -292,7 +347,7 @@
 
         <p>THE ULTIMATE VIRTUAL CASINO</p>
 
-        <p>Fictional Credits Only • No Real Money or Prizes</p>
+        <p>Educational Project • Fictional Credits Only</p>
 
     </footer>
 
