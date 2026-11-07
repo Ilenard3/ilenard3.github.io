@@ -1,5 +1,10 @@
 
-/* NEON EMPIRE CASINO - VEGAS NEON THEME */
+/* =========================================
+   NEON EMPIRE CASINO
+   LUXURY VEGAS NEON LOBBY
+   ========================================= */
+
+/* GENERAL SETTINGS */
 
 * {
     box-sizing: border-box;
@@ -11,104 +16,121 @@ html {
 
 body {
     margin: 0;
-    font-family: Georgia, 'Times New Roman', serif;
-    color: #fff4dc;
-    background-color: #100719;
-    background-image:
-        linear-gradient(
-            rgba(12, 4, 22, 0.35),
-            rgba(12, 4, 22, 0.75)
-        ),
-        url("images/casino-background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #f8edff;
+    line-height: 1.6;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(120, 30, 155, 0.3),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #10071d,
+            #1e0b32,
+            #100719
+        );
 }
 
-/* HEADER AND NAVIGATION */
+a {
+    text-decoration: none;
+}
+
+/* =========================================
+   CASINO HEADER
+   ========================================= */
 
 .site-header {
-    background: rgba(19, 5, 31, 0.94);
-    border-bottom: 2px solid #f43cdb;
-    box-shadow: 0 0 25px rgba(255, 40, 220, 0.5);
+    background: rgba(15, 5, 28, 0.97);
+    border-bottom: 2px solid #e93bd1;
+    box-shadow: 0 5px 30px rgba(211, 38, 201, 0.3);
     padding: 18px 25px;
 }
 
 .header-content {
     max-width: 1250px;
     margin: auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
+/* LOGO */
+
 .logo h1 {
+    font-family: Georgia, 'Times New Roman', serif;
     color: #ffd36d;
-    font-size: 27px;
+    font-size: 28px;
+    letter-spacing: 2px;
     margin: 0;
-    text-shadow: 0 0 12px #e444d6;
+    text-shadow: 0 0 15px rgba(255, 185, 65, 0.4);
 }
 
 .logo p {
-    color: #f3a6eb;
+    color: #e9a4e6;
     font-size: 10px;
     letter-spacing: 3px;
     margin: 3px 0 0;
 }
 
+/* NAVIGATION */
+
 nav {
     display: flex;
     gap: 5px;
-    background: rgba(17, 5, 30, 0.85);
-    border: 1px solid #a43db5;
-    border-radius: 10px;
-    padding: 6px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav a {
-    color: #fff0dc;
-    text-decoration: none;
-    padding: 11px 17px;
-    border-radius: 6px;
+    color: #e9d8ef;
     font-size: 14px;
     font-weight: bold;
+    padding: 11px 16px;
+    border-radius: 8px;
     transition: 0.3s;
 }
 
 nav a:hover,
 nav a.active {
-    background: linear-gradient(135deg, #7d159e, #e52ecb);
-    box-shadow: 0 0 15px #e52ecb;
     color: white;
+    background: linear-gradient(135deg, #75209e, #d12abb);
+    box-shadow: 0 0 15px rgba(233, 59, 209, 0.45);
 }
 
+/* WALLET */
+
 .wallet {
-    background: rgba(35, 9, 49, 0.95);
-    border: 2px solid #e8b65c;
+    background: #2b1740;
+    border: 2px solid #d9ad5c;
     border-radius: 12px;
-    padding: 8px 18px;
+    padding: 9px 20px;
     text-align: center;
-    box-shadow: 0 0 12px rgba(232, 182, 92, 0.4);
+    box-shadow: 0 0 15px rgba(217, 173, 92, 0.25);
 }
 
 .wallet span {
     display: block;
+    color: #e6c2e8;
     font-size: 10px;
-    color: #e5bce5;
     letter-spacing: 1px;
 }
 
 .wallet strong {
     display: block;
-    color: #ffdc83;
-    font-size: 20px;
+    color: #ffda80;
+    font-size: 21px;
 }
 
-/* MAIN CONTENT */
+/* =========================================
+   MAIN LAYOUT
+   ========================================= */
 
 main {
     max-width: 1250px;
@@ -116,125 +138,258 @@ main {
     padding: 30px 20px;
 }
 
-/* WELCOME BANNER */
+/* =========================================
+   LUXURY WELCOME BANNER
+   ========================================= */
 
 .hero {
-    text-align: center;
-    padding: 55px 25px;
-    margin-bottom: 35px;
-    background: rgba(21, 5, 34, 0.72);
-    border: 1px solid rgba(246, 72, 220, 0.7);
-    border-radius: 18px;
-    box-shadow: 0 0 30px rgba(184, 31, 198, 0.35);
+    position: relative;
+    overflow: hidden;
+
+    min-height: 430px;
+    padding: 65px 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    background-color: #29113f;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(15, 4, 28, 0.94) 0%,
+            rgba(25, 7, 44, 0.76) 55%,
+            rgba(28, 8, 46, 0.42) 100%
+        ),
+        url("images/casino-background.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border: 2px solid #a94dbb;
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.5),
+        0 0 25px rgba(193, 44, 202, 0.25);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
 }
 
 .hero-label {
-    color: #ff9bef;
-    font-size: 13px;
-    letter-spacing: 4px;
+    color: #ff9bea;
+    font-size: 12px;
     font-weight: bold;
+    letter-spacing: 3px;
 }
 
 .hero h2 {
-    color: #ffe09a;
-    font-size: 55px;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #fff1d3;
+    font-size: clamp(38px, 5vw, 65px);
     line-height: 1.1;
     margin: 20px 0;
-    text-shadow: 0 0 20px #a94b8d;
+    text-shadow: 0 0 20px #4e126c;
 }
 
 .hero h2 span {
     display: block;
-    color: #ff6de6;
+    color: #ffd36d;
     font-style: italic;
-    text-shadow: 0 0 20px #f72ed4;
+    text-shadow: 0 0 20px rgba(255, 189, 75, 0.4);
 }
 
 .hero-description {
-    max-width: 650px;
-    margin: 0 auto 30px;
-    color: #f1dff0;
-    font-family: Arial, sans-serif;
+    color: #f0deef;
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.9;
+    max-width: 560px;
+    margin-bottom: 30px;
 }
+
+.hero-note {
+    color: #e9b8e6;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+/* MAIN CASINO BUTTON */
 
 .main-button {
     display: inline-block;
-    background: linear-gradient(135deg, #8e16b6, #e32acb);
+    background: linear-gradient(135deg, #8d20b7, #e438ce);
     color: white;
-    text-decoration: none;
-    padding: 15px 35px;
-    border: 2px solid #ff9af0;
-    border-radius: 30px;
-    font-size: 15px;
+    border: 2px solid #ff9bea;
+    border-radius: 10px;
+    padding: 15px 28px;
+    font-size: 14px;
     font-weight: bold;
-    box-shadow: 0 0 20px #d82dc9;
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px rgba(228, 56, 206, 0.45);
     transition: 0.3s;
 }
 
 .main-button:hover {
-    background: #f043d9;
-    box-shadow: 0 0 30px #ff54e4;
+    background: linear-gradient(135deg, #b535dc, #f452dc);
+    box-shadow: 0 0 30px rgba(244, 82, 220, 0.7);
     transform: translateY(-3px);
 }
 
-/* SECTION HEADINGS */
+/* =========================================
+   JACKPOT DECORATION
+   ========================================= */
+
+.jackpot-display {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+
+    background: linear-gradient(145deg, #3d1955, #190925);
+    border: 4px solid #d8aa51;
+    border-radius: 20px;
+    padding: 25px 20px;
+    text-align: center;
+
+    box-shadow:
+        0 0 30px rgba(222, 66, 213, 0.5),
+        inset 0 0 25px rgba(130, 34, 155, 0.4);
+}
+
+.jackpot-title {
+    color: #ffda80;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px #e5a74a;
+}
+
+.jackpot-reels {
+    display: flex;
+    gap: 7px;
+    margin: 20px 0;
+}
+
+.jackpot-reels span {
+    background: linear-gradient(#fff9e8, #eacb92);
+    color: #bd1743;
+    border: 3px solid #d8aa51;
+    border-radius: 8px;
+    font-family: Georgia, serif;
+    font-size: 62px;
+    font-weight: bold;
+    padding: 3px 12px;
+    box-shadow: 0 0 12px rgba(255, 210, 100, 0.4);
+}
+
+.jackpot-display p {
+    color: #ff9bea;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
+/* =========================================
+   SECTION HEADINGS
+   ========================================= */
 
 .section-heading {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .section-heading p {
-    color: #ff9cef;
+    color: #ff9bea;
     font-size: 12px;
-    letter-spacing: 3px;
     font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
 }
 
 .section-heading h2 {
-    color: #ffe09a;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #ffd36d;
     font-size: 38px;
-    margin: 8px 0;
-    text-shadow: 0 0 15px #bd5795;
+    margin: 5px 0;
 }
 
-/* CASINO FLOOR */
+.section-heading > span {
+    color: #d9c2e5;
+    font-size: 14px;
+}
+
+/* =========================================
+   CASINO FLOOR
+   ========================================= */
 
 .casino-floor {
-    margin-top: 40px;
+    margin-top: 75px;
 }
 
 .casino-layout {
     display: grid;
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: 265px minmax(0, 1fr);
     gap: 25px;
     align-items: stretch;
 }
 
-/* PLAYER PROFILE */
+/* =========================================
+   PLAYER PROFILE
+   ========================================= */
 
 .player-panel {
-    background: rgba(20, 5, 34, 0.92);
-    border: 2px solid #ed65dc;
-    border-radius: 15px;
-    padding: 25px 18px;
+    background: linear-gradient(145deg, #2a123f, #170a29);
+    border: 2px solid #cc4ed1;
+    border-radius: 17px;
+    padding: 25px 20px;
     text-align: center;
-    box-shadow: 0 0 20px rgba(235, 51, 211, 0.35);
+
+    box-shadow:
+        0 0 20px rgba(218, 61, 207, 0.3),
+        0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.player-panel h3 {
-    color: #ffd77c;
-    font-size: 19px;
-    margin-top: 0;
+.profile-heading h3 {
+    color: #ffd36d;
+    font-size: 18px;
+    margin: 0;
+}
+
+.profile-heading p {
+    color: #cfa5df;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.profile-avatar {
+    width: 95px;
+    height: 95px;
+    margin: 25px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(145deg, #7e328d, #351247);
+    border: 3px solid #d9ad5c;
+    border-radius: 50%;
+    font-size: 46px;
+
+    box-shadow: 0 0 20px rgba(217, 173, 92, 0.3);
 }
 
 .profile-balance,
 .profile-level,
 .profile-reputation {
-    padding: 20px 5px;
-    border-bottom: 1px solid #a34b98;
+    padding: 22px 0;
+    border-bottom: 1px solid #71418a;
 }
 
 .profile-reputation {
@@ -242,214 +397,293 @@ main {
 }
 
 .player-panel span {
-    color: #e9c8e6;
-    font-family: Arial, sans-serif;
+    color: #d9bde5;
     font-size: 11px;
     letter-spacing: 1px;
 }
 
 .player-panel h2 {
-    color: #ffda78;
-    font-size: 35px;
-    margin: 10px 0 0;
+    color: #ffd36d;
+    font-size: 36px;
+    margin: 5px 0;
 }
 
-.profile-reputation p {
-    color: #ffd36d;
-    font-weight: bold;
+.player-panel p {
+    color: #cdb4dc;
+    font-size: 12px;
+}
+
+.profile-reputation h3 {
+    color: #ffda80;
+    font-size: 17px;
 }
 
 .profile-button {
     display: block;
-    background: #70218c;
-    border: 1px solid #ef71e1;
+    background: linear-gradient(135deg, #77239b, #bc32bd);
+    border: 1px solid #e884e8;
+    border-radius: 9px;
     color: white;
-    text-decoration: none;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 13px;
     margin-top: 20px;
     font-size: 12px;
     font-weight: bold;
+    transition: 0.3s;
 }
 
 .profile-button:hover {
-    background: #a52dbb;
-    box-shadow: 0 0 15px #e943d6;
+    background: #d23bcb;
+    box-shadow: 0 0 18px #d23bcb;
 }
 
-/* GAME CARDS */
+/* =========================================
+   CASINO GAME CARDS
+   ========================================= */
 
 .game-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+    gap: 25px;
 }
 
 .game-card {
-    background: rgba(25, 6, 40, 0.93);
-    border: 2px solid #f15cde;
-    border-radius: 16px;
-    padding: 25px 18px;
-    text-align: center;
+    min-width: 0;
+    overflow: hidden;
+
+    background: linear-gradient(145deg, #301344, #1a0b2c);
+    border: 2px solid #d64cd5;
+    border-radius: 18px;
+
     box-shadow:
-        0 0 15px rgba(255, 54, 224, 0.55),
-        inset 0 0 20px rgba(114, 22, 144, 0.35);
+        0 0 20px rgba(220, 55, 210, 0.3),
+        0 12px 30px rgba(0, 0, 0, 0.35);
+
     transition: 0.3s;
 }
 
 .game-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(255, 54, 224, 0.8);
+    border-color: #ff9bea;
+    box-shadow: 0 0 30px rgba(235, 65, 215, 0.55);
 }
 
+/* GAME ART */
+
 .game-art {
-    height: 165px;
+    height: 215px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+
+    border-bottom: 1px solid #71328b;
 }
 
 .coin-art {
-    font-size: 115px;
-    filter: drop-shadow(0 0 22px #ffbf57);
+    background:
+        radial-gradient(circle, #76348d, #260c3d 70%);
+}
+
+.gold-coin {
+    width: 155px;
+    height: 155px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #fff0b0, #e8b64e, #a56a1b);
+    border: 8px double #ffe6a0;
+    border-radius: 50%;
+
+    font-size: 75px;
+
+    box-shadow:
+        0 0 30px rgba(255, 191, 74, 0.55),
+        inset 0 0 20px rgba(111, 65, 12, 0.4);
 }
 
 .slots-art {
-    gap: 5px;
+    background:
+        radial-gradient(circle, #83327b, #260c3d 75%);
 }
 
-.slots-art span {
-    background: linear-gradient(#fff7e5, #e8c68c);
-    color: #c51b42;
-    border: 3px solid #e9b657;
-    border-radius: 9px;
-    padding: 8px 12px;
-    font-size: 58px;
-    font-weight: bold;
-    box-shadow: 0 0 18px #e73bd3;
+.slot-machine-art {
+    background: linear-gradient(145deg, #59246c, #2c0c43);
+    border: 4px solid #d9ad5c;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 0 25px rgba(232, 70, 214, 0.4);
 }
 
-.game-card h3 {
-    color: #ffe09a;
-    font-size: 28px;
-    margin: 10px 0;
-}
-
-.game-card > p {
-    color: #f0d9ee;
-    font-family: Arial, sans-serif;
+.slot-title {
+    color: #ffd36d;
     font-size: 14px;
-    line-height: 1.7;
-    min-height: 75px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.slot-reels {
+    display: flex;
+    gap: 6px;
+}
+
+.slot-reels span {
+    background: linear-gradient(#fff9e9, #eacb91);
+    color: #c01d4c;
+    border: 2px solid #d9ad5c;
+    border-radius: 7px;
+    padding: 5px 12px;
+    font-family: Georgia, serif;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+/* GAME CONTENT */
+
+.game-content {
+    padding: 25px;
+    text-align: center;
+}
+
+.game-category {
+    color: #f59ae7;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.game-content h3 {
+    font-family: Georgia, serif;
+    color: #ffd36d;
+    font-size: 27px;
+    margin: 12px 0;
+}
+
+.game-content > p {
+    color: #e5d0ed;
+    font-size: 14px;
+    line-height: 1.8;
+    min-height: 100px;
 }
 
 .game-details {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     margin: 20px 0;
 }
 
 .game-details span {
-    background: rgba(107, 30, 129, 0.6);
-    border: 1px solid #a955c2;
+    background: #4c205f;
+    border: 1px solid #9b4eac;
     border-radius: 20px;
-    padding: 7px 10px;
-    color: #f6d5f5;
-    font-family: Arial, sans-serif;
+    padding: 7px 12px;
+    color: #f3d6f2;
     font-size: 11px;
 }
+
+/* GAME BUTTONS */
 
 .play-button,
 .instructions-button {
     display: block;
-    text-decoration: none;
-    padding: 12px;
+    padding: 13px 15px;
     border-radius: 9px;
+    font-size: 13px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 12px;
     transition: 0.3s;
 }
 
 .play-button {
-    background: linear-gradient(135deg, #9515c1, #e831d0);
+    background: linear-gradient(135deg, #8e1fba, #e333cb);
+    border: 2px solid #ff9bea;
     color: white;
-    border: 2px solid #ff94ed;
-    box-shadow: 0 0 14px #cf2bc2;
+    box-shadow: 0 0 15px rgba(227, 51, 203, 0.35);
 }
 
 .play-button:hover {
-    background: #e73dd6;
-    box-shadow: 0 0 25px #f044db;
+    background: #ed46d8;
+    box-shadow: 0 0 22px #ed46d8;
 }
 
 .instructions-button {
-    background: rgba(20, 5, 34, 0.8);
-    border: 1px solid #d9ac5b;
-    color: #ffe09a;
+    background: #261036;
+    border: 1px solid #d9ad5c;
+    color: #ffda80;
 }
 
 .instructions-button:hover {
-    background: #59315d;
+    background: #4a235d;
 }
 
-/* STATISTICS */
+/* =========================================
+   STATISTICS
+   ========================================= */
 
 .dashboard {
-    margin-top: 75px;
+    margin-top: 85px;
 }
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
 }
 
 .stat-card {
-    background: rgba(25, 6, 40, 0.92);
-    border: 2px solid #e5ac58;
-    border-radius: 13px;
+    background: linear-gradient(145deg, #2b123f, #180a2a);
+    border: 2px solid #d9ad5c;
+    border-radius: 15px;
+    padding: 25px 15px;
     text-align: center;
-    padding: 25px 10px;
-    box-shadow: 0 0 15px rgba(219, 128, 53, 0.25);
+    box-shadow: 0 0 15px rgba(217, 173, 92, 0.15);
 }
 
 .stat-icon {
-    font-size: 35px;
+    font-size: 36px;
+}
+
+.stat-card p {
+    color: #d8bce5;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .stat-card h3 {
-    color: #ffda7c;
+    color: #ffd36d;
     font-size: 34px;
     margin: 8px 0;
 }
 
-.stat-card p {
-    color: #e6c9e8;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    letter-spacing: 1px;
+.stat-card span {
+    color: #bba0cb;
+    font-size: 12px;
 }
 
-/* ABOUT SECTION */
+/* =========================================
+   ABOUT SECTION
+   ========================================= */
 
 .about-section {
-    margin-top: 75px;
+    margin-top: 85px;
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
 }
 
 .feature {
-    background: rgba(24, 6, 39, 0.9);
-    border: 1px solid #ad4fb8;
+    background: #241033;
+    border: 1px solid #8740a0;
     border-radius: 14px;
-    padding: 30px 20px;
+    padding: 30px 22px;
     text-align: center;
 }
 
@@ -458,58 +692,63 @@ main {
 }
 
 .feature h3 {
-    color: #ffe09a;
+    color: #ffd36d;
     font-size: 20px;
 }
 
 .feature p {
-    color: #e1cbe4;
-    font-family: Arial, sans-serif;
+    color: #d8c2e2;
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
-/* PLAYER ACCOUNT */
+/* =========================================
+   PLAYER ACCOUNT
+   ========================================= */
 
 .account-section {
-    margin-top: 75px;
-    background: rgba(22, 5, 35, 0.92);
-    border: 1px solid #9d45ad;
-    border-radius: 14px;
-    padding: 30px;
+    margin-top: 80px;
+    background: #1c0b2c;
+    border: 1px solid #7f3d95;
+    border-radius: 15px;
+    padding: 35px 20px;
     text-align: center;
 }
 
 .account-section h2 {
-    color: #ffe09a;
+    color: #ffd36d;
 }
 
 .account-section p {
-    color: #e4cce7;
-    font-family: Arial, sans-serif;
+    color: #d9c1e3;
+    font-size: 14px;
 }
 
 .reset-button {
     background: transparent;
+    border: 1px solid #d45cc8;
+    border-radius: 9px;
     color: #ffc5f1;
-    border: 1px solid #c95bc3;
-    padding: 12px 22px;
-    border-radius: 8px;
-    cursor: pointer;
+    padding: 13px 22px;
+    font-size: 13px;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .reset-button:hover {
-    background: #7b205d;
+    background: #752259;
     color: white;
 }
 
-/* FOOTER */
+/* =========================================
+   FOOTER
+   ========================================= */
 
 footer {
-    background: rgba(14, 4, 24, 0.95);
-    border-top: 2px solid #a73bb2;
-    padding: 35px 20px;
+    background: #10061c;
+    border-top: 2px solid #a13bb1;
+    padding: 40px 20px;
     text-align: center;
     margin-top: 50px;
 }
@@ -520,39 +759,51 @@ footer h3 {
 }
 
 footer p {
-    color: #d4b7d8;
-    font-family: Arial, sans-serif;
+    color: #c9afd5;
     font-size: 13px;
 }
 
 .copyright {
-    font-size: 11px;
     margin-top: 25px;
+    font-size: 11px;
 }
 
-/* RESPONSIVE DESIGN */
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
 
-@media (max-width: 1000px) {
-    .casino-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .player-panel {
-        max-width: 100%;
-    }
+@media (max-width: 1100px) {
 
     .header-content {
         justify-content: center;
     }
-}
 
-@media (max-width: 700px) {
-    .hero h2 {
-        font-size: 38px;
+    .hero {
+        padding: 50px 30px;
     }
 
-    .game-grid,
-    .features-grid {
+    .casino-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h2 {
+        font-size: 45px;
+    }
+
+    .jackpot-display {
+        width: fit-content;
+        max-width: 100%;
+    }
+
+    .game-grid {
         grid-template-columns: 1fr;
     }
 
@@ -560,34 +811,71 @@ footer p {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    nav {
-        justify-content: center;
+    .features-grid {
+        grid-template-columns: 1fr;
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
+
+    main {
+        padding: 20px 12px;
+    }
+
     .hero {
         padding: 35px 15px;
     }
 
     .hero h2 {
-        font-size: 31px;
+        font-size: 34px;
+    }
+
+    .hero-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .jackpot-reels span {
+        font-size: 40px;
+        padding: 3px 9px;
+    }
+
+    .game-content {
+        padding: 20px 15px;
+    }
+
+    .slot-reels span {
+        font-size: 38px;
+        padding: 4px 8px;
     }
 
     .section-heading h2 {
         font-size: 29px;
     }
 
-    .slots-art span {
-        font-size: 42px;
-        padding: 6px 9px;
-    }
-
-    .game-card {
-        padding: 20px 12px;
+    .stat-card h3 {
+        font-size: 26px;
     }
 
     .wallet {
         width: 100%;
+    }
+
+    nav a {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .game-card,
+    .main-button,
+    .play-button {
+        transition: none;
     }
 }

@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Neon Empire Casino | Lobby</title>
+    <title>Neon Empire | Casino Lobby</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="casino-lobby.css?v=2">
     <script src="script.js" defer></script>
 </head>
 
@@ -42,36 +42,64 @@
 
     <main>
 
-        <!-- WELCOME SECTION -->
+        <!-- LUXURY CASINO WELCOME -->
         <section class="hero">
 
-            <p class="hero-label">
-                ✦ WELCOME TO NEON EMPIRE ✦
-            </p>
+            <div class="hero-content">
 
-            <h2>
-                YOUR FORTUNE
-                <span>AWAITS</span>
-            </h2>
+                <p class="hero-label">
+                    ✦ WELCOME TO NEON EMPIRE ✦
+                </p>
 
-            <p class="hero-description">
-                Enter the ultimate Vegas Neon Casino.
-                Play exciting casino games, test your luck,
-                and build your fortune using virtual credits.
-            </p>
+                <h2>
+                    YOUR FORTUNE
+                    <span>AWAITS</span>
+                </h2>
 
-            <a href="#games" class="main-button">
-                🎰 EXPLORE THE CASINO
-            </a>
+                <p class="hero-description">
+                    Welcome to the ultimate Vegas Neon Casino.
+                    Experience the excitement of the casino floor,
+                    play your favorite games, and build your fortune
+                    with virtual credits.
+                </p>
+
+                <a href="#games" class="main-button">
+                    🎰 ENTER THE CASINO FLOOR
+                </a>
+
+                <p class="hero-note">
+                    ✦ VIRTUAL CREDITS ONLY ✦
+                </p>
+
+            </div>
+
+            <div class="jackpot-display">
+
+                <div class="jackpot-title">
+                    ★ JACKPOT ★
+                </div>
+
+                <div class="jackpot-reels">
+                    <span>7</span>
+                    <span>7</span>
+                    <span>7</span>
+                </div>
+
+                <p>THE LUCKY SEVENS</p>
+
+            </div>
 
         </section>
 
-        <!-- MAIN CASINO FLOOR -->
+        <!-- CASINO FLOOR -->
         <section id="games" class="casino-floor">
 
             <div class="section-heading">
-                <p>✦ THE ULTIMATE CASINO EXPERIENCE ✦</p>
-                <h2>Casino Floor</h2>
+                <p>✦ DISCOVER YOUR NEXT BIG WIN ✦</p>
+                <h2>The Casino Floor</h2>
+                <span>
+                    Choose your game and test your luck.
+                </span>
             </div>
 
             <div class="casino-layout">
@@ -79,61 +107,82 @@
                 <!-- PLAYER PROFILE -->
                 <aside class="player-panel">
 
-                    <h3>♛ PLAYER PROFILE</h3>
+                    <div class="profile-heading">
+                        <h3>♛ PLAYER PROFILE</h3>
+                        <p>NEON EMPIRE MEMBER</p>
+                    </div>
+
+                    <div class="profile-avatar">
+                        👑
+                    </div>
 
                     <div class="profile-balance">
-                        <span>💰 AVAILABLE CREDITS</span>
+                        <span>AVAILABLE CREDITS</span>
                         <h2 id="balance">5,000</h2>
+                        <p>💰 Virtual Casino Wallet</p>
                     </div>
 
                     <div class="profile-level">
-                        <span>PLAYER LEVEL</span>
+                        <span>CURRENT PLAYER LEVEL</span>
                         <h2 id="player-level">1</h2>
+                        <p>Keep playing to level up!</p>
                     </div>
 
                     <div class="profile-reputation">
                         <span>CASINO STATUS</span>
-                        <p>⭐ NEON ROOKIE</p>
+                        <h3>⭐ NEON ROOKIE</h3>
                     </div>
 
                     <a href="#statistics" class="profile-button">
-                        VIEW STATISTICS
+                        VIEW MY STATISTICS
                     </a>
 
                 </aside>
 
-                <!-- GAME SELECTION -->
+                <!-- GAME CARDS -->
                 <div class="game-grid">
 
                     <!-- COIN FLIP -->
                     <article class="game-card">
 
                         <div class="game-art coin-art">
-                            🪙
+
+                            <div class="gold-coin">
+                                👑
+                            </div>
+
                         </div>
 
-                        <h3>Coin Flip</h3>
+                        <div class="game-content">
 
-                        <p>
-                            Heads or tails? Make your prediction
-                            and test your luck in this classic
-                            casino game.
-                        </p>
+                            <span class="game-category">
+                                CLASSIC CASINO GAME
+                            </span>
 
-                        <div class="game-details">
-                            <span>⚡ Quick Rounds</span>
-                            <span>💰 2x Payout</span>
+                            <h3>🪙 Coin Flip</h3>
+
+                            <p>
+                                Heads or tails? Choose your side,
+                                flip the golden coin, and discover
+                                whether luck is on your side.
+                            </p>
+
+                            <div class="game-details">
+                                <span>⚡ Quick Rounds</span>
+                                <span>💰 2x Payout</span>
+                            </div>
+
+                            <a href="coinflip/game.html"
+                               class="play-button">
+                                ▶ PLAY COIN FLIP
+                            </a>
+
+                            <a href="coinflip/instructions.html"
+                               class="instructions-button">
+                                📖 HOW TO PLAY
+                            </a>
+
                         </div>
-
-                        <a href="coinflip/game.html"
-                           class="play-button">
-                            ▶ PLAY NOW
-                        </a>
-
-                        <a href="coinflip/instructions.html"
-                           class="instructions-button">
-                            HOW TO PLAY
-                        </a>
 
                     </article>
 
@@ -141,33 +190,51 @@
                     <article class="game-card">
 
                         <div class="game-art slots-art">
-                            <span>7</span>
-                            <span>7</span>
-                            <span>7</span>
+
+                            <div class="slot-machine-art">
+                                <div class="slot-title">
+                                    ★ NEON JACKPOT ★
+                                </div>
+
+                                <div class="slot-reels">
+                                    <span>7</span>
+                                    <span>7</span>
+                                    <span>7</span>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <h3>Neon Slots</h3>
+                        <div class="game-content">
 
-                        <p>
-                            Spin the glowing reels, match
-                            symbols, and chase the ultimate
-                            neon jackpot.
-                        </p>
+                            <span class="game-category">
+                                JACKPOT CASINO GAME
+                            </span>
 
-                        <div class="game-details">
-                            <span>🎰 3 Reels</span>
-                            <span>💎 Up to 10x</span>
+                            <h3>🎰 Neon Slots</h3>
+
+                            <p>
+                                Spin the glowing slot machine,
+                                match winning symbols, and
+                                chase the ultimate neon jackpot.
+                            </p>
+
+                            <div class="game-details">
+                                <span>🎰 Three Reels</span>
+                                <span>💎 Up to 10x</span>
+                            </div>
+
+                            <a href="slots/game.html"
+                               class="play-button">
+                                ▶ PLAY NEON SLOTS
+                            </a>
+
+                            <a href="slots/instructions.html"
+                               class="instructions-button">
+                                📖 HOW TO PLAY
+                            </a>
+
                         </div>
-
-                        <a href="slots/game.html"
-                           class="play-button">
-                            ▶ PLAY NOW
-                        </a>
-
-                        <a href="slots/instructions.html"
-                           class="instructions-button">
-                            HOW TO PLAY
-                        </a>
 
                     </article>
 
@@ -177,7 +244,7 @@
 
         </section>
 
-        <!-- CASINO STATISTICS -->
+        <!-- PLAYER STATISTICS -->
         <section id="statistics" class="dashboard">
 
             <div class="section-heading">
@@ -189,26 +256,30 @@
 
                 <div class="stat-card">
                     <div class="stat-icon">💰</div>
-                    <h3 id="stat-balance">5,000</h3>
                     <p>AVAILABLE CREDITS</p>
+                    <h3 id="stat-balance">5,000</h3>
+                    <span>Your virtual balance</span>
                 </div>
 
                 <div class="stat-card">
                     <div class="stat-icon">🎮</div>
-                    <h3 id="games-played">0</h3>
                     <p>GAMES PLAYED</p>
+                    <h3 id="games-played">0</h3>
+                    <span>Total completed rounds</span>
                 </div>
 
                 <div class="stat-card">
                     <div class="stat-icon">🏆</div>
-                    <h3 id="wins">0</h3>
                     <p>TOTAL WINS</p>
+                    <h3 id="wins">0</h3>
+                    <span>Your winning rounds</span>
                 </div>
 
                 <div class="stat-card">
                     <div class="stat-icon">⭐</div>
-                    <h3 id="stat-level">1</h3>
                     <p>PLAYER LEVEL</p>
+                    <h3 id="stat-level">1</h3>
+                    <span>Level up every 10 games</span>
                 </div>
 
             </div>
@@ -219,19 +290,17 @@
         <section id="about" class="about-section">
 
             <div class="section-heading">
-                <p>✦ WELCOME TO THE EMPIRE ✦</p>
-                <h2>The Neon Experience</h2>
+                <p>✦ THE NEON EMPIRE EXPERIENCE ✦</p>
+                <h2>Welcome to the Empire</h2>
             </div>
 
             <div class="features-grid">
 
                 <div class="feature">
                     <div class="feature-icon">💎</div>
-
                     <h3>Virtual Fortune</h3>
-
                     <p>
-                        Begin with 5,000 virtual credits
+                        Start with 5,000 virtual credits
                         and use your balance across
                         every casino game.
                     </p>
@@ -239,25 +308,21 @@
 
                 <div class="feature">
                     <div class="feature-icon">🎰</div>
-
-                    <h3>Exciting Games</h3>
-
+                    <h3>Exciting Casino Games</h3>
                     <p>
-                        Enjoy Coin Flip and Neon Slots,
-                        each featuring different rules,
-                        payouts, and winning opportunities.
+                        Play Coin Flip and Neon Slots,
+                        each featuring different
+                        rules and winning opportunities.
                     </p>
                 </div>
 
                 <div class="feature">
                     <div class="feature-icon">🏆</div>
-
-                    <h3>Build Your Legacy</h3>
-
+                    <h3>Track Your Progress</h3>
                     <p>
-                        Track your victories, increase
-                        your player level, and build
-                        your casino fortune.
+                        Monitor your balance, total wins,
+                        games played, and player level
+                        throughout your casino journey.
                     </p>
                 </div>
 
@@ -271,8 +336,8 @@
             <h2>⚙ Player Account</h2>
 
             <p>
-                Your casino credits and statistics
-                are automatically saved in your browser.
+                Your virtual credits and statistics are
+                automatically saved in this browser.
             </p>
 
             <button onclick="resetProgress()" class="reset-button">
