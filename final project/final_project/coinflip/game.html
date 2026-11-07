@@ -1,4 +1,3 @@
-<!--Interactive coin flip with heads/tails buttons-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,32 +8,35 @@
 
     <title>Play Coin Flip | Neon Empire</title>
 
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="coinflip.css">
 
+    <!-- Shared casino wallet and statistics -->
     <script src="../script.js" defer></script>
+
+    <!-- Coin Flip game logic -->
     <script src="coinflip.js" defer></script>
 </head>
 
 <body>
 
     <!-- CASINO HEADER -->
-    <header class="site-header">
+    <header class="coin-header">
 
-        <div class="header-content">
+        <div class="coin-header-content">
 
-            <div class="logo">
-                <h1>♛ NEON EMPIRE</h1>
-                <p>THE ULTIMATE CASINO</p>
-            </div>
+            <a href="../index.html" class="casino-logo">
+                <span>♛ NEON EMPIRE</span>
+                <small>THE ULTIMATE CASINO</small>
+            </a>
 
-            <nav>
+            <nav class="coin-nav">
                 <a href="../index.html">Lobby</a>
                 <a href="../index.html#games">Casino Floor</a>
                 <a href="instructions.html">Instructions</a>
                 <a href="game.html" class="active">Coin Flip</a>
             </nav>
 
-            <div class="wallet">
+            <div class="coin-wallet">
                 <span>💰 YOUR BALANCE</span>
                 <strong id="header-balance">5,000 CR</strong>
             </div>
@@ -43,109 +45,165 @@
 
     </header>
 
-    <main class="coin-page">
+    <main class="coin-container">
 
-        <!-- GAME TITLE -->
-        <section class="coin-heading">
+        <!-- GAME INTRODUCTION -->
+        <section class="game-intro">
 
-            <p class="hero-label">
-                ✦ THE NEON EMPIRE CASINO ✦
-            </p>
+            <p class="eyebrow">✦ NEON EMPIRE CASINO ✦</p>
 
-            <h2>🪙 COIN FLIP</h2>
+            <h1>🪙 COIN FLIP</h1>
 
             <p>
-                Heads or Tails? Choose your side
-                and double your bet!
+                Choose your side, place your wager,
+                and see where the coin lands.
             </p>
+
+            <a href="instructions.html" class="small-guide">
+                📖 VIEW GAME INSTRUCTIONS
+            </a>
 
         </section>
 
-        <!-- MAIN GAME -->
-        <section class="coin-game">
+        <!-- GAME AREA -->
+        <section class="coin-game-container">
 
-            <div class="coin-game-top">
+            <!-- GAME BALANCE -->
+            <div class="game-top-stats">
 
-                <div class="coin-balance-box">
+                <div class="game-stat">
                     <span>💰 AVAILABLE CREDITS</span>
-                    <h3 id="balance">5,000</h3>
+                    <strong id="balance">5,000</strong>
                 </div>
 
-                <div class="coin-balance-box">
+                <div class="game-stat">
                     <span>🏆 TOTAL WINS</span>
-                    <h3 id="wins">0</h3>
+                    <strong id="wins">0</strong>
                 </div>
 
             </div>
 
-            <!-- ANIMATED COIN -->
-            <div class="coin-stage">
+            <!-- COIN DISPLAY -->
+            <div class="coin-display-area">
 
-                <div class="coin-disc" id="coin-disc">
-                    <span id="coin-face">?</span>
+                <p class="display-label">THE GOLDEN COIN</p>
+
+                <div class="coin-scene">
+
+                    <div class="coin" id="coin-disc">
+
+                        <div class="coin-inner">
+                            <span id="coin-face">?</span>
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <p id="coin-status">
-                    The coin is ready!
+                <h2 id="coin-status">
+                    READY TO FLIP?
+                </h2>
+
+                <p class="coin-substatus">
+                    Choose Heads or Tails to get started.
                 </p>
 
             </div>
 
-            <!-- BETTING -->
-            <div class="betting-section">
+            <!-- BETTING AREA -->
+            <div class="betting-area">
 
                 <h3>PLACE YOUR BET</h3>
 
                 <label for="bet">
-                    Amount in Credits
+                    Enter Your Wager (Credits)
                 </label>
 
-                <input
-                    type="number"
-                    id="bet"
-                    min="1"
-                    step="1"
-                    value="100"
-                >
+                <div class="bet-input-area">
 
-                <p>
-                    Select Heads or Tails to flip the coin.
-                </p>
+                    <span>CR</span>
+
+                    <input
+                        type="number"
+                        id="bet"
+                        value="100"
+                        min="1"
+                        step="1"
+                        max="5000"
+                    >
+
+                </div>
+
+                <div class="bet-suggestions">
+
+                    <button type="button" onclick="setBet(50)">
+                        50
+                    </button>
+
+                    <button type="button" onclick="setBet(100)">
+                        100
+                    </button>
+
+                    <button type="button" onclick="setBet(250)">
+                        250
+                    </button>
+
+                    <button type="button" onclick="setBet(500)">
+                        500
+                    </button>
+
+                </div>
 
             </div>
 
-            <!-- HEADS OR TAILS -->
-            <div class="coin-choices">
+            <!-- COIN CHOICES -->
+            <div class="choice-area">
 
-                <button
-                    id="heads-button"
-                    onclick="flipCoin('heads')"
-                    class="choice-button">
+                <h3>MAKE YOUR PREDICTION</h3>
 
-                    👑 HEADS
+                <div class="choice-buttons">
 
-                </button>
+                    <button
+                        type="button"
+                        id="heads-button"
+                        class="coin-choice heads-choice"
+                        onclick="flipCoin('heads')">
 
-                <button
-                    id="tails-button"
-                    onclick="flipCoin('tails')"
-                    class="choice-button">
+                        <span>👑</span>
+                        HEADS
 
-                    🪙 TAILS
+                        <small>Choose Heads</small>
 
-                </button>
+                    </button>
+
+                    <button
+                        type="button"
+                        id="tails-button"
+                        class="coin-choice tails-choice"
+                        onclick="flipCoin('tails')">
+
+                        <span>🪙</span>
+                        TAILS
+
+                        <small>Choose Tails</small>
+
+                    </button>
+
+                </div>
 
             </div>
 
             <!-- GAME RESULT -->
-            <div class="coin-result" aria-live="polite">
+            <div class="result-box" aria-live="polite">
 
-                <h3 id="coin-result">
-                    Choose a side to begin!
-                </h3>
+                <p class="result-label">LATEST RESULT</p>
+
+                <h2 id="coin-result">
+                    YOUR NEXT FLIP AWAITS
+                </h2>
 
                 <p id="coin-winnings">
-                    Winning pays 2x your bet.
+                    Winning payout: 2x your bet.
                 </p>
 
             </div>
@@ -153,52 +211,55 @@
         </section>
 
         <!-- PLAYER STATISTICS -->
-        <section class="coin-panel">
+        <section class="coin-statistics">
 
-            <h2>📊 Your Casino Statistics</h2>
+            <div class="statistics-heading">
+                <p>✦ YOUR CASINO PROGRESS ✦</p>
+                <h2>Player Statistics</h2>
+            </div>
 
-            <div class="coin-stats">
+            <div class="coin-stat-grid">
 
-                <div class="coin-stat">
+                <div class="coin-stat-card">
                     <span>🎮</span>
                     <h3 id="games-played">0</h3>
-                    <p>Games Played</p>
+                    <p>Total Games Played</p>
                 </div>
 
-                <div class="coin-stat">
+                <div class="coin-stat-card">
                     <span>🏆</span>
                     <h3 id="player-level">1</h3>
-                    <p>Player Level</p>
+                    <p>Current Player Level</p>
                 </div>
 
             </div>
 
-            <p class="coin-intro">
-                These statistics include all your
-                completed casino games.
-            </p>
-
         </section>
 
-        <!-- NAVIGATION -->
-        <div class="coin-navigation">
+        <!-- BOTTOM NAVIGATION -->
+        <section class="game-navigation">
 
-            <a href="instructions.html" class="coin-back">
+            <a href="instructions.html">
                 📖 Game Instructions
             </a>
 
-            <a href="../index.html" class="coin-back">
+            <a href="../index.html">
                 ← Back to Casino Lobby
             </a>
 
-        </div>
+        </section>
 
     </main>
 
-    <footer>
+    <!-- FOOTER -->
+    <footer class="coin-footer">
+
         <h3>♛ NEON EMPIRE</h3>
-        <p>The Ultimate Virtual Casino</p>
-        <p>Fictional Credits Only • No Real Money</p>
+
+        <p>THE ULTIMATE VIRTUAL CASINO</p>
+
+        <p>Fictional Credits Only • No Real Money or Prizes</p>
+
     </footer>
 
 </body>

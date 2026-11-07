@@ -1,84 +1,106 @@
 
+// =====================================
 // NEON EMPIRE - COIN FLIP GAME
+// =====================================
 
-// Track whether the coin is currently flipping
+// Tracks whether a coin flip is happening
 let isFlipping = false;
 
-// Flip the coin
-function flipCoin(choice) {
 
-    // Prevent another flip during animation
+// =====================================
+// SET A BET AMOUNT
+// =====================================
+
+function setBet(amount) {
+
     if (isFlipping === true) {
         return;
     }
 
-    // Get the player's bet
+    document.getElementById("bet").value = amount;
+}
+
+
+// =====================================
+// FLIP THE COIN
+// =====================================
+
+function flipCoin(choice) {
+
+    // Prevent multiple flips at once
+    if (isFlipping === true) {
+        return;
+    }
+
+    // Check the player's wager
     let bet = getBet();
 
-    // Stop if the bet is invalid
     if (bet === 0) {
         return;
     }
 
-    // Generate a random result
-    let random = Math.floor(Math.random() * 2);
+    // Generate a random coin result
+    let randomNumber = Math.floor(Math.random() * 2);
 
     let result;
 
-    if (random === 0) {
+    if (randomNumber === 0) {
         result = "heads";
     }
     else {
         result = "tails";
     }
 
-    // Start the animation
-    isFlipping = true;
-
+    // Find the HTML elements
     let coin = document.getElementById("coin-disc");
     let coinFace = document.getElementById("coin-face");
+
+    let status = document.getElementById("coin-status");
+    let coinResult = document.getElementById("coin-result");
+    let winnings = document.getElementById("coin-winnings");
 
     let headsButton = document.getElementById("heads-button");
     let tailsButton = document.getElementById("tails-button");
     let betInput = document.getElementById("bet");
 
+    // Start the flip
+    isFlipping = true;
+
     headsButton.disabled = true;
     tailsButton.disabled = true;
     betInput.disabled = true;
 
-    coinFace.textContent = "🪙";
+    // Update messages
+    status.textContent = "THE COIN IS FLIPPING...";
+    coinResult.textContent = "GOOD LUCK!";
+    winnings.textContent = "Your wager: " + bet + " credits.";
 
-    document.getElementById("coin-status").textContent =
-        "Flipping the coin...";
+    coinFace.textContent = "?";
 
-    document.getElementById("coin-result").textContent =
-        "Good luck!";
-
-    document.getElementById("coin-winnings").textContent =
-        "Your bet: " + bet + " credits";
-
-    // Restart animation
-    coin.classList.remove("is-flipping");
+    // Restart the animation
+    coin.classList.remove("flipping");
 
     void coin.offsetWidth;
 
-    coin.classList.add("is-flipping");
+    coin.classList.add("flipping");
 
-    // Show the result after the animation
+    // Reveal the outcome after the animation
     setTimeout(function() {
 
         let payout = 0;
         let message = "";
 
-        // Show the coin result
+        // Display the correct coin side
         if (result === "heads") {
+
             coinFace.textContent = "👑";
         }
         else {
+
             coinFace.textContent = "🪙";
         }
 
-        // Check whether the player won
+        // Check the player's prediction
         if (choice === result) {
 
             payout = bet * 2;
@@ -89,41 +111,40 @@ function flipCoin(choice) {
 
             payout = 0;
 
-            message = "Better luck next time!";
+            message = "BETTER LUCK NEXT TIME!";
         }
 
-        // Update shared casino balance
+        // Update the shared casino wallet
         finishGame(bet, payout);
 
-        // Display the outcome
-        document.getElementById("coin-status").textContent =
-            "The coin landed on " + result.toUpperCase() + "!";
+        // Display the result
+        status.textContent =
+            "THE COIN LANDED ON " + result.toUpperCase() + "!";
 
-        document.getElementById("coin-result").textContent =
-            message;
+        coinResult.textContent = message;
 
-        // Display winnings or losses
+        // Display the payout
         if (payout > 0) {
 
-            document.getElementById("coin-winnings").textContent =
-                "You won " + bet + " credits in profit!" +
-                " Total payout: " + payout + " credits.";
+            winnings.textContent =
+                "You received " + payout +
+                " credits. Profit: " + bet + " credits.";
         }
         else {
 
-            document.getElementById("coin-winnings").textContent =
+            winnings.textContent =
                 "You lost " + bet + " credits.";
         }
 
-        // End animation
-        coin.classList.remove("is-flipping");
+        // Remove animation class
+        coin.classList.remove("flipping");
 
-        // Allow the player to flip again
+        // Allow another game
         headsButton.disabled = false;
         tailsButton.disabled = false;
         betInput.disabled = false;
 
         isFlipping = false;
 
-    }, 1000);
+    }, 1100);
 }
