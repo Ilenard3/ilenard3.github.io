@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Find the Tennis Ball | Neon Empire Casino</title>
+
+    <!-- Tennis Ball styling -->
+    <link rel="stylesheet" href="tennisball.css">
+
+    <!-- Shared casino wallet and statistics -->
+    <script src="../script.js" defer></script>
+
+    <!-- Tennis Ball gameplay -->
+    <script src="tennisball.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="tennis-header">
+
+        <div class="tennis-header-inner">
+
+            <a href="../index.html" class="tennis-logo">
+                <span>♛ NEON EMPIRE</span>
+                <small>THE ULTIMATE CASINO</small>
+            </a>
+
+            <nav class="tennis-nav" aria-label="Main navigation">
+
+                <a href="../index.html">
+                    Lobby
+                </a>
+
+                <a href="../index.html#games">
+                    Casino Floor
+                </a>
+
+                <a href="../index.html#floor2">
+                    Second Floor
+                </a>
+
+                <a href="instructions.html">
+                    Instructions
+                </a>
+
+                <a
+                    href="game.html"
+                    class="active"
+                    aria-current="page">
+                    Tennis Ball
+                </a>
+
+            </nav>
+
+            <div class="tennis-wallet">
+                <span>💰 YOUR BALANCE</span>
+                <strong id="header-balance">5,000 CR</strong>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="tennis-container">
+
+        <!-- INTRODUCTION -->
+        <section class="tennis-game-hero">
+
+            <p class="tennis-eyebrow">
+                ✦ NEON EMPIRE ORIGINALS ✦
+            </p>
+
+            <h1>🎾 FIND THE TENNIS BALL</h1>
+
+            <p>
+                Three cups. One hidden tennis ball.
+                Place your wager and pick the winning cup!
+            </p>
+
+            <a href="instructions.html" class="tennis-guide">
+                📖 GAME RULES AND PAYOUTS
+            </a>
+
+        </section>
+
+        <!-- MAIN GAME -->
+        <section
+            class="tennis-game"
+            aria-labelledby="tennis-game-heading">
+
+            <div class="tennis-content">
+
+                <!-- SHARED PLAYER INFORMATION -->
+                <div class="tennis-top-stats">
+
+                    <div class="tennis-stat-box">
+                        <span>💰 AVAILABLE CREDITS</span>
+                        <strong id="balance">5,000</strong>
+                    </div>
+
+                    <div class="tennis-stat-box">
+                        <span>🏆 TOTAL WINS</span>
+                        <strong id="wins">0</strong>
+                    </div>
+
+                </div>
+
+                <h2
+                    id="tennis-game-heading"
+                    class="tennis-game-heading">
+                    ★ WHICH CUP HIDES THE BALL? ★
+                </h2>
+
+                <!-- BETTING -->
+                <div class="tennis-betting">
+
+                    <label for="tennis-bet">
+                        💰 Your Wager in Credits
+                    </label>
+
+                    <input
+                        type="number"
+                        id="tennis-bet"
+                        value="100"
+                        min="5"
+                        step="5"
+                        inputmode="numeric"
+                        aria-describedby="tennis-bet-help">
+
+                    <div class="tennis-quick-bets">
+
+                        <button
+                            type="button"
+                            onclick="setTennisBet(25)">
+                            25
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="setTennisBet(50)">
+                            50
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="setTennisBet(100)">
+                            100
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="setTennisBet(250)">
+                            250
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="setTennisBet(500)">
+                            500
+                        </button>
+
+                        <button
+                            type="button"
+                            onclick="setTennisBet(1000)">
+                            1,000
+                        </button>
+
+                    </div>
+
+                    <p id="tennis-bet-help" class="tennis-bet-note">
+                        Wager at least 5 credits in multiples of 5.
+                        Selecting a cup places your wager immediately.
+                    </p>
+
+                </div>
+
+                <!-- CUP SELECTION -->
+                <div class="tennis-stage">
+
+                    <p id="tennis-stage-message" class="tennis-stage-message">
+                        Choose one cup to reveal the tennis ball.
+                    </p>
+
+                    <div
+                        class="tennis-cup-grid"
+                        role="group"
+                        aria-label="Choose one of three cups">
+
+                        <!-- CUP 1 -->
+                        <button
+                            type="button"
+                            id="tennis-cup-1"
+                            class="tennis-cup"
+                            aria-label="Choose cup 1"
+                            onclick="pickTennisCup(0)">
+
+                            <span
+                                class="tennis-cup-art"
+                                aria-hidden="true">
+                            </span>
+
+                            <span
+                                id="tennis-reveal-1"
+                                class="tennis-reveal"
+                                aria-hidden="true">
+                                ?
+                            </span>
+
+                            <strong>CUP 1</strong>
+
+                        </button>
+
+                        <!-- CUP 2 -->
+                        <button
+                            type="button"
+                            id="tennis-cup-2"
+                            class="tennis-cup"
+                            aria-label="Choose cup 2"
+                            onclick="pickTennisCup(1)">
+
+                            <span
+                                class="tennis-cup-art"
+                                aria-hidden="true">
+                            </span>
+
+                            <span
+                                id="tennis-reveal-2"
+                                class="tennis-reveal"
+                                aria-hidden="true">
+                                ?
+                            </span>
+
+                            <strong>CUP 2</strong>
+
+                        </button>
+
+                        <!-- CUP 3 -->
+                        <button
+                            type="button"
+                            id="tennis-cup-3"
+                            class="tennis-cup"
+                            aria-label="Choose cup 3"
+                            onclick="pickTennisCup(2)">
+
+                            <span
+                                class="tennis-cup-art"
+                                aria-hidden="true">
+                            </span>
+
+                            <span
+                                id="tennis-reveal-3"
+                                class="tennis-reveal"
+                                aria-hidden="true">
+                                ?
+                            </span>
+
+                            <strong>CUP 3</strong>
+
+                        </button>
+
+                    </div>
+
+                    <p class="tennis-stage-note">
+                        Each cup has an equal chance of hiding the ball.
+                        A correct choice pays 2.8× your wager.
+                    </p>
+
+                </div>
+
+                <!-- NEXT ROUND -->
+                <button
+                    type="button"
+                    id="tennis-again-button"
+                    class="tennis-play-button"
+                    onclick="resetTennisRound()"
+                    disabled>
+                    🎾 PLAY AGAIN
+                </button>
+
+                <!-- RESULT -->
+                <div
+                    class="tennis-result-box"
+                    role="status"
+                    aria-live="polite"
+                    aria-atomic="true">
+
+                    <h2 id="tennis-result-title">
+                        WHERE IS THE TENNIS BALL?
+                    </h2>
+
+                    <p id="tennis-result-detail">
+                        Enter your wager, then select one cup.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- PAYOUT SUMMARY -->
+        <section
+            class="tennis-payout-section"
+            aria-labelledby="tennis-payout-heading">
+
+            <h2 id="tennis-payout-heading">
+                🏆 Quick Payout Guide
+            </h2>
+
+            <table class="tennis-payout-table">
+
+                <caption>
+                    Total payout includes your original wager.
+                </caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Result</th>
+                        <th scope="col">Total Payout</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Choose the cup with the tennis ball</td>
+                        <td>2.8× your wager</td>
+                    </tr>
+
+                    <tr>
+                        <td>Choose an empty cup</td>
+                        <td>0 credits</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <p class="tennis-example">
+                Example: a winning wager of 100 credits returns
+                280 credits total, earning a profit of 180 credits.
+            </p>
+
+        </section>
+
+        <!-- SHARED STATISTICS -->
+        <section
+            class="tennis-statistics"
+            aria-labelledby="tennis-statistics-heading">
+
+            <h2 id="tennis-statistics-heading">
+                Your Casino Progress
+            </h2>
+
+            <div class="tennis-top-stats">
+
+                <div class="tennis-stat-box">
+                    <span>🎮 GAMES PLAYED</span>
+                    <strong id="games-played">0</strong>
+                </div>
+
+                <div class="tennis-stat-box">
+                    <span>⭐ PLAYER LEVEL</span>
+                    <strong id="player-level">1</strong>
+                </div>
+
+            </div>
+
+            <p class="tennis-shared-note">
+                Your balance and statistics are shared across
+                all Neon Empire games.
+            </p>
+
+        </section>
+
+        <!-- BOTTOM NAVIGATION -->
+        <nav
+            class="tennis-bottom-navigation"
+            aria-label="Game navigation">
+
+            <a href="instructions.html" class="tennis-guide">
+                📖 How to Play
+            </a>
+
+            <a href="../index.html#floor2" class="tennis-guide">
+                Back to Second Floor
+            </a>
+
+        </nav>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="tennis-footer">
+
+        <h2>♛ NEON EMPIRE</h2>
+
+        <p>THE ULTIMATE VIRTUAL CASINO</p>
+
+        <p>Educational Project • Fictional Credits Only</p>
+
+    </footer>
+
+</body>
+</html>

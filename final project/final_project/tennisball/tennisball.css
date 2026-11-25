@@ -1,0 +1,806 @@
+/* ==========================================
+   NEON EMPIRE CASINO
+   FIND THE TENNIS BALL
+   GAME AND INSTRUCTIONS STYLES
+   ========================================== */
+
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff2e8;
+    line-height: 1.6;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(120, 30, 155, 0.3),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #10071d,
+            #1e0b32,
+            #100719
+        );
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #ffd36d;
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.tennis-header {
+    padding: 18px 25px;
+
+    background: rgba(15, 5, 28, 0.97);
+    border-bottom: 2px solid #e93bd1;
+
+    box-shadow: 0 5px 30px rgba(211, 38, 201, 0.3);
+}
+
+.tennis-header-inner {
+    max-width: 1250px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.tennis-logo {
+    text-align: center;
+}
+
+.tennis-logo span {
+    display: block;
+
+    color: #ffd36d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    text-shadow: 0 0 15px rgba(255, 185, 65, 0.4);
+}
+
+.tennis-logo small {
+    display: block;
+    margin-top: 3px;
+
+    color: #e9a4e6;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.tennis-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.tennis-nav a {
+    padding: 11px 14px;
+
+    color: #e9d8ef;
+    font-size: 14px;
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    transition:
+        background 0.2s,
+        box-shadow 0.2s;
+}
+
+.tennis-nav a:hover,
+.tennis-nav a.active {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #75209e,
+        #d12abb
+    );
+
+    box-shadow: 0 0 15px rgba(233, 59, 209, 0.45);
+}
+
+.tennis-wallet {
+    padding: 9px 20px;
+    text-align: center;
+
+    background: #2b1740;
+    border: 2px solid #d9ad5c;
+    border-radius: 12px;
+
+    box-shadow: 0 0 15px rgba(217, 173, 92, 0.25);
+}
+
+.tennis-wallet span {
+    display: block;
+
+    color: #e6c2e8;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.tennis-wallet strong {
+    display: block;
+    color: #ffda80;
+    font-size: 22px;
+}
+
+/* ==========================================
+   MAIN LAYOUT AND INTRODUCTION
+   ========================================== */
+
+.tennis-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 20px;
+}
+
+.tennis-game-hero {
+    padding: 50px 30px;
+    margin-bottom: 35px;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #301344,
+        #170a29
+    );
+
+    border: 1px solid #b35ac5;
+    border-radius: 20px;
+
+    box-shadow: 0 0 25px rgba(193, 44, 202, 0.2);
+}
+
+.tennis-eyebrow {
+    color: #ff9bea;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.tennis-game-hero h1 {
+    margin: 20px 0;
+
+    color: #ffd36d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(28px, 5vw, 48px);
+    line-height: 1.2;
+}
+
+.tennis-game-hero > p:not(.tennis-eyebrow) {
+    max-width: 700px;
+    margin: 20px auto;
+
+    color: #e5d0ed;
+    font-size: 16px;
+}
+
+.tennis-guide {
+    display: inline-block;
+    padding: 13px 20px;
+    margin-top: 15px;
+
+    color: #ffda80;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+
+    background: #261036;
+    border: 1px solid #d9ad5c;
+    border-radius: 9px;
+
+    transition:
+        background 0.2s,
+        box-shadow 0.2s;
+}
+
+.tennis-guide:hover {
+    background: #4a235d;
+    box-shadow: 0 0 15px rgba(217, 173, 92, 0.2);
+}
+
+/* ==========================================
+   MAIN GAME
+   ========================================== */
+
+.tennis-game {
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        #301344,
+        #1a0b2c
+    );
+
+    border: 2px solid #d64cd5;
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 20px rgba(220, 55, 210, 0.25),
+        0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.tennis-content {
+    padding: 30px;
+}
+
+.tennis-game-heading {
+    margin: 30px 0 20px;
+
+    color: #ffd36d;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* BALANCE AND STATISTICS */
+
+.tennis-top-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.tennis-stat-box {
+    min-width: 0;
+    padding: 20px 15px;
+    text-align: center;
+
+    background: #321b45;
+    border: 1px solid #b366c6;
+    border-radius: 12px;
+}
+
+.tennis-stat-box span {
+    display: block;
+    color: #e6c2e8;
+    font-size: 14px;
+}
+
+.tennis-stat-box strong {
+    display: block;
+    margin-top: 8px;
+
+    color: #ffd36d;
+    font-size: 32px;
+    overflow-wrap: anywhere;
+}
+
+/* WAGER CONTROLS */
+
+.tennis-betting {
+    margin: 25px 0;
+}
+
+.tennis-betting label {
+    display: block;
+    margin-bottom: 10px;
+
+    color: #ffda80;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tennis-betting input {
+    width: 100%;
+    min-width: 0;
+    padding: 14px;
+
+    color: #ffda80;
+    font-size: 22px;
+
+    background: #13091f;
+    border: 1px solid #a85fb9;
+    border-radius: 9px;
+}
+
+.tennis-quick-bets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.tennis-quick-bets button {
+    flex: 1 1 75px;
+    padding: 10px;
+
+    color: #f3d6f2;
+    font-size: 16px;
+    font-weight: bold;
+
+    background: #4c205f;
+    border: 1px solid #9b4eac;
+    border-radius: 7px;
+}
+
+.tennis-quick-bets button:hover:enabled {
+    background: #752b8a;
+}
+
+.tennis-betting input:disabled,
+.tennis-quick-bets button:disabled {
+    opacity: 0.6;
+}
+
+.tennis-bet-note {
+    color: #d9c2e5;
+    font-size: 14px;
+}
+
+/* ==========================================
+   CUP DISPLAY
+   ========================================== */
+
+.tennis-stage {
+    padding: 25px 20px;
+    margin-bottom: 25px;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(71, 110, 54, 0.2),
+            transparent 70%
+        ),
+        #160920;
+
+    border: 1px solid #76448c;
+    border-radius: 15px;
+}
+
+.tennis-stage-message {
+    margin-top: 0;
+
+    color: #ffda80;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tennis-cup-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.tennis-cup {
+    min-width: 0;
+    padding: 25px 10px 18px;
+
+    color: #fff2e8;
+    text-align: center;
+
+    background: linear-gradient(
+        145deg,
+        #35174d,
+        #21102f
+    );
+
+    border: 2px solid #a85fb9;
+    border-radius: 14px;
+
+    transition:
+        background 0.2s,
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.tennis-cup:hover:enabled {
+    background: #4c205f;
+    border-color: #ffd36d;
+    box-shadow: 0 0 18px rgba(255, 211, 109, 0.2);
+}
+
+/* An upside-down cup drawn with CSS. */
+
+.tennis-cup-art {
+    display: block;
+    position: relative;
+
+    width: 85%;
+    max-width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+
+    background: linear-gradient(
+        110deg,
+        #edb2ff,
+        #a34ccb 35%,
+        #652684 75%,
+        #39144f
+    );
+
+    border: 3px solid #edb2ff;
+    border-radius: 35px 35px 12px 12px;
+
+    box-shadow:
+        inset 10px 0 18px rgba(255, 255, 255, 0.15),
+        0 10px 15px rgba(0, 0, 0, 0.35);
+}
+
+.tennis-cup-art::after {
+    content: "";
+
+    position: absolute;
+    left: -7px;
+    right: -7px;
+    bottom: -5px;
+
+    height: 12px;
+
+    background: #c77be5;
+    border: 2px solid #edb2ff;
+    border-radius: 8px;
+}
+
+.tennis-cup strong {
+    display: block;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* Contents stay hidden until a cup is selected. */
+
+.tennis-reveal {
+    display: none;
+}
+
+.tennis-cup.revealed .tennis-cup-art {
+    display: none;
+}
+
+.tennis-cup.revealed .tennis-reveal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 130px;
+    margin-bottom: 20px;
+
+    color: #d9c2e5;
+    font-size: 68px;
+}
+
+/* Gold border marks the player's chosen cup. */
+
+.tennis-cup.selected {
+    border-color: #ffd36d;
+    box-shadow: 0 0 20px rgba(255, 211, 109, 0.3);
+}
+
+.tennis-cup.selected strong {
+    color: #ffd36d;
+}
+
+/* Green background marks the cup containing the ball. */
+
+.tennis-cup.has-ball {
+    background: linear-gradient(
+        145deg,
+        #32462b,
+        #18291c
+    );
+}
+
+.tennis-stage-note {
+    margin-bottom: 0;
+    color: #d9c2e5;
+    font-size: 14px;
+}
+
+/* ==========================================
+   PLAY AGAIN AND RESULTS
+   ========================================== */
+
+.tennis-play-button {
+    width: 100%;
+    padding: 17px;
+
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+
+    background: linear-gradient(
+        135deg,
+        #8e1fba,
+        #c42bb2
+    );
+
+    border: 2px solid #ff9bea;
+    border-radius: 10px;
+
+    box-shadow: 0 0 18px rgba(227, 51, 203, 0.3);
+}
+
+.tennis-play-button:hover:enabled {
+    background: #a52a9a;
+}
+
+.tennis-play-button:disabled {
+    opacity: 0.5;
+    box-shadow: none;
+}
+
+.tennis-result-box {
+    padding: 22px;
+    margin-top: 25px;
+    text-align: center;
+
+    background: #170a26;
+    border: 1px solid #76448c;
+    border-radius: 12px;
+}
+
+.tennis-result-box h2 {
+    margin: 0 0 10px;
+    color: #ffda80;
+    font-size: 24px;
+}
+
+.tennis-result-box p {
+    margin: 0;
+    color: #e5d0ed;
+    font-size: 16px;
+}
+
+/* ==========================================
+   INSTRUCTIONS AND PAYOUTS
+   ========================================== */
+
+.tennis-payout-section,
+.tennis-statistics {
+    padding: 30px;
+    margin-top: 30px;
+
+    background: linear-gradient(
+        145deg,
+        #2b123f,
+        #180a2a
+    );
+
+    border: 1px solid #a454b8;
+    border-radius: 15px;
+}
+
+.tennis-payout-section > h2,
+.tennis-statistics > h2 {
+    margin-top: 0;
+
+    color: #ffd36d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+}
+
+.tennis-rules-heading {
+    color: #ffd36d;
+    font-size: 24px;
+}
+
+.tennis-rules-list {
+    padding-left: 25px;
+    color: #e5d0ed;
+    font-size: 16px;
+}
+
+.tennis-rules-list li {
+    margin-bottom: 15px;
+}
+
+.tennis-payout-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 16px;
+}
+
+.tennis-payout-table caption {
+    margin-bottom: 12px;
+
+    color: #d9c2e5;
+    font-size: 14px;
+    text-align: left;
+}
+
+.tennis-payout-table th,
+.tennis-payout-table td {
+    padding: 14px 8px;
+    text-align: left;
+    border-bottom: 1px solid #76448c;
+}
+
+.tennis-payout-table th {
+    color: #ffd36d;
+}
+
+.tennis-payout-table td,
+.tennis-example {
+    color: #e5d0ed;
+    font-size: 16px;
+}
+
+.tennis-shared-note {
+    margin-top: 25px;
+
+    color: #d9c2e5;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ==========================================
+   BOTTOM NAVIGATION AND FOOTER
+   ========================================== */
+
+.tennis-bottom-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.tennis-footer {
+    padding: 35px 20px;
+    margin-top: 40px;
+    text-align: center;
+
+    background: #10061c;
+    border-top: 2px solid #a13bb1;
+}
+
+.tennis-footer h2 {
+    color: #ffd36d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+}
+
+.tennis-footer p {
+    color: #c9afd5;
+    font-size: 14px;
+}
+
+/* ==========================================
+   RESPONSIVE LAYOUT
+   ========================================== */
+
+@media (max-width: 1100px) {
+
+    .tennis-header-inner {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .tennis-container {
+        padding: 25px 12px;
+    }
+
+    .tennis-game-hero {
+        padding: 35px 18px;
+    }
+
+    .tennis-content,
+    .tennis-payout-section,
+    .tennis-statistics {
+        padding: 20px 15px;
+    }
+
+    .tennis-top-stats {
+        gap: 10px;
+    }
+
+    .tennis-stat-box {
+        padding: 15px 8px;
+    }
+
+    .tennis-stat-box strong {
+        font-size: 26px;
+    }
+
+    .tennis-stage {
+        padding: 20px 10px;
+    }
+
+    .tennis-cup-grid {
+        gap: 8px;
+    }
+
+    .tennis-cup {
+        padding: 20px 5px 15px;
+    }
+
+    .tennis-cup-art {
+        height: 90px;
+        border-radius: 22px 22px 8px 8px;
+    }
+
+    .tennis-cup.revealed .tennis-reveal {
+        height: 90px;
+        font-size: 45px;
+    }
+
+    .tennis-cup strong {
+        font-size: 14px;
+        letter-spacing: 0;
+    }
+
+    .tennis-game-heading {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .tennis-payout-table,
+    .tennis-payout-table td {
+        font-size: 14px;
+    }
+
+    .tennis-wallet {
+        width: 100%;
+    }
+
+    .tennis-nav a {
+        padding: 9px 10px;
+    }
+
+    .tennis-eyebrow {
+        letter-spacing: 1px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .tennis-nav a,
+    .tennis-guide,
+    .tennis-cup {
+        transition: none;
+    }
+}
