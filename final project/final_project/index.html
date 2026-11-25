@@ -11,14 +11,8 @@
     <!-- Existing casino styling -->
     <link rel="stylesheet" href="casino-lobby.css?v=2">
 
-    <!-- Dice Duel styling -->
-    <link rel="stylesheet" href="diceduel/diceduel.css">
-
     <!-- Existing shared wallet and statistics -->
     <script src="script.js" defer></script>
-
-    <!-- Dice Duel gameplay -->
-    <script src="diceduel/diceduel.js" defer></script>
 </head>
 
 <body>
@@ -255,296 +249,87 @@
         </section>
 
         <!-- SECOND FLOOR -->
-         <section id="floor2" class="second-floor">
+        <section id="floor2" class="casino-floor">
 
     <div class="section-heading">
+
         <p>✦ TAKE YOUR LUCK TO THE NEXT LEVEL ✦</p>
+
         <h2>The Second Floor</h2>
-        <span>New games. Same Neon Empire wallet.</span>
+
+        <span>
+            Discover new games and keep building your virtual fortune.
+        </span>
+
     </div>
 
-    <!-- DICE DUEL -->
-    <article class="dice-duel">
+    <div class="game-grid">
 
-        <div class="dice-banner" aria-hidden="true">
-            <span>⚄</span>
-            <span>⚂</span>
-        </div>
+        <!-- DICE DUEL GAME CARD -->
+        <article class="game-card">
 
-        <div class="dice-content">
+            <!-- CARD ARTWORK -->
+            <div class="game-art slots-art">
 
-            <p class="dice-eyebrow">
-                ✦ NEON EMPIRE ORIGINALS ✦
-            </p>
+                <div class="slot-machine-art">
 
-            <h3>🎲 DICE DUEL</h3>
-
-            <p class="dice-description">
-                Challenge the house to a showdown.
-                One die each. The higher roll wins!
-            </p>
-
-            <!-- PLAY / HOW TO PLAY TABS -->
-            <div
-                class="dice-tabs"
-                role="tablist"
-                aria-label="Dice Duel">
-
-                <button
-                    type="button"
-                    id="dice-play-tab"
-                    role="tab"
-                    aria-selected="true"
-                    aria-controls="dice-play-panel"
-                    onclick="showDiceTab('play')">
-                    ▶ Play Dice Duel
-                </button>
-
-                <button
-                    type="button"
-                    id="dice-rules-tab"
-                    role="tab"
-                    aria-selected="false"
-                    aria-controls="dice-rules-panel"
-                    tabindex="-1"
-                    onclick="showDiceTab('rules')">
-                    📖 How to Play
-                </button>
-
-            </div>
-
-            <!-- PLAY PANEL -->
-            <div
-                id="dice-play-panel"
-                role="tabpanel"
-                aria-labelledby="dice-play-tab"
-                tabindex="0">
-
-                <!-- DICE DISPLAY -->
-                <div class="dice-arena">
-
-                    <div class="dice-player-box">
-
-                        <p>YOUR DIE</p>
-
-                        <span
-                            id="dice-player-face"
-                            class="dice-face"
-                            role="img"
-                            aria-label="Your die: not rolled">
-                            ⚀
-                        </span>
-
-                        <strong id="dice-player-number">
-                            Ready
-                        </strong>
-
+                    <div class="slot-title">
+                        ★ CHALLENGE THE HOUSE ★
                     </div>
 
-                    <span class="dice-versus">VS</span>
-
-                    <div class="dice-player-box">
-
-                        <p>HOUSE DIE</p>
-
-                        <span
-                            id="dice-house-face"
-                            class="dice-face"
-                            role="img"
-                            aria-label="House die: not rolled">
-                            ⚀
-                        </span>
-
-                        <strong id="dice-house-number">
-                            Ready
-                        </strong>
-
+                    <div class="slot-reels" aria-hidden="true">
+                        <span>⚄</span>
+                        <span>⚂</span>
                     </div>
-
-                </div>
-
-                <!-- BETTING -->
-                <div class="dice-betting">
-
-                    <label for="dice-bet">
-                        💰 Your Wager in Credits
-                    </label>
-
-                    <input
-                        type="number"
-                        id="dice-bet"
-                        value="100"
-                        min="1"
-                        step="1"
-                        inputmode="numeric"
-                        aria-describedby="dice-result-detail">
-
-                    <div class="dice-quick-bets">
-
-                        <button
-                            type="button"
-                            onclick="setDiceBet(25)">
-                            25
-                        </button>
-
-                        <button
-                            type="button"
-                            onclick="setDiceBet(50)">
-                            50
-                        </button>
-
-                        <button
-                            type="button"
-                            onclick="setDiceBet(100)">
-                            100
-                        </button>
-
-                        <button
-                            type="button"
-                            onclick="setDiceBet(250)">
-                            250
-                        </button>
-
-                        <button
-                            type="button"
-                            onclick="setDiceBet(500)">
-                            500
-                        </button>
-
-                    </div>
-
-                    <p class="dice-bet-note">
-                        Enter a positive whole-number wager.
-                        A winning roll pays 2× your bet.
-                    </p>
-
-                </div>
-
-                <!-- ROLL BUTTON -->
-                <button
-                    type="button"
-                    class="dice-roll-button"
-                    onclick="playDiceDuel()">
-                    🎲 ROLL THE DICE
-                </button>
-
-                <!-- RESULTS -->
-                <div
-                    class="dice-result-box"
-                    role="status"
-                    aria-live="polite"
-                    aria-atomic="true">
-
-                    <h4 id="dice-result-title">
-                        READY FOR A DUEL?
-                    </h4>
-
-                    <p id="dice-result-detail">
-                        Place your wager and challenge the house.
-                    </p>
 
                 </div>
 
             </div>
 
-            <!-- HOW TO PLAY PANEL -->
-            <div
-                id="dice-rules-panel"
-                role="tabpanel"
-                aria-labelledby="dice-rules-tab"
-                tabindex="0"
-                hidden>
+            <!-- CARD INFORMATION -->
+            <div class="game-content">
 
-                <h4 class="dice-rules-heading">
-                    How to Play Dice Duel
-                </h4>
+                <span class="game-category">
+                    HEAD-TO-HEAD DICE GAME
+                </span>
 
-                <ol class="dice-rules-list">
+                <h3>🎲 Dice Duel</h3>
 
-                    <li>
-                        Enter a positive whole-number wager.
-                        You cannot wager more than your available balance.
-                    </li>
-
-                    <li>
-                        Select <strong>Roll the Dice</strong>.
-                        You and the house each roll one random
-                        six-sided die.
-                    </li>
-
-                    <li>
-                        If your number is higher, you win!
-                        If the numbers match, your wager is returned.
-                    </li>
-
-                    <li>
-                        Select Roll the Dice again whenever you
-                        want to play another round.
-                    </li>
-
-                </ol>
-
-                <table class="dice-payout-table">
-
-                    <caption>
-                        Total payout includes your original wager.
-                    </caption>
-
-                    <thead>
-                        <tr>
-                            <th scope="col">Result</th>
-                            <th scope="col">Total Payout</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-                            <td>Your roll is higher</td>
-                            <td>2× your wager</td>
-                        </tr>
-
-                        <tr>
-                            <td>The rolls match</td>
-                            <td>1× — wager refunded</td>
-                        </tr>
-
-                        <tr>
-                            <td>The house rolls higher</td>
-                            <td>0 credits</td>
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-                <p class="dice-example">
-                    <strong>Example:</strong>
-                    If you wager 100 credits and win, you receive
-                    200 credits total, earning a profit of 100 credits.
-                    A tie changes your balance by 0.
+                <p>
+                    Roll against the house in a neon showdown.
+                    A higher roll wins, and matching rolls
+                    return your wager.
                 </p>
 
-                <p class="dice-example">
-                    Every round counts toward Games Played.
-                    Winning rounds increase Total Wins.
-                    Ties do not count as wins.
-                </p>
+                <div class="game-details">
+                    <span>🎲 Higher Roll Wins</span>
+                    <span>💰 2× Win Payout</span>
+                </div>
+
+                <!-- OPENS THE SEPARATE GAME PAGE -->
+                <a
+                    href="diceduel/game.html"
+                    class="play-button">
+                    ▶ PLAY DICE DUEL
+                </a>
+
+                <!-- OPENS THE SEPARATE INSTRUCTIONS PAGE -->
+                <a
+                    href="diceduel/instructions.html"
+                    class="instructions-button">
+                    📖 HOW TO PLAY
+                </a>
 
             </div>
 
-            <p class="dice-shared-note">
-                Your wallet and statistics are shared across
-                all Neon Empire games.
-            </p>
+        </article>
 
-        </div>
+        <!-- FIND THE TENNIS BALL CARD WILL GO HERE NEXT -->
 
-    </article>
+            </div>
 
-    <!-- Find the Tennis Ball will go here next. -->
-
-    </section>
+        </section>
+    
         <!-- PLAYER STATISTICS -->
         <section id="statistics" class="dashboard">
 

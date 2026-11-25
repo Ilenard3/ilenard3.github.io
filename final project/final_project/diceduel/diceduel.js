@@ -1,95 +1,27 @@
 // ==========================================
 // NEON EMPIRE CASINO
 // DICE DUEL
-// Uses the shared wallet in ../script.js
+//
+// Shared wallet and statistics are provided
+// by ../script.js, loaded before this file.
 // ==========================================
 
 
-// Switch between Play and How to Play.
-function showDiceTab(tabName) {
+// ==========================================
+// QUICK BET BUTTONS
+// ==========================================
 
-    let showPlay = tabName === "play";
-
-    let playTab = document.getElementById("dice-play-tab");
-
-    let rulesTab = document.getElementById("dice-rules-tab");
-
-    let playPanel = document.getElementById("dice-play-panel");
-
-    let rulesPanel = document.getElementById("dice-rules-panel");
-
-
-    // Show the selected panel and hide the other one.
-    playPanel.hidden = !showPlay;
-
-    rulesPanel.hidden = showPlay;
-
-
-    // Update which tab appears selected.
-    playTab.setAttribute(
-        "aria-selected",
-        String(showPlay)
-    );
-
-    rulesTab.setAttribute(
-        "aria-selected",
-        String(!showPlay)
-    );
-
-
-    // Support keyboard navigation.
-    playTab.tabIndex = showPlay ? 0 : -1;
-
-    rulesTab.tabIndex = showPlay ? -1 : 0;
-}
-
-
-// Allow arrow keys, Home, and End to switch tabs.
-let diceTabs = document.querySelectorAll(".dice-tabs button");
-
-for (let i = 0; i < diceTabs.length; i++) {
-
-    diceTabs[i].addEventListener("keydown", function(event) {
-
-        let nextTab;
-
-        if (
-            event.key === "ArrowLeft" ||
-            event.key === "ArrowRight"
-        ) {
-
-            nextTab = i === 0 ? 1 : 0;
-        }
-        else if (event.key === "Home") {
-
-            nextTab = 0;
-        }
-        else if (event.key === "End") {
-
-            nextTab = 1;
-        }
-        else {
-
-            return;
-        }
-
-        event.preventDefault();
-
-        showDiceTab(nextTab === 0 ? "play" : "rules");
-
-        diceTabs[nextTab].focus();
-    });
-}
-
-
-// Change the wager using a quick-bet button.
 function setDiceBet(amount) {
 
     document.getElementById("dice-bet").value = amount;
+
 }
 
 
-// Play one complete Dice Duel round.
+// ==========================================
+// MAIN DICE DUEL FUNCTION
+// ==========================================
+
 function playDiceDuel() {
 
     let betInput = document.getElementById("dice-bet");
@@ -105,9 +37,9 @@ function playDiceDuel() {
     let bet = Number(betInput.value);
 
 
-    // ==========================================
+    // ======================================
     // VALIDATE THE WAGER
-    // ==========================================
+    // ======================================
 
     if (!Number.isSafeInteger(bet) || bet <= 0) {
 
@@ -119,6 +51,7 @@ function playDiceDuel() {
         betInput.focus();
 
         return;
+
     }
 
     if (bet > balance) {
@@ -131,9 +64,11 @@ function playDiceDuel() {
         betInput.focus();
 
         return;
+
     }
 
-    // Keep payouts and the balance within safe numeric limits.
+    // Prevent amounts beyond JavaScript's
+    // safe whole-number calculation range.
     if (
         !Number.isSafeInteger(bet * 2) ||
         !Number.isSafeInteger(balance + bet)
@@ -147,24 +82,32 @@ function playDiceDuel() {
         betInput.focus();
 
         return;
+
     }
 
 
-    // ==========================================
-    // ROLL THE DICE
-    // ==========================================
+    // ======================================
+    // GENERATE BOTH DICE ROLLS
+    // ======================================
 
-    // Each die independently generates a number from 1 to 6.
+    // Each roll independently produces 1–6.
     let playerRoll = Math.floor(Math.random() * 6) + 1;
 
     let houseRoll = Math.floor(Math.random() * 6) + 1;
 
-    let diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+    let diceFaces = [
+        "⚀",
+        "⚁",
+        "⚂",
+        "⚃",
+        "⚄",
+        "⚅"
+    ];
 
 
-    // ==========================================
-    // DISPLAY BOTH ROLLS
-    // ==========================================
+    // ======================================
+    // DISPLAY BOTH DICE
+    // ======================================
 
     let playerFace = document.getElementById(
         "dice-player-face"
@@ -197,9 +140,9 @@ function playDiceDuel() {
     ).textContent = houseRoll;
 
 
-    // ==========================================
-    // DETERMINE THE WINNER AND PAYOUT
-    // ==========================================
+    // ======================================
+    // CHECK THE RESULT
+    // ======================================
 
     let payout = 0;
 
@@ -207,39 +150,47 @@ function playDiceDuel() {
 
     if (playerRoll > houseRoll) {
 
-        // Winning payout includes the original wager.
+        // Win: return twice the original wager.
         payout = bet * 2;
 
         message = "🏆 YOU WIN THE DUEL!";
+
     }
     else if (playerRoll === houseRoll) {
 
-        // A tie returns the original wager.
+        // Tie: return the original wager.
         payout = bet;
 
         message = "🤝 TIE! WAGER RETURNED";
+
     }
     else {
 
-        // A loss returns no credits.
+        // Loss: no payout.
         payout = 0;
 
         message = "THE HOUSE WINS THIS ROUND";
+
     }
 
 
-    // ==========================================
+    // ======================================
     // UPDATE THE SHARED CASINO WALLET
-    // ==========================================
+    // ======================================
 
-    // Your existing function subtracts the wager,
-    // adds the payout, updates statistics, and saves progress.
+    // This existing function:
+    // - subtracts the wager
+    // - adds the total payout
+    // - increments Games Played
+    // - increments Wins for a winning round
+    // - updates Player Level
+    // - saves progress and refreshes displays
     finishGame(bet, payout);
 
 
-    // ==========================================
-    // DISPLAY THE RESULT
-    // ==========================================
+    // ======================================
+    // DISPLAY PAYOUT AND NET CHANGE
+    // ======================================
 
     let profit = payout - bet;
 
@@ -248,6 +199,7 @@ function playDiceDuel() {
     if (profit > 0) {
 
         profitText = "+" + profitText;
+
     }
 
     resultTitle.textContent = message;
@@ -258,4 +210,5 @@ function playDiceDuel() {
         ". Wager: " + bet.toLocaleString() +
         " CR | Total payout: " + payout.toLocaleString() +
         " CR | Net: " + profitText + " CR.";
+
 }

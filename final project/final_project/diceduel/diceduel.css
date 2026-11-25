@@ -1,127 +1,292 @@
 /* ==========================================
-   SECOND FLOOR / DICE DUEL STYLES
+   NEON EMPIRE CASINO
+   DICE DUEL — GAME AND INSTRUCTIONS
    ========================================== */
 
-.second-floor {
-    margin-top: 75px;
-    scroll-margin-top: 25px;
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
 }
 
-.dice-duel {
-    max-width: 850px;
-    margin: 0 auto;
-    overflow: hidden;
-
-    background: linear-gradient(
-        145deg,
-        #301344,
-        #1a0b2c
-    );
-
-    border: 2px solid #d64cd5;
-    border-radius: 18px;
-
-    box-shadow:
-        0 0 20px rgba(220, 55, 210, 0.3),
-        0 12px 30px rgba(0, 0, 0, 0.35);
+html {
+    scroll-behavior: smooth;
 }
 
-.dice-banner {
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff2e8;
+    line-height: 1.6;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(120, 30, 155, 0.3),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #10071d,
+            #1e0b32,
+            #100719
+        );
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: default;
+    opacity: 0.6;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #ffd36d;
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.dice-header {
+    background: rgba(15, 5, 28, 0.97);
+    border-bottom: 2px solid #e93bd1;
+    box-shadow: 0 5px 30px rgba(211, 38, 201, 0.3);
+    padding: 18px 25px;
+}
+
+.dice-header-inner {
+    max-width: 1250px;
+    margin: auto;
+
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 25px;
-
-    min-height: 190px;
-
-    background: radial-gradient(
-        circle,
-        #76348d,
-        #260c3d 75%
-    );
-
-    border-bottom: 1px solid #71328b;
 }
 
-.dice-banner span {
+.dice-logo {
+    text-align: center;
+}
+
+.dice-logo span {
+    display: block;
+
+    color: #ffd36d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    text-shadow: 0 0 15px rgba(255, 185, 65, 0.4);
+}
+
+.dice-logo small {
+    display: block;
+    margin-top: 3px;
+
+    color: #e9a4e6;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.dice-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.dice-nav a {
+    padding: 11px 14px;
+    border-radius: 8px;
+
+    color: #e9d8ef;
+    font-size: 14px;
+    font-weight: bold;
+
+    transition:
+        background 0.2s,
+        box-shadow 0.2s;
+}
+
+.dice-nav a:hover,
+.dice-nav a.active {
+    color: white;
+    background: linear-gradient(135deg, #75209e, #d12abb);
+    box-shadow: 0 0 15px rgba(233, 59, 209, 0.45);
+}
+
+.dice-wallet {
+    padding: 9px 20px;
+    text-align: center;
+
+    background: #2b1740;
+    border: 2px solid #d9ad5c;
+    border-radius: 12px;
+
+    box-shadow: 0 0 15px rgba(217, 173, 92, 0.25);
+}
+
+.dice-wallet span {
+    display: block;
+    color: #e6c2e8;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.dice-wallet strong {
+    display: block;
     color: #ffda80;
-    font-size: 110px;
-    line-height: 1;
-    transform: rotate(-15deg);
-    text-shadow: 0 0 25px rgba(255, 185, 65, 0.4);
+    font-size: 22px;
 }
 
-.dice-banner span + span {
-    color: #fff1d3;
-    transform: rotate(15deg);
+/* ==========================================
+   MAIN LAYOUT AND INTRODUCTION
+   ========================================== */
+
+.dice-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 35px 20px;
 }
 
-.dice-content {
-    padding: 30px;
+.dice-game-hero {
+    padding: 50px 30px;
+    margin-bottom: 35px;
+    text-align: center;
+
+    background: linear-gradient(135deg, #301344, #170a29);
+    border: 1px solid #b35ac5;
+    border-radius: 20px;
+
+    box-shadow: 0 0 25px rgba(193, 44, 202, 0.2);
 }
 
 .dice-eyebrow {
     color: #ff9bea;
     font-size: 14px;
     font-weight: bold;
-    letter-spacing: 2px;
-    text-align: center;
+    letter-spacing: 3px;
 }
 
-.dice-content h3 {
+.dice-game-hero h1 {
+    margin: 20px 0;
+
     color: #ffd36d;
-    font-family: Georgia, serif;
-    font-size: 34px;
-    text-align: center;
-    margin: 12px 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.2;
 }
 
-.dice-description {
+.dice-game-hero > p:not(.dice-eyebrow) {
+    max-width: 700px;
+    margin: 20px auto;
     color: #e5d0ed;
     font-size: 16px;
-    text-align: center;
 }
 
-/* PLAY / HOW TO PLAY TABS */
+.dice-guide {
+    display: inline-block;
+    padding: 13px 20px;
+    margin-top: 15px;
 
-.dice-tabs {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    margin: 28px 0;
-}
-
-.dice-duel button {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.dice-tabs button {
-    padding: 15px 10px;
     color: #ffda80;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
 
     background: #261036;
     border: 1px solid #d9ad5c;
     border-radius: 9px;
+
+    transition:
+        background 0.2s,
+        box-shadow 0.2s;
 }
 
-.dice-tabs button[aria-selected="true"] {
-    color: white;
-
-    background: linear-gradient(
-        135deg,
-        #8e1fba,
-        #c42bb2
-    );
-
-    border-color: #ff9bea;
-    box-shadow: 0 0 15px rgba(227, 51, 203, 0.35);
+.dice-guide:hover {
+    background: #4a235d;
+    box-shadow: 0 0 15px rgba(217, 173, 92, 0.2);
 }
 
-.dice-duel [hidden] {
-    display: none !important;
+/* ==========================================
+   MAIN GAME
+   ========================================== */
+
+.dice-duel {
+    overflow: hidden;
+
+    background: linear-gradient(145deg, #301344, #1a0b2c);
+    border: 2px solid #d64cd5;
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 20px rgba(220, 55, 210, 0.25),
+        0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.dice-content {
+    padding: 30px;
+}
+
+.dice-game-heading {
+    margin: 30px 0 20px;
+
+    color: #ffd36d;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* BALANCE AND STATISTICS BOXES */
+
+.dice-top-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.dice-stat-box {
+    min-width: 0;
+    padding: 20px 15px;
+    text-align: center;
+
+    background: #321b45;
+    border: 1px solid #b366c6;
+    border-radius: 12px;
+}
+
+.dice-stat-box span {
+    display: block;
+    color: #e6c2e8;
+    font-size: 14px;
+}
+
+.dice-stat-box strong {
+    display: block;
+    margin-top: 8px;
+
+    color: #ffd36d;
+    font-size: 32px;
+    overflow-wrap: anywhere;
 }
 
 /* DICE DISPLAY */
@@ -130,62 +295,72 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 35px;
+    gap: 50px;
+
+    padding: 30px 15px;
 
     background: #160920;
     border: 1px solid #76448c;
     border-radius: 15px;
-
-    padding: 25px 15px;
 }
 
 .dice-player-box {
+    min-width: 0;
     text-align: center;
 }
 
 .dice-player-box p {
+    margin: 0;
+
     color: #e9a4e6;
     font-size: 14px;
     font-weight: bold;
     letter-spacing: 1px;
-    margin: 0;
 }
 
 .dice-face {
     display: block;
+
     color: #ffda80;
-    font-size: 100px;
+    font-family:
+        "Segoe UI Symbol",
+        "Apple Symbols",
+        Arial,
+        sans-serif;
+    font-size: 110px;
     line-height: 1.3;
+
+    text-shadow: 0 0 20px rgba(255, 185, 65, 0.25);
 }
 
 .dice-player-box strong {
     display: block;
     color: #fff1d3;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .dice-versus {
     color: #ff9bea;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
 }
 
 /* WAGER CONTROLS */
 
 .dice-betting {
-    margin: 25px 0;
+    margin: 30px 0;
 }
 
 .dice-betting label {
     display: block;
+    margin-bottom: 10px;
+
     color: #ffda80;
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 
 .dice-betting input {
-    box-sizing: border-box;
     width: 100%;
     min-width: 0;
     padding: 14px;
@@ -206,10 +381,13 @@
 }
 
 .dice-quick-bets button {
-    flex: 1 1 65px;
+    flex: 1 1 75px;
     padding: 10px;
 
     color: #f3d6f2;
+    font-size: 16px;
+    font-weight: bold;
+
     background: #4c205f;
     border: 1px solid #9b4eac;
     border-radius: 7px;
@@ -227,14 +405,12 @@
 .dice-roll-button {
     width: 100%;
     padding: 17px;
+
     color: white;
+    font-size: 18px;
+    font-weight: bold;
 
-    background: linear-gradient(
-        135deg,
-        #8e1fba,
-        #c42bb2
-    );
-
+    background: linear-gradient(135deg, #8e1fba, #c42bb2);
     border: 2px solid #ff9bea;
     border-radius: 10px;
 
@@ -248,28 +424,49 @@
 /* RESULTS */
 
 .dice-result-box {
-    background: #170a26;
-    border: 1px solid #76448c;
-    border-radius: 12px;
-
     padding: 22px;
     margin-top: 25px;
     text-align: center;
+
+    background: #170a26;
+    border: 1px solid #76448c;
+    border-radius: 12px;
 }
 
-.dice-result-box h4 {
-    color: #ffda80;
-    font-size: 22px;
+.dice-result-box h2 {
     margin: 0 0 10px;
+    color: #ffda80;
+    font-size: 24px;
 }
 
 .dice-result-box p {
+    margin: 0;
     color: #e5d0ed;
     font-size: 16px;
-    margin: 0;
 }
 
-/* HOW TO PLAY */
+/* ==========================================
+   INSTRUCTIONS AND PAYOUTS
+   ========================================== */
+
+.dice-payout-section,
+.dice-statistics {
+    padding: 30px;
+    margin-top: 30px;
+
+    background: linear-gradient(145deg, #2b123f, #180a2a);
+    border: 1px solid #a454b8;
+    border-radius: 15px;
+}
+
+.dice-payout-section > h2,
+.dice-statistics > h2 {
+    margin-top: 0;
+
+    color: #ffd36d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+}
 
 .dice-rules-heading {
     color: #ffd36d;
@@ -277,9 +474,9 @@
 }
 
 .dice-rules-list {
+    padding-left: 25px;
     color: #e5d0ed;
     font-size: 16px;
-    padding-left: 25px;
 }
 
 .dice-rules-list li {
@@ -294,10 +491,11 @@
 }
 
 .dice-payout-table caption {
+    margin-bottom: 12px;
+
     color: #d9c2e5;
     font-size: 14px;
     text-align: left;
-    margin-bottom: 12px;
 }
 
 .dice-payout-table th,
@@ -318,42 +516,130 @@
 }
 
 .dice-shared-note {
+    margin-top: 25px;
+
     color: #d9c2e5;
     font-size: 14px;
     text-align: center;
+}
+
+/* ==========================================
+   BOTTOM NAVIGATION AND FOOTER
+   ========================================== */
+
+.dice-bottom-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
     margin-top: 25px;
 }
 
-/* KEYBOARD ACCESSIBILITY */
+.dice-footer {
+    padding: 35px 20px;
+    margin-top: 40px;
+    text-align: center;
 
-.dice-duel button:focus-visible,
-.dice-duel input:focus-visible,
-.dice-duel [role="tabpanel"]:focus-visible {
-    outline: 3px solid #ffd36d;
-    outline-offset: 4px;
+    background: #10061c;
+    border-top: 2px solid #a13bb1;
 }
 
-/* MOBILE LAYOUT */
+.dice-footer h2 {
+    color: #ffd36d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+}
 
-@media (max-width: 500px) {
+.dice-footer p {
+    color: #c9afd5;
+    font-size: 14px;
+}
 
-    .dice-content {
+/* ==========================================
+   RESPONSIVE LAYOUT
+   ========================================== */
+
+@media (max-width: 1100px) {
+
+    .dice-header-inner {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .dice-container {
+        padding: 25px 12px;
+    }
+
+    .dice-game-hero {
+        padding: 35px 18px;
+    }
+
+    .dice-content,
+    .dice-payout-section,
+    .dice-statistics {
         padding: 20px 15px;
     }
 
-    .dice-content h3 {
-        font-size: 28px;
-    }
-
     .dice-arena {
-        gap: 18px;
+        gap: 22px;
     }
 
     .dice-face {
-        font-size: 80px;
+        font-size: 85px;
     }
 
-    .dice-tabs button {
+    .dice-top-stats {
+        gap: 10px;
+    }
+
+    .dice-stat-box {
+        padding: 15px 8px;
+    }
+
+    .dice-stat-box span {
         font-size: 14px;
+    }
+
+    .dice-stat-box strong {
+        font-size: 26px;
+    }
+
+    .dice-payout-table {
+        font-size: 14px;
+    }
+
+    .dice-payout-table td {
+        font-size: 14px;
+    }
+
+    .dice-payout-table th,
+    .dice-payout-table td {
+        padding: 12px 5px;
+    }
+
+    .dice-wallet {
+        width: 100%;
+    }
+
+    .dice-nav a {
+        padding: 9px 10px;
+    }
+
+    .dice-eyebrow {
+        letter-spacing: 1px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .dice-nav a,
+    .dice-guide {
+        transition: none;
     }
 }

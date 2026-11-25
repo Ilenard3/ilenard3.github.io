@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Dice Duel Instructions | Neon Empire Casino</title>
+
+    <!-- Shared Dice Duel styling -->
+    <link rel="stylesheet" href="diceduel.css">
+
+    <!-- Shared casino wallet and statistics -->
+    <script src="../script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="dice-header">
+
+        <div class="dice-header-inner">
+
+            <a href="../index.html" class="dice-logo">
+                <span>♛ NEON EMPIRE</span>
+                <small>THE ULTIMATE CASINO</small>
+            </a>
+
+            <nav class="dice-nav" aria-label="Main navigation">
+
+                <a href="../index.html">
+                    Lobby
+                </a>
+
+                <a href="../index.html#games">
+                    Casino Floor
+                </a>
+
+                <a href="../index.html#floor2">
+                    Second Floor
+                </a>
+
+                <a
+                    href="instructions.html"
+                    class="active"
+                    aria-current="page">
+                    Instructions
+                </a>
+
+                <a href="game.html">
+                    Play Dice Duel
+                </a>
+
+            </nav>
+
+            <div class="dice-wallet">
+                <span>💰 YOUR BALANCE</span>
+                <strong id="header-balance">5,000 CR</strong>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="dice-container">
+
+        <!-- INTRODUCTION -->
+        <section class="dice-game-hero">
+
+            <p class="dice-eyebrow">
+                ✦ LEARN THE GAME ✦
+            </p>
+
+            <h1>🎲 DICE DUEL INSTRUCTIONS</h1>
+
+            <p>
+                Learn the rules, understand the payouts,
+                and get ready to challenge the house.
+            </p>
+
+            <a href="game.html" class="dice-guide">
+                ▶ PLAY DICE DUEL
+            </a>
+
+        </section>
+
+        <!-- HOW TO PLAY -->
+        <section
+            class="dice-duel"
+            aria-labelledby="dice-instructions-heading">
+
+            <div class="dice-content">
+
+                <h2
+                    id="dice-instructions-heading"
+                    class="dice-rules-heading">
+                    How to Play
+                </h2>
+
+                <ol class="dice-rules-list">
+
+                    <li>
+                        <strong>Choose your wager.</strong>
+                        Enter a positive whole-number amount in
+                        the wager box, or select a quick-bet button.
+                        Your wager cannot exceed your available credits.
+                    </li>
+
+                    <li>
+                        <strong>Roll the dice.</strong>
+                        Select <strong>Roll the Dice</strong>.
+                        You and the house each roll one six-sided die.
+                    </li>
+
+                    <li>
+                        <strong>Compare the numbers.</strong>
+                        If your roll is higher than the house's roll,
+                        you win. If the rolls match, your wager is
+                        returned. If the house rolls higher, you
+                        lose your wager.
+                    </li>
+
+                    <li>
+                        <strong>Check your result.</strong>
+                        The game displays both rolls, your total
+                        payout, and your net profit or loss.
+                        Your shared balance and statistics update
+                        automatically.
+                    </li>
+
+                    <li>
+                        <strong>Play another round.</strong>
+                        Keep your wager or enter a new amount,
+                        then select Roll the Dice again.
+                    </li>
+
+                </ol>
+
+                <p class="dice-example">
+                    Each die independently generates a random number
+                    from 1 through 6. Previous rounds do not affect
+                    the next roll.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- PAYOUT TABLE -->
+        <section
+            class="dice-payout-section"
+            aria-labelledby="dice-payout-heading">
+
+            <h2 id="dice-payout-heading">
+                🏆 Rules and Payouts
+            </h2>
+
+            <table class="dice-payout-table">
+
+                <caption>
+                    All payout multipliers include your original wager.
+                </caption>
+
+                <thead>
+                    <tr>
+                        <th scope="col">Result</th>
+                        <th scope="col">Total Payout</th>
+                        <th scope="col">Net Change</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Your roll is higher</td>
+                        <td>2× your wager</td>
+                        <td>Gain your wager amount</td>
+                    </tr>
+
+                    <tr>
+                        <td>The rolls match</td>
+                        <td>1× your wager</td>
+                        <td>No change</td>
+                    </tr>
+
+                    <tr>
+                        <td>The house rolls higher</td>
+                        <td>0 credits</td>
+                        <td>Lose your wager amount</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- EXAMPLE ROUNDS -->
+        <section
+            class="dice-payout-section"
+            aria-labelledby="dice-examples-heading">
+
+            <h2 id="dice-examples-heading">
+                🎲 Example Rounds
+            </h2>
+
+            <p class="dice-example">
+                Each example below starts with a balance of
+                <strong>5,000 credits</strong> and a wager of
+                <strong>100 credits</strong>.
+            </p>
+
+            <h3 class="dice-rules-heading">
+                You Win
+            </h3>
+
+            <p class="dice-example">
+                You roll <strong>5</strong> and the house rolls
+                <strong>2</strong>. Your total payout is
+                <strong>200 credits</strong>, including your
+                original 100-credit wager. Your net profit is
+                <strong>100 credits</strong>, leaving a balance
+                of <strong>5,100 credits</strong>.
+            </p>
+
+            <h3 class="dice-rules-heading">
+                A Tie
+            </h3>
+
+            <p class="dice-example">
+                You and the house both roll <strong>4</strong>.
+                Your <strong>100-credit wager is returned</strong>.
+                Your balance stays at <strong>5,000 credits</strong>.
+            </p>
+
+            <h3 class="dice-rules-heading">
+                The House Wins
+            </h3>
+
+            <p class="dice-example">
+                You roll <strong>2</strong> and the house rolls
+                <strong>6</strong>. Your payout is
+                <strong>0 credits</strong>. You lose your
+                100-credit wager, leaving a balance of
+                <strong>4,900 credits</strong>.
+            </p>
+
+        </section>
+
+        <!-- SHARED PROGRESS -->
+        <section
+            class="dice-statistics"
+            aria-labelledby="dice-progress-heading">
+
+            <h2 id="dice-progress-heading">
+                Your Wallet and Statistics
+            </h2>
+
+            <ul class="dice-rules-list">
+
+                <li>
+                    <strong>Shared wallet:</strong>
+                    Dice Duel uses the same credits as
+                    Coin Flip, Neon Slots, and your other
+                    Neon Empire games.
+                </li>
+
+                <li>
+                    <strong>Games Played:</strong>
+                    Every completed round counts as one game,
+                    including ties.
+                </li>
+
+                <li>
+                    <strong>Total Wins:</strong>
+                    Your win count increases when your roll
+                    beats the house. Ties do not count as wins.
+                </li>
+
+                <li>
+                    <strong>Player Level:</strong>
+                    You start at Level 1 and gain one level
+                    for every 10 completed games across the casino.
+                </li>
+
+                <li>
+                    <strong>Saved progress:</strong>
+                    Your balance and statistics are saved
+                    in this browser for this site.
+                </li>
+
+            </ul>
+
+            <p class="dice-shared-note">
+                All wagers use fictional credits.
+                No real money or prizes.
+            </p>
+
+        </section>
+
+        <!-- BOTTOM NAVIGATION -->
+        <nav
+            class="dice-bottom-navigation"
+            aria-label="Game navigation">
+
+            <a href="game.html" class="dice-guide">
+                ▶ PLAY DICE DUEL
+            </a>
+
+            <a href="../index.html#floor2" class="dice-guide">
+                Back to Second Floor
+            </a>
+
+        </nav>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="dice-footer">
+
+        <h2>♛ NEON EMPIRE</h2>
+
+        <p>THE ULTIMATE VIRTUAL CASINO</p>
+
+        <p>Educational Project • Fictional Credits Only</p>
+
+    </footer>
+
+</body>
+</html>
