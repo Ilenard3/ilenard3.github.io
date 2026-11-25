@@ -4,20 +4,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Neon Empire | Casino Lobby</title>
 
-    <!-- Existing casino styling -->
-    <link rel="stylesheet" href="casino-lobby.css?v=2">
+    <!-- Casino lobby styling -->
+    <link rel="stylesheet" href="casino-lobby.css?v=3">
 
-    <!-- Existing shared wallet and statistics -->
+    <!-- Shared wallet and statistics -->
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- CASINO HEADER -->
+    <!-- ======================================
+         CASINO HEADER
+         ====================================== -->
+
     <header class="site-header">
 
         <div class="header-content">
@@ -27,13 +31,23 @@
                 <p>THE ULTIMATE CASINO</p>
             </div>
 
-            <nav>
-                <a href="index.html" class="active">Lobby</a>
+            <nav aria-label="Main navigation">
+
+                <a href="index.html" class="active"
+                   aria-current="page">
+                    Lobby
+                </a>
+
                 <a href="#games">Casino Floor</a>
+
                 <a href="#floor2">Second Floor</a>
+
                 <a href="#guidebook">Guidebook</a>
+
                 <a href="#statistics">Statistics</a>
+
                 <a href="#about">About</a>
+
             </nav>
 
             <div class="wallet">
@@ -47,7 +61,10 @@
 
     <main>
 
-        <!-- LUXURY CASINO WELCOME -->
+        <!-- ==================================
+             LUXURY CASINO WELCOME
+             ================================== -->
+
         <section class="hero">
 
             <div class="hero-content">
@@ -96,25 +113,36 @@
 
         </section>
 
-        <!-- CASINO FLOOR -->
+        <!-- ==================================
+             FIRST FLOOR
+             ================================== -->
+
         <section id="games" class="casino-floor">
 
             <div class="section-heading">
+
                 <p>✦ DISCOVER YOUR NEXT BIG WIN ✦</p>
+
                 <h2>The Casino Floor</h2>
+
                 <span>
                     Choose your game and test your luck.
                 </span>
+
             </div>
 
             <div class="casino-layout">
 
                 <!-- PLAYER PROFILE -->
+
                 <aside class="player-panel">
 
                     <div class="profile-heading">
+
                         <h3>♛ PLAYER PROFILE</h3>
+
                         <p>NEON EMPIRE MEMBER</p>
+
                     </div>
 
                     <div class="profile-avatar">
@@ -122,20 +150,31 @@
                     </div>
 
                     <div class="profile-balance">
+
                         <span>AVAILABLE CREDITS</span>
+
                         <h2 id="balance">5,000</h2>
+
                         <p>💰 Virtual Casino Wallet</p>
+
                     </div>
 
                     <div class="profile-level">
+
                         <span>CURRENT PLAYER LEVEL</span>
+
                         <h2 id="player-level">1</h2>
+
                         <p>Keep playing to level up!</p>
+
                     </div>
 
                     <div class="profile-reputation">
+
                         <span>CASINO STATUS</span>
+
                         <h3>⭐ NEON ROOKIE</h3>
+
                     </div>
 
                     <a href="#statistics" class="profile-button">
@@ -144,10 +183,12 @@
 
                 </aside>
 
-                <!-- GAME CARDS -->
+                <!-- FIRST FLOOR GAME CARDS -->
+
                 <div class="game-grid">
 
                     <!-- COIN FLIP -->
+
                     <article class="game-card">
 
                         <div class="game-art coin-art">
@@ -173,8 +214,11 @@
                             </p>
 
                             <div class="game-details">
+
                                 <span>⚡ Quick Rounds</span>
-                                <span>💰 2x Payout</span>
+
+                                <span>💰 1.9x Payout</span>
+
                             </div>
 
                             <a href="coinflip/game.html"
@@ -191,21 +235,26 @@
 
                     </article>
 
-                    <!-- SLOT MACHINES -->
+                    <!-- NEON SLOT MACHINES -->
+
                     <article class="game-card">
 
                         <div class="game-art slots-art">
 
                             <div class="slot-machine-art">
+
                                 <div class="slot-title">
                                     ★ NEON JACKPOT ★
                                 </div>
 
                                 <div class="slot-reels">
+
                                     <span>7</span>
                                     <span>7</span>
                                     <span>7</span>
+
                                 </div>
+
                             </div>
 
                         </div>
@@ -225,8 +274,11 @@
                             </p>
 
                             <div class="game-details">
+
                                 <span>🎰 Three Reels</span>
-                                <span>💎 Up to 10x</span>
+
+                                <span>💎 Up to 12x</span>
+
                             </div>
 
                             <a href="slots/game.html"
@@ -244,235 +296,382 @@
                     </article>
 
                 </div>
+                <!-- END FIRST FLOOR GAME GRID -->
 
             </div>
+            <!-- END CASINO LAYOUT -->
 
         </section>
+        <!-- END FIRST FLOOR -->
 
-        <!-- SECOND FLOOR -->
+        <!-- ==================================
+             SECOND FLOOR
+             ================================== -->
+
         <section id="floor2" class="casino-floor">
 
-    <div class="section-heading">
+            <div class="section-heading">
 
-        <p>✦ TAKE YOUR LUCK TO THE NEXT LEVEL ✦</p>
+                <p>✦ TAKE YOUR LUCK TO THE NEXT LEVEL ✦</p>
 
-        <h2>The Second Floor</h2>
+                <h2>The Second Floor</h2>
 
-        <span>
-            Discover new games and keep building your virtual fortune.
-        </span>
-
-    </div>
-
-    <div class="game-grid">
-
-        <!-- DICE DUEL GAME CARD -->
-        <article class="game-card">
-
-            <!-- CARD ARTWORK -->
-            <div class="game-art slots-art">
-
-                <div class="slot-machine-art">
-
-                    <div class="slot-title">
-                        ★ CHALLENGE THE HOUSE ★
-                    </div>
-
-                    <div class="slot-reels" aria-hidden="true">
-                        <span>⚄</span>
-                        <span>⚂</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- CARD INFORMATION -->
-            <div class="game-content">
-
-                <span class="game-category">
-                    HEAD-TO-HEAD DICE GAME
+                <span>
+                    Discover new games and keep building
+                    your virtual fortune.
                 </span>
 
-                <h3>🎲 Dice Duel</h3>
+            </div>
+
+            <div class="game-grid">
+
+                <!-- DICE DUEL GAME CARD -->
+
+                <article class="game-card">
+
+                    <div class="game-art slots-art">
+
+                        <div class="slot-machine-art">
+
+                            <div class="slot-title">
+                                ★ CHALLENGE THE HOUSE ★
+                            </div>
+
+                            <div class="slot-reels"
+                                 aria-hidden="true">
+
+                                <span>⚄</span>
+
+                                <span>⚂</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="game-content">
+
+                        <span class="game-category">
+                            HEAD-TO-HEAD DICE GAME
+                        </span>
+
+                        <h3>🎲 Dice Duel</h3>
+
+                        <p>
+                            Roll against the house in a neon
+                            showdown. A higher roll wins,
+                            and matching rolls return
+                            your wager.
+                        </p>
+
+                        <div class="game-details">
+
+                            <span>🎲 Higher Roll Wins</span>
+
+                            <span>💰 2× Win Payout</span>
+
+                        </div>
+
+                        <a href="diceduel/game.html"
+                           class="play-button">
+                            ▶ PLAY DICE DUEL
+                        </a>
+
+                        <a href="diceduel/instructions.html"
+                           class="instructions-button">
+                            📖 HOW TO PLAY
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- FIND THE TENNIS BALL -->
+
+                <article class="game-card">
+
+                    <div class="game-art coin-art">
+
+                        <div class="gold-coin"
+                             aria-hidden="true">
+                            🎾
+                        </div>
+
+                    </div>
+
+                    <div class="game-content">
+
+                        <span class="game-category">
+                            THREE CUPS • ONE HIDDEN BALL
+                        </span>
+
+                        <h3>🎾 Find The Tennis Ball</h3>
+
+                        <p>
+                            A tennis ball is hidden under
+                            one of three cups. Choose your cup,
+                            reveal the ball, and see whether
+                            you picked the winner.
+                        </p>
+
+                        <div class="game-details">
+
+                            <span>🎾 Pick One of Three</span>
+
+                            <span>💰 2.8× Win Payout</span>
+
+                        </div>
+
+                        <a href="tennisball/game.html"
+                           class="play-button">
+                            ▶ PLAY FIND THE TENNIS BALL
+                        </a>
+
+                        <a href="tennisball/instructions.html"
+                           class="instructions-button">
+                            📖 HOW TO PLAY
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+            <!-- END SECOND FLOOR GAME GRID -->
+
+        </section>
+        <!-- END SECOND FLOOR -->
+
+        <!-- ==================================
+             NEW ROYAL CASINO GUIDEBOOK
+             ================================== -->
+
+        <section id="guidebook"
+                 class="guidebook-section">
+
+            <div class="section-heading">
 
                 <p>
-                    Roll against the house in a neon showdown.
-                    A higher roll wins, and matching rolls
-                    return your wager.
+                    ✦ THE ROYAL CASINO COLLECTION ✦
                 </p>
 
-                <div class="game-details">
-                    <span>🎲 Higher Roll Wins</span>
-                    <span>💰 2× Win Payout</span>
-                </div>
+                <h2>♛ The Royal Casino Guidebook</h2>
 
-                <!-- OPENS THE SEPARATE GAME PAGE -->
-                <a
-                    href="diceduel/game.html"
-                    class="play-button">
-                    ▶ PLAY DICE DUEL
-                </a>
-
-                <!-- OPENS THE SEPARATE INSTRUCTIONS PAGE -->
-                <a
-                    href="diceduel/instructions.html"
-                    class="instructions-button">
-                    📖 HOW TO PLAY
-                </a>
+                <span>
+                    Discover the rules behind six
+                    legendary Las Vegas casino games.
+                </span>
 
             </div>
 
-        </article>
+            <div class="guidebook-feature">
 
-        <!-- FIND THE TENNIS BALL GAME CARD -->
-<article class="game-card">
+                <div class="guidebook-feature-content">
 
-    <!-- CARD ARTWORK -->
-    <div class="game-art coin-art">
+                    <p class="guidebook-label">
+                        ✦ NEON EMPIRE CASINO ACADEMY ✦
+                    </p>
 
-        <div class="gold-coin" aria-hidden="true">
-            🎾
-        </div>
+                    <div class="guidebook-feature-icon">
+                        📖
+                    </div>
 
-    </div>
+                    <h3>MASTER THE CASINO CLASSICS</h3>
 
-    <!-- CARD INFORMATION -->
-    <div class="game-content">
+                    <p class="guidebook-description">
+                        Ever wondered how to play Blackjack,
+                        Roulette, or Poker at a real casino?
+                        Explore our collection of six detailed
+                        game manuals covering rules, betting
+                        options, payouts, and examples.
+                        Learn at your own pace with
+                        the Royal Casino Guidebook.
+                    </p>
 
-        <span class="game-category">
-            THREE CUPS • ONE HIDDEN BALL
-        </span>
+                    <!-- SIX GUIDEBOOK GAMES -->
 
-        <h3>🎾 Find The Tennis Ball</h3>
+                    <div class="guidebook-game-list">
 
-        <p>
-            A tennis ball is hidden under one of three cups.
-            Choose your cup, reveal the ball,
-            and see whether you picked the winner.
-        </p>
+                        <span>🃏 Blackjack</span>
 
-        <div class="game-details">
-            <span>🎾 Pick One of Three</span>
-            <span>💰 2.8× Win Payout</span>
-        </div>
+                        <span>🎡 Roulette</span>
 
-        <a
-            href="tennisball/game.html"
-            class="play-button">
-            ▶ PLAY FIND THE TENNIS BALL
-        </a>
+                        <span>♠️ Texas Hold'em Poker</span>
 
-        <a
-            href="tennisball/instructions.html"
-            class="instructions-button">
-            📖 HOW TO PLAY
-        </a>
+                        <span>🎲 Craps</span>
 
-    </div>
+                        <span>♦️ Baccarat</span>
 
-</article>
+                        <span>♥️ Three Card Poker</span>
+
+                    </div>
+
+                    <!-- GUIDEBOOK BUTTON -->
+
+                    <a href="guidebook/index.html"
+                       class="guidebook-launch-button">
+                        📖 ENTER THE ROYAL GUIDEBOOK
+                    </a>
+
+                    <p class="guidebook-feature-note">
+                        ✦ SIX COMPLETE GAME MANUALS ✦
+                    </p>
+
+                </div>
+
+            </div>
 
         </section>
-    
-        <!-- PLAYER STATISTICS -->
+        <!-- END GUIDEBOOK -->
+
+        <!-- ==================================
+             PLAYER STATISTICS
+             ================================== -->
+
         <section id="statistics" class="dashboard">
 
             <div class="section-heading">
+
                 <p>✦ YOUR CASINO JOURNEY ✦</p>
+
                 <h2>Player Statistics</h2>
+
             </div>
 
             <div class="stats-grid">
 
                 <div class="stat-card">
+
                     <div class="stat-icon">💰</div>
+
                     <p>AVAILABLE CREDITS</p>
+
                     <h3 id="stat-balance">5,000</h3>
+
                     <span>Your virtual balance</span>
+
                 </div>
 
                 <div class="stat-card">
+
                     <div class="stat-icon">🎮</div>
+
                     <p>GAMES PLAYED</p>
+
                     <h3 id="games-played">0</h3>
+
                     <span>Total completed rounds</span>
+
                 </div>
 
                 <div class="stat-card">
+
                     <div class="stat-icon">🏆</div>
+
                     <p>TOTAL WINS</p>
+
                     <h3 id="wins">0</h3>
+
                     <span>Your winning rounds</span>
+
                 </div>
 
                 <div class="stat-card">
+
                     <div class="stat-icon">⭐</div>
+
                     <p>PLAYER LEVEL</p>
+
                     <h3 id="stat-level">1</h3>
+
                     <span>Level up every 10 games</span>
+
                 </div>
 
             </div>
 
         </section>
 
-        <!-- ABOUT THE CASINO -->
+        <!-- ==================================
+             ABOUT THE CASINO
+             ================================== -->
+
         <section id="about" class="about-section">
 
             <div class="section-heading">
+
                 <p>✦ THE NEON EMPIRE EXPERIENCE ✦</p>
+
                 <h2>Welcome to the Empire</h2>
+
             </div>
 
             <div class="features-grid">
 
                 <div class="feature">
+
                     <div class="feature-icon">💎</div>
+
                     <h3>Virtual Fortune</h3>
+
                     <p>
                         Start with 5,000 virtual credits
                         and use your balance across
                         every casino game.
                     </p>
+
                 </div>
 
                 <div class="feature">
+
                     <div class="feature-icon">🎰</div>
+
                     <h3>Exciting Casino Games</h3>
+
                     <p>
                         Play Coin Flip, Neon Slots,
-                        Dice Duel, and Find The Tennis Ball 
+                        Dice Duel, and Find The Tennis Ball,
                         each featuring different
                         rules and winning opportunities.
                     </p>
+
                 </div>
 
                 <div class="feature">
+
                     <div class="feature-icon">🏆</div>
+
                     <h3>Track Your Progress</h3>
+
                     <p>
                         Monitor your balance, total wins,
                         games played, and player level
                         throughout your casino journey.
                     </p>
+
                 </div>
 
             </div>
 
         </section>
 
-        <!-- PLAYER ACCOUNT -->
+        <!-- ==================================
+             PLAYER ACCOUNT
+             ================================== -->
+
         <section class="account-section">
 
             <h2>⚙ Player Account</h2>
 
             <p>
-                Your virtual credits and statistics are
-                automatically saved in this browser.
+                Your virtual credits and statistics
+                are automatically saved in this browser.
             </p>
 
-            <button onclick="resetProgress()" class="reset-button">
+            <button type="button"
+                    onclick="resetProgress()"
+                    class="reset-button">
                 RESET CASINO PROGRESS
             </button>
 
@@ -480,7 +679,10 @@
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- ======================================
+         FOOTER
+         ====================================== -->
+
     <footer>
 
         <h3>♛ NEON EMPIRE</h3>
