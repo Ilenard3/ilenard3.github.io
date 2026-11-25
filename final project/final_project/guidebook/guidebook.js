@@ -1,1167 +1,995 @@
 
 // ==========================================
 // NEON EMPIRE CASINO
-// ROYAL CASINO GUIDEBOOK
+// ROYAL GUIDEBOOK 2.0 UPGRADES
 // ==========================================
 
-// Each game contains its own instruction manual.
-// The guidebook does not change player credits.
-
 // ==========================================
-// CASINO GAME MANUALS
+// ACADEMY PROGRESS
 // ==========================================
 
-const casinoGuides = {
+const academyGameIds = [
+    "blackjack",
+    "roulette",
+    "poker",
+    "craps",
+    "baccarat",
+    "threecard"
+];
 
-    blackjack: {
-        title: "Blackjack",
-        icon: "🃏",
-        description:
-            "Learn to play one of the world's most famous casino card games.",
+let completedGuides = [];
+let passedQuizzes = [];
+let currentGuide = null;
 
-        sections: [
-            {
-                title: "01 | Game Overview",
-                content: `
-                    <p>
-                        Blackjack is a card game where players
-                        compete against the dealer.
-                        The objective is to finish closer
-                        to 21 than the dealer without
-                        exceeding 21.
-                    </p>
-                    <p>
-                        A standard game uses one or more
-                        decks of 52 playing cards.
-                    </p>
-                `
-            },
-            {
-                title: "02 | Card Values",
-                content: `
-                    <ul>
-                        <li><strong>2 through 10:</strong>
-                        Face value.</li>
-                        <li><strong>Jack, Queen, King:</strong>
-                        10 points each.</li>
-                        <li><strong>Ace:</strong>
-                        1 or 11 points, whichever is
-                        more favorable without busting.</li>
-                    </ul>
+function readAcademyProgress(key) {
 
-                    <div class="manual-example">
-                        <h4>Example Hand</h4>
-                        <p>
-                            Ace + King = 21.
-                            An Ace and a ten-value card
-                            as the first two cards form
-                            a natural blackjack.
-                        </p>
-                    </div>
-                `
-            },
-            {
-                title: "03 | How to Play",
-                content: `
-                    <ol>
-                        <li>Place your wager before
-                        cards are dealt.</li>
-                        <li>You receive two cards.
-                        The dealer also receives cards,
-                        typically with one visible.</li>
-                        <li>Choose to Hit, Stand, Double
-                        Down, or Split when allowed.</li>
-                        <li>The dealer plays according
-                        to the table's fixed rules.</li>
-                        <li>Compare hands to determine
-                        the winner.</li>
-                    </ol>
-                `
-            },
-            {
-                title: "04 | Player Decisions",
-                content: `
-                    <ul>
-                        <li><strong>Hit:</strong>
-                        Request another card.</li>
-                        <li><strong>Stand:</strong>
-                        Keep your current hand.</li>
-                        <li><strong>Double Down:</strong>
-                        Double your wager and receive
-                        exactly one additional card.</li>
-                        <li><strong>Split:</strong>
-                        Divide an eligible pair into
-                        two separate hands with
-                        an additional wager.</li>
-                        <li><strong>Surrender:</strong>
-                        Where available, give up the
-                        hand and recover half your bet.</li>
-                    </ul>
-                `
-            },
-            {
-                title: "05 | Winning and Payouts",
-                content: `
-                    <div class="manual-table-wrap">
-                        <table class="manual-table">
-                            <tr>
-                                <th>Result</th>
-                                <th>Typical Payout</th>
-                            </tr>
-                            <tr>
-                                <td>Regular Win</td>
-                                <td>1:1 profit</td>
-                            </tr>
-                            <tr>
-                                <td>Natural Blackjack</td>
-                                <td>3:2 at many tables</td>
-                            </tr>
-                            <tr>
-                                <td>Push (Tie)</td>
-                                <td>Wager returned</td>
-                            </tr>
-                            <tr>
-                                <td>Loss or Bust</td>
-                                <td>Wager lost</td>
-                            </tr>
-                        </table>
-                    </div>
+    try {
+        const saved = JSON.parse(
+            localStorage.getItem(key) || "[]"
+        );
 
-                    <p class="manual-note">
-                        Some tables pay 6:5 for blackjack.
-                        Dealer rules and other conditions vary.
-                    </p>
-                `
-            },
-            {
-                title: "06 | Beginner Tips",
-                content: `
-                    <ul>
-                        <li>Check whether the dealer
-                        hits or stands on soft 17.</li>
-                        <li>Learn basic strategy for
-                        the specific table rules.</li>
-                        <li>Never assume that 21
-                        automatically beats a natural
-                        blackjack.</li>
-                        <li>No betting system can
-                        guarantee a profit.</li>
-                    </ul>
-                `
-            }
-        ]
-    },
+        if (!Array.isArray(saved)) {
+            return [];
+        }
 
-    roulette: {
-        title: "Roulette",
-        icon: "🎡",
-        description:
-            "Discover the roulette wheel, betting layout, and common payouts.",
+        return saved.filter(function(id) {
+            return academyGameIds.includes(id);
+        });
 
-        sections: [
-            {
-                title: "01 | Game Overview",
-                content: `
-                    <p>
-                        Roulette is a casino wheel game.
-                        Players place bets on where a
-                        small ball will land when the
-                        spinning wheel comes to rest.
-                    </p>
-                    <p>
-                        European roulette has 37 pockets:
-                        numbers 1 through 36 and a single 0.
-                        American roulette has 38 pockets,
-                        adding a 00.
-                    </p>
-                `
-            },
-            {
-                title: "02 | How to Play",
-                content: `
-                    <ol>
-                        <li>Choose a roulette table.</li>
-                        <li>Place chips on the numbers
-                        or betting areas you prefer.</li>
-                        <li>The dealer spins the wheel
-                        and releases the ball.</li>
-                        <li>Betting closes before
-                        the ball settles.</li>
-                        <li>The winning pocket
-                        determines which bets pay.</li>
-                    </ol>
-                `
-            },
-            {
-                title: "03 | Common Betting Options",
-                content: `
-                    <ul>
-                        <li><strong>Straight Up:</strong>
-                        One specific number.</li>
-                        <li><strong>Split:</strong>
-                        Two adjacent numbers.</li>
-                        <li><strong>Street:</strong>
-                        Three numbers in a row.</li>
-                        <li><strong>Corner:</strong>
-                        Four numbers.</li>
-                        <li><strong>Red or Black:</strong>
-                        Bet on a color.</li>
-                        <li><strong>Odd or Even:</strong>
-                        Bet on number parity.</li>
-                        <li><strong>Dozen:</strong>
-                        Bet on 1-12, 13-24, or 25-36.</li>
-                    </ul>
-                `
-            },
-            {
-                title: "04 | Roulette Payouts",
-                content: `
-                    <div class="manual-table-wrap">
-                        <table class="manual-table">
-                            <tr>
-                                <th>Bet</th>
-                                <th>Profit Payout</th>
-                            </tr>
-                            <tr><td>Straight Up</td><td>35:1</td></tr>
-                            <tr><td>Split</td><td>17:1</td></tr>
-                            <tr><td>Street</td><td>11:1</td></tr>
-                            <tr><td>Corner</td><td>8:1</td></tr>
-                            <tr><td>Dozen</td><td>2:1</td></tr>
-                            <tr><td>Red / Black</td><td>1:1</td></tr>
-                            <tr><td>Odd / Even</td><td>1:1</td></tr>
-                        </table>
-                    </div>
-
-                    <p class="manual-note">
-                        These are standard profit odds.
-                        Winning bets also return the
-                        original stake.
-                    </p>
-                `
-            },
-            {
-                title: "05 | Example Round",
-                content: `
-                    <div class="manual-example">
-                        <h4>Betting on Red</h4>
-                        <p>
-                            You place a 100-credit example
-                            wager on red. If a red number
-                            wins, the 1:1 payout gives
-                            100 credits in profit plus
-                            your original 100 credits.
-                        </p>
-                        <p>
-                            If black or green wins,
-                            the red bet loses under
-                            standard rules.
-                        </p>
-                    </div>
-                `
-            },
-            {
-                title: "06 | Understanding the Odds",
-                content: `
-                    <p>
-                        The zero pocket creates a
-                        house advantage because it
-                        is neither red nor black,
-                        odd nor even.
-                    </p>
-                    <ul>
-                        <li>European single-zero
-                        roulette: approximately
-                        2.70% house edge on
-                        standard bets.</li>
-                        <li>American double-zero
-                        roulette: approximately
-                        5.26% house edge on
-                        standard bets.</li>
-                    </ul>
-                    <p>
-                        Some European tables offer
-                        special rules that reduce
-                        the edge on certain bets.
-                        Previous spins do not
-                        predict future results.
-                    </p>
-                `
-            }
-        ]
-    },
-
-    poker: {
-        title: "Texas Hold'em Poker",
-        icon: "♠️",
-        description:
-            "Learn poker hands, community cards, betting rounds, and showdowns.",
-
-        sections: [
-            {
-                title: "01 | Game Overview",
-                content: `
-                    <p>
-                        Texas Hold'em is a popular
-                        poker variation played against
-                        other players, rather than
-                        directly against the house
-                        in its standard form.
-                    </p>
-                    <p>
-                        Each player receives two
-                        private cards. Five community
-                        cards are dealt face up.
-                        Players make the best possible
-                        five-card poker hand.
-                    </p>
-                `
-            },
-            {
-                title: "02 | Starting the Game",
-                content: `
-                    <ol>
-                        <li>The dealer button identifies
-                        the nominal dealer position.</li>
-                        <li>Two players post the small
-                        and big blinds.</li>
-                        <li>Each player receives
-                        two private cards.</li>
-                        <li>The first betting
-                        round begins.</li>
-                    </ol>
-                `
-            },
-            {
-                title: "03 | The Four Betting Rounds",
-                content: `
-                    <ol>
-                        <li><strong>Pre-Flop:</strong>
-                        Players act after receiving
-                        their two private cards.</li>
-                        <li><strong>Flop:</strong>
-                        Three community cards
-                        are revealed.</li>
-                        <li><strong>Turn:</strong>
-                        A fourth community card
-                        is revealed.</li>
-                        <li><strong>River:</strong>
-                        The fifth community card
-                        is revealed.</li>
-                    </ol>
-
-                    <p>
-                        If more than one player remains
-                        after final betting, the hand
-                        proceeds to a showdown.
-                    </p>
-                `
-            },
-            {
-                title: "04 | Player Actions",
-                content: `
-                    <ul>
-                        <li><strong>Check:</strong>
-                        Pass the action when no
-                        bet needs to be called.</li>
-                        <li><strong>Bet:</strong>
-                        Place the first wager
-                        of a betting round.</li>
-                        <li><strong>Call:</strong>
-                        Match the required bet.</li>
-                        <li><strong>Raise:</strong>
-                        Increase the current bet.</li>
-                        <li><strong>Fold:</strong>
-                        Give up your hand.</li>
-                        <li><strong>All-In:</strong>
-                        Wager all remaining chips.</li>
-                    </ul>
-                `
-            },
-            {
-                title: "05 | Poker Hand Rankings",
-                content: `
-                    <div class="manual-table-wrap">
-                        <table class="manual-table">
-                            <tr>
-                                <th>Rank</th>
-                                <th>Hand</th>
-                            </tr>
-                            <tr><td>1</td><td>Royal Flush</td></tr>
-                            <tr><td>2</td><td>Straight Flush</td></tr>
-                            <tr><td>3</td><td>Four of a Kind</td></tr>
-                            <tr><td>4</td><td>Full House</td></tr>
-                            <tr><td>5</td><td>Flush</td></tr>
-                            <tr><td>6</td><td>Straight</td></tr>
-                            <tr><td>7</td><td>Three of a Kind</td></tr>
-                            <tr><td>8</td><td>Two Pair</td></tr>
-                            <tr><td>9</td><td>One Pair</td></tr>
-                            <tr><td>10</td><td>High Card</td></tr>
-                        </table>
-                    </div>
-                `
-            },
-            {
-                title: "06 | Winning a Hand",
-                content: `
-                    <p>
-                        A player can win when all
-                        opponents fold or by holding
-                        the best five-card hand
-                        at showdown.
-                    </p>
-
-                    <div class="manual-example">
-                        <h4>Example</h4>
-                        <p>
-                            Your private cards are
-                            A♠ and K♠. The board
-                            contains Q♠, J♠, 10♠,
-                            3♦, and 2♣.
-                        </p>
-                        <p>
-                            You have a royal flush,
-                            the highest-ranking
-                            poker hand.
-                        </p>
-                    </div>
-                `
-            },
-            {
-                title: "07 | Beginner Tips",
-                content: `
-                    <ul>
-                        <li>Learn the hand rankings
-                        before playing.</li>
-                        <li>Understand how blinds
-                        and betting rounds work.</li>
-                        <li>Pay attention to your
-                        position at the table.</li>
-                        <li>A strong starting hand
-                        does not guarantee victory.</li>
-                        <li>Casino poker rooms
-                        commonly collect a rake
-                        or other fee.</li>
-                    </ul>
-                `
-            }
-        ]
-    },
-
-    craps: {
-        title: "Craps",
-        icon: "🎲",
-        description:
-            "Understand the come-out roll, point numbers, and dice bets.",
-
-        sections: [
-            {
-                title: "01 | Game Overview",
-                content: `
-                    <p>
-                        Craps is a casino dice game
-                        played using two six-sided dice.
-                        Players wager on the outcome
-                        of the dice rolls.
-                    </p>
-                    <p>
-                        The person rolling the dice
-                        is called the shooter.
-                    </p>
-                `
-            },
-            {
-                title: "02 | The Come-Out Roll",
-                content: `
-                    <p>
-                        A new Pass Line round begins
-                        with the come-out roll.
-                    </p>
-
-                    <ul>
-                        <li><strong>7 or 11:</strong>
-                        Pass Line wins.</li>
-                        <li><strong>2, 3, or 12:</strong>
-                        Pass Line loses.</li>
-                        <li><strong>4, 5, 6, 8, 9, or 10:</strong>
-                        That number becomes
-                        the point.</li>
-                    </ul>
-                `
-            },
-            {
-                title: "03 | The Point Phase",
-                content: `
-                    <p>
-                        After a point is established,
-                        the shooter continues rolling.
-                    </p>
-
-                    <ul>
-                        <li>If the point appears
-                        again before a 7,
-                        Pass Line wins.</li>
-                        <li>If a 7 appears before
-                        the point, Pass Line loses.</li>
-                        <li>Other totals do not
-                        resolve the Pass Line bet.</li>
-                    </ul>
-                `
-            },
-            {
-                title: "04 | Popular Bets",
-                content: `
-                    <ul>
-                        <li><strong>Pass Line:</strong>
-                        Bet with the shooter under
-                        the standard point rules.</li>
-                        <li><strong>Don't Pass:</strong>
-                        Generally bets against the
-                        shooter. A come-out 12
-                        normally pushes.</li>
-                        <li><strong>Come:</strong>
-                        Similar to Pass Line,
-                        but placed after a
-                        point is established.</li>
-                        <li><strong>Place Bets:</strong>
-                        Wager on selected numbers
-                        appearing before a 7.</li>
-                        <li><strong>Odds Bets:</strong>
-                        Additional bets behind
-                        eligible line bets,
-                        typically paid at true odds.</li>
-                    </ul>
-                `
-            },
-            {
-                title: "05 | Payout Examples",
-                content: `
-                    <div class="manual-table-wrap">
-                        <table class="manual-table">
-                            <tr>
-                                <th>Bet</th>
-                                <th>Profit Payout</th>
-                            </tr>
-                            <tr>
-                                <td>Pass Line</td>
-                                <td>1:1</td>
-                            </tr>
-                            <tr>
-                                <td>Don't Pass</td>
-                                <td>1:1</td>
-                            </tr>
-                            <tr>
-                                <td>Place 6 or 8</td>
-                                <td>7:6</td>
-                            </tr>
-                            <tr>
-                                <td>Place 5 or 9</td>
-                                <td>7:5</td>
-                            </tr>
-                            <tr>
-                                <td>Place 4 or 10</td>
-                                <td>9:5</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <p class="manual-note">
-                        Table minimums, permitted bet
-                        amounts, and special rules vary.
-                    </p>
-                `
-            },
-            {
-                title: "06 | Example Round",
-                content: `
-                    <div class="manual-example">
-                        <h4>Pass Line Example</h4>
-                        <p>
-                            You place a 100-credit
-                            example Pass Line wager.
-                            The come-out roll is 6,
-                            establishing a point of 6.
-                        </p>
-                        <p>
-                            The shooter rolls 8,
-                            then 5, then 6.
-                            Because the point appears
-                            before a 7, your bet wins
-                            100 credits in profit.
-                        </p>
-                    </div>
-                `
-            },
-            {
-                title: "07 | Beginner Tips",
-                content: `
-                    <ul>
-                        <li>Start by understanding
-                        the Pass Line rules.</li>
-                        <li>Learn the difference
-                        between come-out and
-                        point phases.</li>
-                        <li>Check the table's
-                        minimum bets and odds limits.</li>
-                        <li>Every dice roll is
-                        independent of earlier rolls.</li>
-                    </ul>
-                `
-            }
-        ]
-    },
-
-    baccarat: {
-        title: "Baccarat",
-        icon: "♦️",
-        description:
-            "Learn how Player and Banker hands compete to reach nine.",
-
-        sections: [
-            {
-                title: "01 | Game Overview",
-                content: `
-                    <p>
-                        Baccarat is a casino card
-                        game where players usually
-                        wager on which of two hands,
-                        Player or Banker, will finish
-                        closest to a total of nine.
-                    </p>
-                    <p>
-                        This guide explains the
-                        common Punto Banco version.
-                    </p>
-                `
-            },
-            {
-                title: "02 | Card Values",
-                content: `
-                    <ul>
-                        <li><strong>Ace:</strong>
-                        1 point.</li>
-                        <li><strong>2 through 9:</strong>
-                        Face value.</li>
-                        <li><strong>10, Jack, Queen, King:</strong>
-                        0 points.</li>
-                    </ul>
-
-                    <p>
-                        Only the last digit of the
-                        total counts.
-                    </p>
-
-                    <div class="manual-example">
-                        <h4>Example</h4>
-                        <p>
-                            A 7 and an 8 total 15,
-                            which counts as 5
-                            in Baccarat.
-                        </p>
-                    </div>
-                `
-            },
-            {
-                title: "03 | How to Play",
-                content: `
-                    <ol>
-                        <li>Choose Player, Banker,
-                        or Tie as your wager.</li>
-                        <li>Two cards are dealt
-                        to each hand.</li>
-                        <li>Check for a natural
-                        total of 8 or 9.</li>
-                        <li>If needed, additional
-                        cards are drawn according
-                        to fixed rules.</li>
-                        <li>The hand closest
-                        to 9 wins.</li>
-                    </ol>
-
-                    <p>
-                        Players do not choose
-                        whether to hit or stand
-                        in standard Punto Banco.
-                    </p>
-                `
-            },
-            {
-                title: "04 | Common Payouts",
-                content: `
-                    <div class="manual-table-wrap">
-                        <table class="manual-table">
-                            <tr>
-                                <th>Bet</th>
-                                <th>Typical Profit</th>
-                            </tr>
-                            <tr>
-                                <td>Player</td>
-                                <td>1:1</td>
-                            </tr>
-                            <tr>
-                                <td>Banker</td>
-                                <td>0.95:1 after 5% commission</td>
-                            </tr>
-                            <tr>
-                                <td>Tie</td>
-                                <td>8:1 at many tables</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <p class="manual-note">
-                        Some tables offer different
-                        commission structures or
-                        Tie payouts.
-                    </p>
-                `
-            },
-            {
-                title: "05 | Example Round",
-                content: `
-                    <div class="manual-example">
-                        <h4>Player Wins</h4>
-                        <p>
-                            The Player hand has 9,
-                            while the Banker hand
-                            has 6. The Player wins.
-                        </p>
-                        <p>
-                            A winning 100-credit
-                            example Player bet earns
-                            100 credits in profit,
-                            plus the returned stake.
-                        </p>
-                    </div>
-                `
-            },
-            {
-                title: "06 | Beginner Tips",
-                content: `
-                    <ul>
-                        <li>Player and Banker are
-                        names of hands, not
-                        descriptions of who is
-                        placing the bet.</li>
-                        <li>Learn the fixed
-                        drawing rules.</li>
-                        <li>Check whether Banker
-                        commission applies.</li>
-                        <li>Understand that a
-                        Tie bet typically has
-                        a larger house edge.</li>
-                        <li>Past results do not
-                        determine future hands.</li>
-                    </ul>
-                `
-            }
-        ]
-    },
-
-    threecard: {
-        title: "Three Card Poker",
-        icon: "♥️",
-        description:
-            "Discover three-card rankings and how to challenge the dealer.",
-
-        sections: [
-            {
-                title: "01 | Game Overview",
-                content: `
-                    <p>
-                        Three Card Poker is a casino
-                        table game where the player
-                        and dealer each receive
-                        three cards.
-                    </p>
-                    <p>
-                        This guide focuses on
-                        the common Ante and Play
-                        version of the game.
-                    </p>
-                `
-            },
-            {
-                title: "02 | How to Play",
-                content: `
-                    <ol>
-                        <li>Place an Ante wager.</li>
-                        <li>You and the dealer
-                        each receive three cards.</li>
-                        <li>Look at your cards.</li>
-                        <li>Fold and lose your Ante,
-                        or make a Play wager equal
-                        to your Ante.</li>
-                        <li>The dealer reveals
-                        their cards.</li>
-                        <li>Compare the hands
-                        using the table rules.</li>
-                    </ol>
-                `
-            },
-            {
-                title: "03 | Three Card Hand Rankings",
-                content: `
-                    <div class="manual-table-wrap">
-                        <table class="manual-table">
-                            <tr>
-                                <th>Rank</th>
-                                <th>Hand</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>Straight Flush</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Three of a Kind</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Straight</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Flush</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Pair</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td>High Card</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <p>
-                        Unlike five-card poker,
-                        a straight ranks above
-                        a flush in Three Card Poker.
-                    </p>
-                `
-            },
-            {
-                title: "04 | Dealer Qualification",
-                content: `
-                    <p>
-                        In a common Ante and Play
-                        game, the dealer must hold
-                        Queen-high or better
-                        to qualify.
-                    </p>
-
-                    <ul>
-                        <li>If the dealer does
-                        not qualify, the Ante
-                        pays 1:1 and the
-                        Play wager pushes.</li>
-                        <li>If the dealer qualifies
-                        and your hand wins,
-                        both Ante and Play
-                        typically pay 1:1.</li>
-                        <li>If the dealer qualifies
-                        and your hand loses,
-                        both wagers lose.</li>
-                        <li>If the hands tie,
-                        both wagers push.</li>
-                    </ul>
-                `
-            },
-            {
-                title: "05 | Ante Bonus",
-                content: `
-                    <p>
-                        Many tables pay an
-                        additional Ante Bonus
-                        for qualifying strong
-                        player hands, regardless
-                        of the dealer's hand.
-                    </p>
-
-                    <div class="manual-table-wrap">
-                        <table class="manual-table">
-                            <tr>
-                                <th>Hand</th>
-                                <th>Example Bonus</th>
-                            </tr>
-                            <tr>
-                                <td>Straight Flush</td>
-                                <td>5:1</td>
-                            </tr>
-                            <tr>
-                                <td>Three of a Kind</td>
-                                <td>4:1</td>
-                            </tr>
-                            <tr>
-                                <td>Straight</td>
-                                <td>1:1</td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <p class="manual-note">
-                        Bonus schedules vary by casino.
-                        Pair Plus is a separate
-                        optional wager with its
-                        own payout table.
-                    </p>
-                `
-            },
-            {
-                title: "06 | Example Round",
-                content: `
-                    <div class="manual-example">
-                        <h4>Winning Against the Dealer</h4>
-                        <p>
-                            You wager 100 example
-                            credits on Ante and
-                            another 100 on Play.
-                        </p>
-                        <p>
-                            Your pair of Kings beats
-                            a qualifying dealer
-                            hand with a pair of Tens.
-                        </p>
-                        <p>
-                            Both bets pay 1:1,
-                            producing 200 credits
-                            in total profit.
-                        </p>
-                    </div>
-                `
-            },
-            {
-                title: "07 | Beginner Tips",
-                content: `
-                    <ul>
-                        <li>Memorize the special
-                        three-card rankings.</li>
-                        <li>Understand the
-                        Queen-high dealer
-                        qualification rule.</li>
-                        <li>Read the Ante Bonus
-                        schedule before playing.</li>
-                        <li>Pair Plus and other
-                        side bets have separate
-                        rules and odds.</li>
-                        <li>No hand or strategy
-                        guarantees a win.</li>
-                    </ul>
-                `
-            }
-        ]
     }
+    catch (error) {
+        return [];
+    }
+}
+
+completedGuides = readAcademyProgress(
+    "neonAcademyGuides"
+);
+
+passedQuizzes = readAcademyProgress(
+    "neonAcademyQuizzes"
+);
+
+function updateAcademyProgress() {
+
+    const completed = new Set(completedGuides);
+    const passed = new Set(passedQuizzes);
+
+    const count = completed.size;
+    const percent = Math.round(count / 6 * 100);
+
+    document.getElementById(
+        "guides-completed"
+    ).textContent = count + " / 6";
+
+    document.getElementById(
+        "quizzes-passed"
+    ).textContent = passed.size + " / 6";
+
+    document.getElementById(
+        "progress-percent"
+    ).textContent = percent + "%";
+
+    document.getElementById(
+        "progress-fill"
+    ).style.width = percent + "%";
+
+    document.getElementById(
+        "academy-progress"
+    ).setAttribute(
+        "aria-valuenow",
+        percent
+    );
+
+    let rank = "ROOKIE";
+
+    if (count >= 2) {
+        rank = "STUDENT";
+    }
+
+    if (count >= 4) {
+        rank = "EXPERT";
+    }
+
+    if (count === 6 && passed.size === 6) {
+        rank = "ROYAL MASTER";
+    }
+
+    document.getElementById(
+        "academy-rank"
+    ).textContent = rank;
+
+    let message =
+        "📖 Your royal casino education starts here!";
+
+    if (count > 0) {
+        message =
+            "⭐ Great progress! " + count +
+            " of 6 guides completed.";
+    }
+
+    if (count === 6) {
+        message =
+            "👑 All guides completed! Try passing every quiz.";
+    }
+
+    if (count === 6 && passed.size === 6) {
+        message =
+            "🏆 ROYAL MASTER! You've completed the academy!";
+    }
+
+    document.getElementById(
+        "progress-message"
+    ).textContent = message;
+
+    document.querySelectorAll(
+        ".guide-completion"
+    ).forEach(function(label) {
+
+        const id = label.dataset.completion;
+
+        if (completed.has(id)) {
+            label.textContent = "✅ GUIDE COMPLETED";
+            label.classList.add("completed");
+        }
+        else {
+            label.textContent = "📖 Not Yet Completed";
+            label.classList.remove("completed");
+        }
+
+    });
+}
+
+
+// ==========================================
+// MARK A MANUAL AS COMPLETED
+// ==========================================
+
+document.getElementById(
+    "complete-guide"
+).addEventListener("click", function() {
+
+    if (!currentGuide) {
+        return;
+    }
+
+    if (!completedGuides.includes(currentGuide)) {
+
+        completedGuides.push(currentGuide);
+
+        localStorage.setItem(
+            "neonAcademyGuides",
+            JSON.stringify(completedGuides)
+        );
+
+    }
+
+    document.getElementById(
+        "completion-message"
+    ).textContent =
+        "🏆 Excellent! This manual is now completed.";
+
+    updateAcademyProgress();
+
+});
+
+
+// ==========================================
+// UPGRADED MANUAL OPENING
+// ==========================================
+
+// Preserve the original manual display function.
+const originalOpenGuide = openGuide;
+
+openGuide = function(gameName) {
+
+    if (!casinoGuides[gameName]) {
+        return;
+    }
+
+    currentGuide = gameName;
+
+    // Display the original complete manual.
+    originalOpenGuide(gameName);
+
+    // Build the table of contents.
+    const toc = document.getElementById(
+        "manual-toc-links"
+    );
+
+    toc.innerHTML = "";
+
+    const panels = document.querySelectorAll(
+        "#manual-content .manual-panel"
+    );
+
+    panels.forEach(function(panel, index) {
+
+        panel.id = "manual-topic-" + index;
+
+        const heading = panel.querySelector("h3");
+
+        const button = document.createElement("button");
+
+        button.type = "button";
+
+        button.textContent = heading.textContent;
+
+        button.addEventListener("click", function() {
+
+            panel.scrollIntoView({
+                behavior: window.matchMedia(
+                    "(prefers-reduced-motion: reduce)"
+                ).matches ? "auto" : "smooth",
+                block: "start"
+            });
+
+        });
+
+        toc.appendChild(button);
+
+    });
+
+    const alreadyCompleted =
+        completedGuides.includes(gameName);
+
+    document.getElementById(
+        "completion-message"
+    ).textContent = alreadyCompleted
+        ? "✅ You've already completed this manual!"
+        : "";
+
+    resetQuizDisplay();
+
 };
 
 
 // ==========================================
-// FIND HTML ELEMENTS
+// SEARCH AND CATEGORY FILTERS
 // ==========================================
 
-const gameLibrary = document.getElementById(
-    "game-library"
-);
+let activeCategory = "all";
 
-const manualSection = document.getElementById(
-    "manual-section"
-);
+function filterAcademyGames() {
 
-const manualTitle = document.getElementById(
-    "manual-title"
-);
-
-const manualIcon = document.getElementById(
-    "manual-icon"
-);
-
-const manualDescription = document.getElementById(
-    "manual-description"
-);
-
-const manualContent = document.getElementById(
-    "manual-content"
-);
-
-
-// ==========================================
-// OPEN A GAME MANUAL
-// ==========================================
-
-function openGuide(gameName) {
-
-    const game = casinoGuides[gameName];
-
-    if (!game) {
-        return;
-    }
-
-    manualTitle.textContent = game.title;
-
-    manualIcon.textContent = game.icon;
-
-    manualDescription.textContent =
-        game.description;
-
-    // Clear the previously opened guide.
-    manualContent.innerHTML = "";
-
-    // Add each instruction section.
-    for (let i = 0; i < game.sections.length; i++) {
-
-        const section = game.sections[i];
-
-        const panel = document.createElement(
-            "article"
-        );
-
-        panel.className = "manual-panel";
-
-        const heading = document.createElement(
-            "h3"
-        );
-
-        heading.textContent = section.title;
-
-        panel.appendChild(heading);
-
-        // The HTML comes from our own fixed
-        // game manual data, not user input.
-        const information = document.createElement(
-            "div"
-        );
-
-        information.innerHTML = section.content;
-
-        panel.appendChild(information);
-
-        manualContent.appendChild(panel);
-
-    }
-
-    // Hide the game selection menu.
-    gameLibrary.hidden = true;
-
-    // Display the selected manual.
-    manualSection.hidden = false;
-
-    // Move the visitor to the manual.
-    manualSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-
-}
-
-
-// ==========================================
-// RETURN TO GAME LIBRARY
-// ==========================================
-
-function showGuideLibrary() {
-
-    manualSection.hidden = true;
-
-    gameLibrary.hidden = false;
-
-    gameLibrary.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-
-}
-
-
-// ==========================================
-// SEARCH THE GAME LIBRARY
-// ==========================================
-
-function searchGuides() {
-
-    const searchInput = document.getElementById(
+    const searchText = document.getElementById(
         "game-search"
-    );
+    ).value.toLowerCase().trim();
 
-    const searchText =
-        searchInput.value.toLowerCase().trim();
-
-    const gameCards = document.querySelectorAll(
+    const cards = document.querySelectorAll(
         ".guide-game-card"
     );
 
-    let visibleGames = 0;
+    let visibleCount = 0;
 
-    for (let i = 0; i < gameCards.length; i++) {
+    cards.forEach(function(card) {
 
-        const card = gameCards[i];
+        const matchesSearch =
+            card.dataset.name.includes(searchText);
 
-        const gameName = card.dataset.name;
+        const matchesCategory =
+            activeCategory === "all" ||
+            card.dataset.category === activeCategory;
 
-        if (gameName.includes(searchText)) {
+        const visible =
+            matchesSearch && matchesCategory;
 
-            card.hidden = false;
+        card.hidden = !visible;
 
-            visibleGames++;
-
+        if (visible) {
+            visibleCount++;
         }
-        else {
 
-            card.hidden = true;
-
-        }
-
-    }
+    });
 
     document.getElementById(
         "search-count"
     ).textContent =
-        "Showing " + visibleGames +
+        "Showing " + visibleCount +
         " of 6 casino games.";
 
     document.getElementById(
         "no-results"
-    ).hidden = visibleGames !== 0;
+    ).hidden = visibleCount !== 0;
 
 }
 
-
-// ==========================================
-// CONNECT BUTTONS
-// ==========================================
-
-const guideButtons = document.querySelectorAll(
-    ".guide-open-button"
-);
-
-for (let i = 0; i < guideButtons.length; i++) {
-
-    guideButtons[i].addEventListener(
-        "click",
-        function() {
-
-            openGuide(this.dataset.game);
-
-        }
-    );
-
-}
+// Replace the old search behavior with the
+// new combined search and category filtering.
+searchGuides = filterAcademyGames;
 
 document.getElementById(
     "game-search"
 ).addEventListener(
     "input",
-    searchGuides
+    filterAcademyGames
 );
 
+document.querySelectorAll(
+    ".filter-button"
+).forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        activeCategory = button.dataset.filter;
+
+        document.querySelectorAll(
+            ".filter-button"
+        ).forEach(function(item) {
+
+            const selected = item === button;
+
+            item.classList.toggle(
+                "active",
+                selected
+            );
+
+            item.setAttribute(
+                "aria-pressed",
+                String(selected)
+            );
+
+        });
+
+        filterAcademyGames();
+
+    });
+
+});
+
+
+// ==========================================
+// RANDOM GAME GUIDE
+// ==========================================
+
 document.getElementById(
-    "back-to-guides"
+    "random-guide"
+).addEventListener("click", function() {
+
+    const randomIndex = Math.floor(
+        Math.random() * academyGameIds.length
+    );
+
+    openGuide(academyGameIds[randomIndex]);
+
+});
+
+
+// ==========================================
+// ROYAL KNOWLEDGE QUIZ QUESTIONS
+// ==========================================
+
+// Every game has five questions.
+// The correct answer is stored by its index.
+
+const academyQuestions = {
+
+    blackjack: [
+        {
+            question: "🎯 What is the main goal of Blackjack?",
+            answers: [
+                "Reach exactly 30",
+                "Beat the dealer without exceeding 21",
+                "Collect four matching cards",
+                "Get the highest single card"
+            ],
+            correct: 1,
+            explanation:
+                "Blackjack is about beating the dealer without going over 21."
+        },
+        {
+            question: "🃏 How many points is a King worth?",
+            answers: ["5", "10", "11", "13"],
+            correct: 1,
+            explanation:
+                "Kings, Queens, and Jacks are worth 10 points."
+        },
+        {
+            question: "♠ What does Hit mean?",
+            answers: [
+                "Request another card",
+                "End your turn",
+                "Double your wager",
+                "Give up your hand"
+            ],
+            correct: 0,
+            explanation:
+                "Hit means requesting another card."
+        },
+        {
+            question: "👑 What is a natural Blackjack?",
+            answers: [
+                "Three cards totaling 21",
+                "Any hand totaling 20",
+                "An Ace and a ten-value card as the first two cards",
+                "Two Aces"
+            ],
+            correct: 2,
+            explanation:
+                "A natural Blackjack is a two-card total of 21."
+        },
+        {
+            question: "💰 What happens on a normal push?",
+            answers: [
+                "You double your money",
+                "The dealer takes half",
+                "Your wager is returned",
+                "You receive another card"
+            ],
+            correct: 2,
+            explanation:
+                "A push is a tie, so the original wager is returned."
+        }
+    ],
+
+    roulette: [
+        {
+            question: "🎡 How many pockets are on a European wheel?",
+            answers: ["36", "37", "38", "40"],
+            correct: 1,
+            explanation:
+                "European roulette has numbers 1-36 plus a single zero."
+        },
+        {
+            question: "🔴 What is the standard profit payout for red?",
+            answers: ["1:1", "2:1", "5:1", "35:1"],
+            correct: 0,
+            explanation:
+                "Red and black bets normally pay 1:1."
+        },
+        {
+            question: "🎯 What does a straight-up bet cover?",
+            answers: [
+                "Two numbers",
+                "Four numbers",
+                "One number",
+                "Twelve numbers"
+            ],
+            correct: 2,
+            explanation:
+                "A straight-up bet covers one specific number."
+        },
+        {
+            question: "🟢 What color is the zero pocket?",
+            answers: ["Red", "Black", "Blue", "Green"],
+            correct: 3,
+            explanation:
+                "Zero pockets are green."
+        },
+        {
+            question: "💰 What is the standard straight-up profit payout?",
+            answers: ["1:1", "8:1", "17:1", "35:1"],
+            correct: 3,
+            explanation:
+                "A winning straight-up bet normally pays 35:1 profit."
+        }
+    ],
+
+    poker: [
+        {
+            question: "♠ How many private cards does each player get?",
+            answers: ["2", "3", "4", "5"],
+            correct: 0,
+            explanation:
+                "Texas Hold'em players receive two private cards."
+        },
+        {
+            question: "🃏 How many community cards are eventually dealt?",
+            answers: ["2", "3", "4", "5"],
+            correct: 3,
+            explanation:
+                "Five community cards appear by the river."
+        },
+        {
+            question: "🏆 Which is the highest-ranked poker hand?",
+            answers: [
+                "Full House",
+                "Royal Flush",
+                "Straight",
+                "Two Pair"
+            ],
+            correct: 1,
+            explanation:
+                "A Royal Flush is the highest-ranked standard poker hand."
+        },
+        {
+            question: "🎲 What is the Flop?",
+            answers: [
+                "The final card",
+                "The first three community cards",
+                "A player's private cards",
+                "The dealer button"
+            ],
+            correct: 1,
+            explanation:
+                "The Flop reveals three community cards."
+        },
+        {
+            question: "💰 What does Fold mean?",
+            answers: [
+                "Match a bet",
+                "Increase a bet",
+                "Give up your hand",
+                "Win automatically"
+            ],
+            correct: 2,
+            explanation:
+                "Folding means giving up your hand."
+        }
+    ],
+
+    craps: [
+        {
+            question: "🎲 How many dice are used in Craps?",
+            answers: ["1", "2", "3", "4"],
+            correct: 1,
+            explanation:
+                "Craps uses two six-sided dice."
+        },
+        {
+            question: "⭐ Which come-out roll wins a Pass Line bet?",
+            answers: ["2", "3", "7", "12"],
+            correct: 2,
+            explanation:
+                "A come-out 7 or 11 wins a Pass Line bet."
+        },
+        {
+            question: "🎯 Which number can become a point?",
+            answers: ["2", "3", "6", "11"],
+            correct: 2,
+            explanation:
+                "Possible points are 4, 5, 6, 8, 9, and 10."
+        },
+        {
+            question: "💰 What is a Pass Line win paid at?",
+            answers: ["1:1", "2:1", "5:1", "10:1"],
+            correct: 0,
+            explanation:
+                "A Pass Line win pays even money."
+        },
+        {
+            question: "🎲 What happens if a 7 appears before the point?",
+            answers: [
+                "Pass Line wins",
+                "Pass Line loses",
+                "The point doubles",
+                "Nothing happens"
+            ],
+            correct: 1,
+            explanation:
+                "Rolling 7 before repeating the point loses the Pass Line bet."
+        }
+    ],
+
+    baccarat: [
+        {
+            question: "♦️ What is the target number in Baccarat?",
+            answers: ["7", "9", "11", "21"],
+            correct: 1,
+            explanation:
+                "The goal is to finish closest to nine."
+        },
+        {
+            question: "🃏 How much is a Queen worth?",
+            answers: ["0", "1", "10", "12"],
+            correct: 0,
+            explanation:
+                "Face cards and tens are worth zero."
+        },
+        {
+            question: "🎯 What does a total of 15 count as?",
+            answers: ["15", "10", "5", "1"],
+            correct: 2,
+            explanation:
+                "Only the last digit counts, so 15 becomes 5."
+        },
+        {
+            question: "👑 Which are the two main hands?",
+            answers: [
+                "Red and Black",
+                "Player and Banker",
+                "King and Queen",
+                "Dealer and Shooter"
+            ],
+            correct: 1,
+            explanation:
+                "The two hands are called Player and Banker."
+        },
+        {
+            question: "💰 What commission is common on winning Banker bets?",
+            answers: ["0%", "2%", "5%", "20%"],
+            correct: 2,
+            explanation:
+                "Traditional commission Baccarat often charges 5%."
+        }
+    ],
+
+    threecard: [
+        {
+            question: "♥️ How many cards does each hand receive?",
+            answers: ["2", "3", "5", "7"],
+            correct: 1,
+            explanation:
+                "Each hand contains three cards."
+        },
+        {
+            question: "♠ Which hand ranks higher in Three Card Poker?",
+            answers: [
+                "Flush",
+                "Straight",
+                "Pair",
+                "High Card"
+            ],
+            correct: 1,
+            explanation:
+                "A Straight ranks above a Flush in Three Card Poker."
+        },
+        {
+            question: "👑 What does the dealer commonly need to qualify?",
+            answers: [
+                "Ace-high",
+                "King-high",
+                "Queen-high or better",
+                "A pair"
+            ],
+            correct: 2,
+            explanation:
+                "The dealer normally needs Queen-high or better."
+        },
+        {
+            question: "💰 What is the Play wager compared with the Ante?",
+            answers: [
+                "Half the Ante",
+                "Equal to the Ante",
+                "Triple the Ante",
+                "Always optional in amount"
+            ],
+            correct: 1,
+            explanation:
+                "The Play wager equals the Ante in standard Ante and Play."
+        },
+        {
+            question: "🏆 Which is the highest Three Card Poker hand?",
+            answers: [
+                "Pair",
+                "Flush",
+                "Three of a Kind",
+                "Straight Flush"
+            ],
+            correct: 3,
+            explanation:
+                "A Straight Flush is the highest three-card hand."
+        }
+    ]
+
+};
+
+
+// ==========================================
+// QUIZ VARIABLES
+// ==========================================
+
+let quizIndex = 0;
+let quizPoints = 0;
+let quizAnswered = false;
+
+const quizStartScreen = document.getElementById(
+    "quiz-start-screen"
+);
+
+const quizQuestionScreen = document.getElementById(
+    "quiz-question-screen"
+);
+
+const quizResultScreen = document.getElementById(
+    "quiz-result-screen"
+);
+
+
+// ==========================================
+// RESET QUIZ DISPLAY
+// ==========================================
+
+function resetQuizDisplay() {
+
+    quizIndex = 0;
+    quizPoints = 0;
+    quizAnswered = false;
+
+    quizStartScreen.hidden = false;
+    quizQuestionScreen.hidden = true;
+    quizResultScreen.hidden = true;
+
+}
+
+
+// ==========================================
+// START A KNOWLEDGE QUIZ
+// ==========================================
+
+function startAcademyQuiz() {
+
+    if (!currentGuide) {
+        return;
+    }
+
+    quizIndex = 0;
+    quizPoints = 0;
+    quizAnswered = false;
+
+    quizStartScreen.hidden = true;
+    quizResultScreen.hidden = true;
+    quizQuestionScreen.hidden = false;
+
+    displayQuizQuestion();
+
+}
+
+
+// ==========================================
+// DISPLAY A QUESTION
+// ==========================================
+
+function displayQuizQuestion() {
+
+    const questions = academyQuestions[currentGuide];
+
+    const question = questions[quizIndex];
+
+    quizAnswered = false;
+
+    document.getElementById(
+        "quiz-counter"
+    ).textContent =
+        "QUESTION " + (quizIndex + 1) + " OF 5";
+
+    document.getElementById(
+        "quiz-score"
+    ).textContent =
+        "⭐ SCORE: " + quizPoints;
+
+    document.getElementById(
+        "quiz-progress-fill"
+    ).style.width =
+        ((quizIndex + 1) / questions.length * 100) + "%";
+
+    document.getElementById(
+        "quiz-question"
+    ).textContent = question.question;
+
+    document.getElementById(
+        "quiz-feedback"
+    ).textContent = "";
+
+    document.getElementById(
+        "next-question"
+    ).hidden = true;
+
+    const answersContainer = document.getElementById(
+        "quiz-answers"
+    );
+
+    answersContainer.innerHTML = "";
+
+    question.answers.forEach(function(answer, index) {
+
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "quiz-answer";
+
+        button.textContent =
+            String.fromCharCode(65 + index) +
+            ". " + answer;
+
+        button.addEventListener("click", function() {
+
+            checkQuizAnswer(index);
+
+        });
+
+        answersContainer.appendChild(button);
+
+    });
+
+}
+
+
+// ==========================================
+// CHECK THE SELECTED ANSWER
+// ==========================================
+
+function checkQuizAnswer(selectedIndex) {
+
+    if (quizAnswered) {
+        return;
+    }
+
+    quizAnswered = true;
+
+    const question =
+        academyQuestions[currentGuide][quizIndex];
+
+    const correctIndex = question.correct;
+
+    const buttons = document.querySelectorAll(
+        ".quiz-answer"
+    );
+
+    buttons.forEach(function(button, index) {
+
+        button.disabled = true;
+
+        if (index === correctIndex) {
+            button.classList.add("correct");
+        }
+
+        if (
+            index === selectedIndex &&
+            index !== correctIndex
+        ) {
+            button.classList.add("incorrect");
+        }
+
+    });
+
+    const feedback = document.getElementById(
+        "quiz-feedback"
+    );
+
+    if (selectedIndex === correctIndex) {
+
+        quizPoints++;
+
+        feedback.textContent =
+            "🎉 CORRECT! " + question.explanation;
+
+    }
+    else {
+
+        feedback.textContent =
+            "📖 NOT QUITE! " + question.explanation;
+
+    }
+
+    document.getElementById(
+        "quiz-score"
+    ).textContent =
+        "⭐ SCORE: " + quizPoints;
+
+    const nextButton = document.getElementById(
+        "next-question"
+    );
+
+    nextButton.hidden = false;
+
+    if (quizIndex === 4) {
+        nextButton.textContent = "🏆 VIEW RESULTS";
+    }
+    else {
+        nextButton.textContent = "NEXT QUESTION →";
+    }
+
+}
+
+
+// ==========================================
+// NEXT QUESTION
+// ==========================================
+
+function nextAcademyQuestion() {
+
+    if (!quizAnswered) {
+        return;
+    }
+
+    quizIndex++;
+
+    if (quizIndex >= 5) {
+        finishAcademyQuiz();
+    }
+    else {
+        displayQuizQuestion();
+    }
+
+}
+
+
+// ==========================================
+// FINISH THE QUIZ
+// ==========================================
+
+function finishAcademyQuiz() {
+
+    quizQuestionScreen.hidden = true;
+    quizResultScreen.hidden = false;
+
+    const passed = quizPoints >= 4;
+
+    document.getElementById(
+        "quiz-final-score"
+    ).textContent =
+        quizPoints + " / 5 CORRECT";
+
+    if (passed) {
+
+        document.getElementById(
+            "quiz-result-icon"
+        ).textContent = "🏆";
+
+        document.getElementById(
+            "quiz-result-title"
+        ).textContent = "ROYAL QUIZ PASSED!";
+
+        document.getElementById(
+            "quiz-result-description"
+        ).textContent =
+            "👑 Excellent work! You understand the " +
+            casinoGuides[currentGuide].title +
+            " fundamentals.";
+
+        if (!passedQuizzes.includes(currentGuide)) {
+
+            passedQuizzes.push(currentGuide);
+
+            localStorage.setItem(
+                "neonAcademyQuizzes",
+                JSON.stringify(passedQuizzes)
+            );
+
+        }
+
+        updateAcademyProgress();
+
+    }
+    else {
+
+        document.getElementById(
+            "quiz-result-icon"
+        ).textContent = "📚";
+
+        document.getElementById(
+            "quiz-result-title"
+        ).textContent = "KEEP LEARNING!";
+
+        document.getElementById(
+            "quiz-result-description"
+        ).textContent =
+            "You need at least 4 out of 5 to pass. " +
+            "Review the manual and try again!";
+
+    }
+
+}
+
+
+// ==========================================
+// CONNECT QUIZ BUTTONS
+// ==========================================
+
+document.getElementById(
+    "start-quiz"
 ).addEventListener(
     "click",
-    showGuideLibrary
+    startAcademyQuiz
 );
 
 document.getElementById(
-    "another-guide"
+    "next-question"
+).addEventListener(
+    "click",
+    nextAcademyQuestion
+);
+
+document.getElementById(
+    "retry-quiz"
+).addEventListener(
+    "click",
+    startAcademyQuiz
+);
+
+document.getElementById(
+    "quiz-back-to-guides"
 ).addEventListener(
     "click",
     showGuideLibrary
@@ -1169,10 +997,7 @@ document.getElementById(
 
 
 // ==========================================
-// LOAD THE SHARED CASINO BALANCE
+// LOAD ACADEMY PROGRESS
 // ==========================================
 
-// This displays the player's existing credits.
-// Reading the guidebook never places a wager.
-
-loadProgress();
+updateAcademyProgress();
