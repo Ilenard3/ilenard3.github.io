@@ -1,0 +1,486 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Royal Casino Guidebook | Neon Empire</title>
+
+    <!-- Guidebook styling -->
+    <link rel="stylesheet" href="guidebook.css">
+
+    <!-- Shared casino wallet -->
+    <script src="../script.js" defer></script>
+
+    <!-- Guidebook functionality -->
+    <script src="guidebook.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CASINO HEADER -->
+    <header class="guide-header">
+
+        <div class="guide-header-inner">
+
+            <a href="../index.html" class="guide-logo">
+                <span>♛ NEON EMPIRE</span>
+                <small>THE ULTIMATE CASINO</small>
+            </a>
+
+            <nav class="guide-nav"
+                 aria-label="Main navigation">
+
+                <a href="../index.html">Lobby</a>
+
+                <a href="../index.html#games">
+                    Casino Floor
+                </a>
+
+                <a href="../index.html#floor2">
+                    Second Floor
+                </a>
+
+                <a href="index.html"
+                   class="active"
+                   aria-current="page">
+                    Guidebook
+                </a>
+
+                <a href="../index.html#statistics">
+                    Statistics
+                </a>
+
+            </nav>
+
+            <div class="guide-wallet">
+                <span>💰 YOUR BALANCE</span>
+                <strong id="header-balance">
+                    5,000 CR
+                </strong>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="guide-container">
+
+        <!-- WELCOME BANNER -->
+        <section class="guide-hero">
+
+            <p class="guide-eyebrow">
+                ✦ THE ROYAL CASINO COLLECTION ✦
+            </p>
+
+            <div class="guide-crown">♛</div>
+
+            <h1>THE ROYAL CASINO GUIDEBOOK</h1>
+
+            <p>
+                Discover the rules behind six legendary
+                casino games. Learn the terminology,
+                understand the betting options, and
+                explore how each game works.
+            </p>
+
+            <div class="guide-highlights">
+                <span>📖 6 COMPLETE GUIDES</span>
+                <span>♠ CLASSIC CASINO GAMES</span>
+                <span>🎓 BEGINNER FRIENDLY</span>
+            </div>
+
+            <a href="#game-library"
+               class="guide-primary-button">
+                📖 EXPLORE THE GUIDES
+            </a>
+
+        </section>
+
+        <!-- GAME LIBRARY -->
+        <section id="game-library"
+                 class="guide-library">
+
+            <div class="guide-heading">
+
+                <p>✦ EXPLORE THE CASINO ✦</p>
+
+                <h2>Choose Your Game</h2>
+
+                <span>
+                    Select a game to open its
+                    complete instruction manual.
+                </span>
+
+            </div>
+
+            <!-- SEARCH -->
+            <div class="guide-search">
+
+                <label for="game-search">
+                    🔎 FIND A CASINO GAME
+                </label>
+
+                <input
+                    type="search"
+                    id="game-search"
+                    placeholder="Search Blackjack, Poker, Roulette..."
+                    autocomplete="off">
+
+                <p id="search-count"
+                   aria-live="polite">
+                    Showing all 6 casino games.
+                </p>
+
+            </div>
+
+            <!-- GAME CARDS -->
+            <div class="guide-game-grid">
+
+                <!-- BLACKJACK -->
+                <article class="guide-game-card"
+                         data-name="blackjack cards 21">
+
+                    <div class="guide-game-art">
+                        <span>🃏</span>
+                    </div>
+
+                    <div class="guide-game-content">
+
+                        <span class="guide-category">
+                            CLASSIC CARD GAME
+                        </span>
+
+                        <h3>Blackjack</h3>
+
+                        <p>
+                            Challenge the dealer and
+                            try to reach 21 without
+                            going over.
+                        </p>
+
+                        <div class="guide-details">
+                            <span>♠ Playing Cards</span>
+                            <span>★ Beginner Friendly</span>
+                        </div>
+
+                        <button type="button"
+                                class="guide-open-button"
+                                data-game="blackjack">
+                            📖 READ BLACKJACK GUIDE
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- ROULETTE -->
+                <article class="guide-game-card"
+                         data-name="roulette wheel numbers">
+
+                    <div class="guide-game-art">
+                        <span>🎡</span>
+                    </div>
+
+                    <div class="guide-game-content">
+
+                        <span class="guide-category">
+                            CLASSIC WHEEL GAME
+                        </span>
+
+                        <h3>Roulette</h3>
+
+                        <p>
+                            Discover the spinning
+                            roulette wheel, betting
+                            layout, and winning numbers.
+                        </p>
+
+                        <div class="guide-details">
+                            <span>🎡 Casino Wheel</span>
+                            <span>★ Beginner Friendly</span>
+                        </div>
+
+                        <button type="button"
+                                class="guide-open-button"
+                                data-game="roulette">
+                            📖 READ ROULETTE GUIDE
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- POKER -->
+                <article class="guide-game-card"
+                         data-name="poker texas holdem cards">
+
+                    <div class="guide-game-art">
+                        <span>♠️</span>
+                    </div>
+
+                    <div class="guide-game-content">
+
+                        <span class="guide-category">
+                            STRATEGY CARD GAME
+                        </span>
+
+                        <h3>Texas Hold'em Poker</h3>
+
+                        <p>
+                            Learn community cards,
+                            betting rounds, poker hands,
+                            and showdown rules.
+                        </p>
+
+                        <div class="guide-details">
+                            <span>♠ Poker Hands</span>
+                            <span>★ Advanced Rules</span>
+                        </div>
+
+                        <button type="button"
+                                class="guide-open-button"
+                                data-game="poker">
+                            📖 READ POKER GUIDE
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- CRAPS -->
+                <article class="guide-game-card"
+                         data-name="craps dice pass line">
+
+                    <div class="guide-game-art">
+                        <span>🎲</span>
+                    </div>
+
+                    <div class="guide-game-content">
+
+                        <span class="guide-category">
+                            CLASSIC DICE GAME
+                        </span>
+
+                        <h3>Craps</h3>
+
+                        <p>
+                            Discover the come-out roll,
+                            point numbers, and popular
+                            dice betting options.
+                        </p>
+
+                        <div class="guide-details">
+                            <span>🎲 Two Dice</span>
+                            <span>★ Intermediate</span>
+                        </div>
+
+                        <button type="button"
+                                class="guide-open-button"
+                                data-game="craps">
+                            📖 READ CRAPS GUIDE
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- BACCARAT -->
+                <article class="guide-game-card"
+                         data-name="baccarat banker player cards">
+
+                    <div class="guide-game-art">
+                        <span>♦️</span>
+                    </div>
+
+                    <div class="guide-game-content">
+
+                        <span class="guide-category">
+                            ROYAL CARD GAME
+                        </span>
+
+                        <h3>Baccarat</h3>
+
+                        <p>
+                            Learn how Player and Banker
+                            hands compete to finish
+                            closest to nine.
+                        </p>
+
+                        <div class="guide-details">
+                            <span>♦ Card Totals</span>
+                            <span>★ Beginner Friendly</span>
+                        </div>
+
+                        <button type="button"
+                                class="guide-open-button"
+                                data-game="baccarat">
+                            📖 READ BACCARAT GUIDE
+                        </button>
+
+                    </div>
+
+                </article>
+
+                <!-- THREE CARD POKER -->
+                <article class="guide-game-card"
+                         data-name="three card poker ante play">
+
+                    <div class="guide-game-art">
+                        <span>♥️</span>
+                    </div>
+
+                    <div class="guide-game-content">
+
+                        <span class="guide-category">
+                            CASINO TABLE GAME
+                        </span>
+
+                        <h3>Three Card Poker</h3>
+
+                        <p>
+                            Learn three-card hand
+                            rankings and how to
+                            compete against the dealer.
+                        </p>
+
+                        <div class="guide-details">
+                            <span>♥ Three Cards</span>
+                            <span>★ Intermediate</span>
+                        </div>
+
+                        <button type="button"
+                                class="guide-open-button"
+                                data-game="threecard">
+                            📖 READ THREE CARD POKER
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <p id="no-results" hidden>
+                No games found. Try another search.
+            </p>
+
+        </section>
+
+        <!-- INTERACTIVE MANUAL -->
+        <section id="manual-section"
+                 class="manual-section"
+                 hidden>
+
+            <div class="manual-top">
+
+                <button type="button"
+                        id="back-to-guides"
+                        class="guide-secondary-button">
+                    ← ALL GAME GUIDES
+                </button>
+
+                <span>♛ ROYAL GAME MANUAL</span>
+
+            </div>
+
+            <div class="manual-hero">
+
+                <div id="manual-icon"
+                     class="manual-icon">
+                    🃏
+                </div>
+
+                <p class="guide-eyebrow">
+                    ✦ LEARN THE GAME ✦
+                </p>
+
+                <h2 id="manual-title">
+                    Game Instructions
+                </h2>
+
+                <p id="manual-description"></p>
+
+            </div>
+
+            <div id="manual-content"
+                 class="manual-content">
+            </div>
+
+            <div class="manual-bottom">
+
+                <button type="button"
+                        id="another-guide"
+                        class="guide-primary-button">
+                    📖 EXPLORE ANOTHER GAME
+                </button>
+
+                <a href="../index.html"
+                   class="guide-secondary-button">
+                    ← RETURN TO CASINO LOBBY
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- EDUCATIONAL NOTICE -->
+        <section class="guide-notice">
+
+            <h2>♛ Learn Before You Play</h2>
+
+            <p>
+                Casino rules and payouts may vary by
+                location and table. These guides explain
+                common versions of popular casino games
+                for educational purposes.
+            </p>
+
+            <p>
+                Casino games involve financial risk.
+                No strategy guarantees a win.
+                Neon Empire uses fictional credits only.
+            </p>
+
+        </section>
+
+        <!-- RETURN TO LOBBY -->
+        <section class="guide-navigation">
+
+            <a href="../index.html"
+               class="guide-secondary-button">
+                ← BACK TO CASINO LOBBY
+            </a>
+
+            <a href="../index.html#games"
+               class="guide-primary-button">
+                🎰 VISIT THE CASINO FLOOR
+            </a>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="guide-footer">
+
+        <h2>♛ NEON EMPIRE</h2>
+
+        <p>THE ULTIMATE VIRTUAL CASINO</p>
+
+        <p>
+            Educational Project • Fictional Credits Only
+        </p>
+
+        <p class="guide-copyright">
+            © 2026 Neon Empire Casino |
+            Web Design Final Project
+        </p>
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,775 @@
+
+/* ==========================================
+   NEON EMPIRE CASINO
+   ROYAL CASINO GUIDEBOOK
+   LUXURY LAS VEGAS NEON THEME
+   ========================================== */
+
+/* GENERAL */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff2e8;
+    line-height: 1.6;
+
+    background:
+        linear-gradient(
+            rgba(12, 5, 24, 0.87),
+            rgba(17, 5, 29, 0.95)
+        ),
+        url("../images/casino-background.jpg");
+
+    background-color: #100719;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #ffd36d;
+    outline-offset: 4px;
+}
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.guide-header {
+    background: rgba(15, 5, 28, 0.97);
+    border-bottom: 2px solid #e93bd1;
+    box-shadow: 0 5px 30px rgba(211, 38, 201, 0.3);
+    padding: 18px 25px;
+}
+
+.guide-header-inner {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.guide-logo {
+    display: block;
+    text-align: center;
+}
+
+.guide-logo span {
+    display: block;
+    color: #ffd36d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(255, 185, 65, 0.4);
+}
+
+.guide-logo small {
+    display: block;
+    color: #e9a4e6;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.guide-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.guide-nav a {
+    color: #e9d8ef;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px 13px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.guide-nav a:hover,
+.guide-nav a.active {
+    color: white;
+    background: linear-gradient(135deg, #75209e, #d12abb);
+    box-shadow: 0 0 15px rgba(233, 59, 209, 0.45);
+}
+
+.guide-wallet {
+    background: #2b1740;
+    border: 2px solid #d9ad5c;
+    border-radius: 12px;
+    padding: 9px 20px;
+    text-align: center;
+}
+
+.guide-wallet span {
+    display: block;
+    color: #e6c2e8;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.guide-wallet strong {
+    display: block;
+    color: #ffda80;
+    font-size: 21px;
+}
+
+/* ==========================================
+   MAIN CONTAINER
+   ========================================== */
+
+.guide-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 35px 20px;
+}
+
+/* ==========================================
+   ROYAL GUIDEBOOK HERO
+   ========================================== */
+
+.guide-hero {
+    padding: 55px 30px;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(155, 45, 175, 0.25),
+            transparent 70%
+        ),
+        linear-gradient(145deg, #301344, #170a29);
+
+    border: 2px solid #b35ac5;
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(225, 45, 205, 0.2);
+}
+
+.guide-eyebrow {
+    color: #ff9bea;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.guide-crown {
+    color: #ffd36d;
+    font-family: Georgia, serif;
+    font-size: 75px;
+    line-height: 1.2;
+    text-shadow: 0 0 25px rgba(255, 211, 109, 0.5);
+}
+
+.guide-hero h1 {
+    color: #ffd36d;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(30px, 5vw, 48px);
+    letter-spacing: 2px;
+    margin: 18px 0;
+}
+
+.guide-hero > p:not(.guide-eyebrow) {
+    max-width: 730px;
+    margin: 18px auto;
+    color: #ead8ef;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.guide-highlights {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 28px 0;
+}
+
+.guide-highlights span {
+    background: #452050;
+    color: #ffda80;
+    border: 1px solid #d8a758;
+    border-radius: 25px;
+    padding: 9px 15px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* ==========================================
+   BUTTONS
+   ========================================== */
+
+.guide-primary-button,
+.guide-secondary-button,
+.guide-open-button {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.guide-primary-button,
+.guide-open-button {
+    color: white;
+    background: linear-gradient(135deg, #8e1fba, #e333cb);
+    border: 2px solid #ff9bea;
+    box-shadow: 0 0 15px rgba(227, 51, 203, 0.35);
+}
+
+.guide-primary-button:hover,
+.guide-open-button:hover {
+    background: linear-gradient(135deg, #ad35dc, #f34cda);
+    box-shadow: 0 0 25px rgba(233, 69, 215, 0.6);
+    transform: translateY(-3px);
+}
+
+.guide-secondary-button {
+    color: #ffda80;
+    background: #251134;
+    border: 1px solid #d9ad5c;
+}
+
+.guide-secondary-button:hover {
+    background: #4a235d;
+    box-shadow: 0 0 15px rgba(217, 173, 92, 0.3);
+}
+
+/* ==========================================
+   GAME LIBRARY
+   ========================================== */
+
+.guide-library {
+    margin-top: 75px;
+}
+
+.guide-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.guide-heading p {
+    color: #ff9bea;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.guide-heading h2 {
+    color: #ffd36d;
+    font-family: Georgia, serif;
+    font-size: 38px;
+    margin: 8px 0;
+}
+
+.guide-heading > span {
+    color: #d9c2e5;
+    font-size: 14px;
+}
+
+/* SEARCH */
+
+.guide-search {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    padding: 23px;
+
+    background: #28143b;
+    border: 1px solid #a454b8;
+    border-radius: 13px;
+    text-align: center;
+}
+
+.guide-search label {
+    display: block;
+    color: #ffd36d;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.guide-search input {
+    width: 100%;
+    padding: 15px;
+    color: #fff2e8;
+    background: #13091f;
+    border: 2px solid #a85fb9;
+    border-radius: 9px;
+    font-size: 15px;
+}
+
+.guide-search input:focus {
+    outline: 2px solid #ffd36d;
+}
+
+.guide-search p {
+    color: #cdb5d9;
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+/* GAME CARDS */
+
+.guide-game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.guide-game-card {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    background: linear-gradient(145deg, #301344, #1a0b2c);
+    border: 2px solid #d64cd5;
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 20px rgba(220, 55, 210, 0.25),
+        0 12px 30px rgba(0, 0, 0, 0.35);
+
+    transition: 0.3s;
+}
+
+.guide-game-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff9bea;
+    box-shadow: 0 0 30px rgba(235, 65, 215, 0.45);
+}
+
+.guide-game-art {
+    min-height: 165px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle, #76348d, #260c3d 75%);
+
+    border-bottom: 1px solid #71328b;
+}
+
+.guide-game-art span {
+    font-size: 76px;
+    filter: drop-shadow(0 0 15px rgba(255, 211, 109, 0.3));
+}
+
+.guide-game-content {
+    padding: 23px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.guide-category {
+    color: #f59ae7;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.guide-game-content h3 {
+    color: #ffd36d;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    margin: 12px 0;
+}
+
+.guide-game-content > p {
+    color: #e5d0ed;
+    font-size: 13px;
+    line-height: 1.8;
+    flex: 1;
+}
+
+.guide-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.guide-details span {
+    background: #4c205f;
+    border: 1px solid #9b4eac;
+    border-radius: 20px;
+    padding: 7px 10px;
+    color: #f3d6f2;
+    font-size: 10px;
+}
+
+.guide-open-button {
+    width: 100%;
+}
+
+#no-results {
+    color: #ffda80;
+    text-align: center;
+    padding: 25px;
+}
+
+/* ==========================================
+   INTERACTIVE MANUAL
+   ========================================== */
+
+.manual-section {
+    margin-top: 50px;
+}
+
+.manual-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.manual-top > span {
+    color: #ff9bea;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.manual-hero {
+    padding: 40px 25px;
+    text-align: center;
+
+    background: linear-gradient(135deg, #391b53, #1c0c30);
+    border: 2px solid #d9ad5c;
+    border-radius: 18px;
+
+    box-shadow: 0 0 25px rgba(217, 173, 92, 0.2);
+}
+
+.manual-icon {
+    font-size: 75px;
+}
+
+.manual-hero h2 {
+    color: #ffd36d;
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 5vw, 43px);
+    margin: 10px 0;
+}
+
+.manual-hero > p:last-child {
+    color: #ead8ef;
+    font-size: 15px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.manual-content {
+    margin-top: 30px;
+}
+
+.manual-panel {
+    background: rgba(22, 6, 38, 0.96);
+    border: 1px solid #8943a2;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.manual-panel h3 {
+    color: #ffd36d;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    margin: 0 0 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #75418d;
+}
+
+.manual-panel h4 {
+    color: #ffda80;
+    font-size: 17px;
+    margin: 20px 0 8px;
+}
+
+.manual-panel p,
+.manual-panel li {
+    color: #e5d0ed;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.manual-panel ol,
+.manual-panel ul {
+    padding-left: 25px;
+}
+
+.manual-panel li {
+    margin-bottom: 12px;
+}
+
+.manual-panel strong {
+    color: #ffe09a;
+}
+
+.manual-example {
+    background: #28143b;
+    border-left: 4px solid #ffd36d;
+    border-radius: 9px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.manual-example h4 {
+    margin-top: 0;
+}
+
+.manual-table-wrap {
+    overflow-x: auto;
+    margin-top: 18px;
+}
+
+.manual-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #28143b;
+}
+
+.manual-table th {
+    background: #55226e;
+    color: #ffe09a;
+    text-align: left;
+    padding: 14px;
+}
+
+.manual-table td {
+    color: #ead8ef;
+    padding: 13px;
+    border-bottom: 1px solid #593366;
+}
+
+.manual-table tr:hover {
+    background: #3a1b50;
+}
+
+.manual-note {
+    color: #cdb5d9;
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+.manual-bottom {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 35px 0;
+}
+
+/* ==========================================
+   EDUCATIONAL NOTICE
+   ========================================== */
+
+.guide-notice {
+    margin-top: 70px;
+    padding: 30px;
+    text-align: center;
+
+    background: linear-gradient(145deg, #2b123f, #180a2a);
+    border: 1px solid #d9ad5c;
+    border-radius: 15px;
+}
+
+.guide-notice h2 {
+    color: #ffd36d;
+    font-family: Georgia, serif;
+    font-size: 27px;
+}
+
+.guide-notice p {
+    color: #d9c2e5;
+    font-size: 14px;
+    max-width: 800px;
+    margin: 12px auto;
+}
+
+.guide-navigation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.guide-footer {
+    background: rgba(14, 4, 25, 0.98);
+    border-top: 2px solid #a13bb1;
+    padding: 35px 20px;
+    text-align: center;
+    margin-top: 55px;
+}
+
+.guide-footer h2 {
+    color: #ffd36d;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.guide-footer p {
+    color: #c9afd5;
+    font-size: 13px;
+}
+
+.guide-copyright {
+    font-size: 11px !important;
+    margin-top: 25px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+@media (max-width: 1050px) {
+
+    .guide-header-inner {
+        justify-content: center;
+    }
+
+    .guide-game-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+
+    .guide-container {
+        padding: 22px 12px;
+    }
+
+    .guide-hero {
+        padding: 35px 18px;
+    }
+
+    .guide-crown {
+        font-size: 55px;
+    }
+
+    .guide-heading h2 {
+        font-size: 30px;
+    }
+
+    .guide-game-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guide-game-art {
+        min-height: 135px;
+    }
+
+    .guide-game-art span {
+        font-size: 60px;
+    }
+
+    .manual-panel {
+        padding: 22px 16px;
+    }
+
+    .manual-panel h3 {
+        font-size: 22px;
+    }
+
+    .manual-table {
+        font-size: 12px;
+    }
+
+    .manual-table th,
+    .manual-table td {
+        padding: 10px 8px;
+    }
+
+    .guide-wallet {
+        width: 100%;
+    }
+}
+
+@media (max-width: 430px) {
+
+    .guide-logo span {
+        font-size: 23px;
+    }
+
+    .guide-nav a {
+        font-size: 11px;
+        padding: 8px;
+    }
+
+    .guide-highlights span {
+        font-size: 9px;
+    }
+
+    .manual-top {
+        justify-content: center;
+    }
+
+    .guide-primary-button,
+    .guide-secondary-button {
+        max-width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .guide-game-card,
+    .guide-primary-button,
+    .guide-secondary-button,
+    .guide-open-button {
+        transition: none;
+    }
+}
