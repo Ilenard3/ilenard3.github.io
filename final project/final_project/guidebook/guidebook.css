@@ -1,167 +1,414 @@
 
 /* ==========================================
    NEON EMPIRE CASINO
-   ROYAL GUIDEBOOK 2.0
-   VISUAL AND INTERACTIVE UPGRADES
+   ROYAL CASINO ACADEMY
+   COMPLETE FINAL STYLESHEET
    ========================================== */
 
-/* ROYAL COLOR SYSTEM */
-
 :root {
-    --royal-gold: #ffd36d;
-    --royal-pink: #ff9bea;
-    --royal-purple: #8e1fba;
-    --royal-dark: #100719;
-    --royal-panel: #301344;
-    --royal-text: #ead8ef;
+    --dark: #100719;
+    --night: #190a2c;
+    --panel: #301344;
+    --purple: #75209e;
+    --pink: #e93bd1;
+    --soft-pink: #ff9bea;
+    --gold: #ffd36d;
+    --light-gold: #ffe6a0;
+    --white: #fff4ff;
+    --text: #ead8ef;
 }
 
-/* VIVID CASINO BACKGROUND */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    color: var(--white);
     background:
-        radial-gradient(
-            ellipse at 10% 10%,
-            rgba(174, 43, 211, 0.22),
-            transparent 42%
-        ),
-        radial-gradient(
-            ellipse at 90% 35%,
-            rgba(230, 42, 172, 0.14),
-            transparent 40%
-        ),
-        linear-gradient(
-            rgba(12, 5, 24, 0.9),
-            rgba(17, 5, 29, 0.96)
-        ),
-        url("../images/casino-background.jpg");
-
-    background-color: #100719;
-    background-size: cover;
+        radial-gradient(circle at 12% 8%,
+            rgba(169, 45, 210, .25), transparent 35%),
+        radial-gradient(circle at 90% 45%,
+            rgba(233, 59, 209, .12), transparent 40%),
+        linear-gradient(135deg,
+            #100719, #241039, #12071f);
     background-attachment: fixed;
 }
 
-/* ROYAL HERO */
+a {
+    text-decoration: none;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* HEADER */
+
+.guide-header {
+    background: rgba(15, 5, 28, .97);
+    border-bottom: 2px solid var(--pink);
+    padding: 18px 25px;
+    box-shadow: 0 5px 30px rgba(211, 38, 201, .3);
+}
+
+.guide-header-inner {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.guide-logo {
+    text-align: center;
+}
+
+.guide-logo span {
+    display: block;
+    color: var(--gold);
+    font: bold 28px Georgia, serif;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(255, 211, 109, .4);
+}
+
+.guide-logo small {
+    display: block;
+    color: #e9a4e6;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.guide-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.guide-nav a {
+    color: var(--text);
+    padding: 10px 13px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: .25s;
+}
+
+.guide-nav a:hover,
+.guide-nav a.active {
+    background: linear-gradient(135deg,
+        #75209e, #d12abb);
+    color: white;
+    box-shadow: 0 0 15px rgba(233, 59, 209, .4);
+}
+
+.guide-wallet {
+    background: #2b1740;
+    border: 2px solid #d9ad5c;
+    border-radius: 12px;
+    padding: 9px 20px;
+    text-align: center;
+}
+
+.guide-wallet span {
+    display: block;
+    color: #e6c2e8;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.guide-wallet strong {
+    display: block;
+    color: var(--gold);
+    font-size: 21px;
+}
+
+/* MAIN LAYOUT */
+
+.guide-container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 35px 20px;
+}
 
 .guide-hero {
     position: relative;
     overflow: hidden;
-
+    isolation: isolate;
+    padding: 65px 35px;
+    text-align: center;
+    border: 3px solid #d9ad5c;
+    border-radius: 23px;
     background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(184, 48, 215, 0.34),
-            transparent 65%
-        ),
-        linear-gradient(135deg, #3c155a, #170a29);
-
-    border: 2px solid #d9ad5c;
-
+        radial-gradient(ellipse at 50% 0%,
+            rgba(245, 86, 226, .24), transparent 55%),
+        linear-gradient(135deg,
+            #42145f, #240d3d, #100719);
     box-shadow:
-        0 0 30px rgba(233, 59, 209, 0.35),
-        inset 0 0 50px rgba(143, 33, 184, 0.2),
-        0 20px 45px rgba(0, 0, 0, 0.45);
+        0 20px 50px rgba(0, 0, 0, .5),
+        0 0 35px rgba(233, 59, 209, .25);
+}
+
+.guide-hero::before {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    border: 1px solid rgba(255, 211, 109, .35);
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.guide-hero::after {
+    content: "♠ ♥ ♣ ♦";
+    position: absolute;
+    right: -10px;
+    bottom: -30px;
+    font: 110px Georgia, serif;
+    color: rgba(255, 211, 109, .05);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .royal-sparkles {
-    color: #ffda80;
-    font-size: 25px;
-    letter-spacing: 22px;
-    margin-bottom: 15px;
-    animation: royalGlow 3s ease-in-out infinite alternate;
+    color: var(--gold);
+    font-size: 24px;
+    letter-spacing: 15px;
+    animation: sparkle 3s ease-in-out infinite alternate;
+}
+
+.guide-eyebrow {
+    color: var(--soft-pink);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
 }
 
 .guide-crown {
-    font-size: 90px;
+    display: inline-block;
+    font: 95px Georgia, serif;
+    line-height: 1.2;
+    margin: 15px 0;
+    color: var(--gold);
+    text-shadow: 0 0 25px rgba(255, 211, 109, .5);
     animation: crownFloat 4s ease-in-out infinite;
+}
+
+.guide-hero h1 {
+    color: var(--gold);
+    font: bold clamp(32px, 5vw, 53px) Georgia, serif;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    margin: 15px 0 22px;
 }
 
 .guide-hero h1 span {
     display: block;
-    color: #ff9bea;
-    text-shadow: 0 0 22px rgba(255, 95, 225, 0.6);
+    color: var(--soft-pink);
+    text-shadow: 0 0 22px rgba(255, 95, 225, .5);
 }
 
-.guide-highlights span {
-    background: linear-gradient(145deg, #55226e, #321747);
-    border: 1px solid #d9ad5c;
-    box-shadow: 0 0 12px rgba(255, 211, 109, 0.1);
+.guide-hero > p:not(.guide-eyebrow):not(.royal-hero-note) {
+    max-width: 750px;
+    margin: 18px auto;
+    color: #f0deef;
+    font-size: 16px;
 }
 
-.hero-actions {
+.guide-highlights,
+.hero-actions,
+.guide-filters,
+.manual-hero-tags,
+.manual-bottom,
+.guide-navigation,
+.quiz-result-actions {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 28px;
+    gap: 12px;
+}
+
+.guide-highlights {
+    margin: 30px 0;
+}
+
+.guide-highlights span,
+.manual-hero-tags span {
+    background: linear-gradient(145deg,
+        #55226e, #321747);
+    border: 1px solid #d9ad5c;
+    border-radius: 25px;
+    padding: 9px 15px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.hero-actions {
+    margin-top: 25px;
 }
 
 .royal-hero-note {
-    color: #e9a4e6 !important;
-    font-size: 11px !important;
-    font-weight: bold;
+    color: #e9a4e6;
+    font-size: 11px;
     letter-spacing: 2px;
-    margin-top: 30px !important;
+    margin-top: 30px;
 }
 
-@keyframes crownFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
+/* BUTTONS */
 
-    50% {
-        transform: translateY(-9px);
-    }
+.guide-primary-button,
+.guide-secondary-button,
+.guide-open-button {
+    display: inline-block;
+    padding: 15px 23px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.5;
+    transition: .25s;
 }
 
-@keyframes royalGlow {
-    from {
-        opacity: 0.55;
-        text-shadow: 0 0 5px #ffd36d;
-    }
-
-    to {
-        opacity: 1;
-        text-shadow: 0 0 22px #ffd36d;
-    }
+.guide-primary-button,
+.guide-open-button {
+    color: white;
+    background: linear-gradient(135deg,
+        #8e1fba, #e333cb);
+    border: 2px solid #ff9bea;
+    box-shadow: 0 0 17px rgba(227, 51, 203, .35);
 }
 
-/* ==========================================
-   ACADEMY DASHBOARD
-   ========================================== */
+.guide-primary-button:hover,
+.guide-open-button:hover {
+    background: linear-gradient(135deg,
+        #ad35dc, #f34cda);
+    transform: translateY(-3px);
+    box-shadow: 0 0 27px rgba(233, 69, 215, .6);
+}
+
+.guide-secondary-button {
+    color: var(--gold);
+    background: #251134;
+    border: 2px solid #d9ad5c;
+}
+
+.guide-secondary-button:hover {
+    background: #4a235d;
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(217, 173, 92, .3);
+}
+
+/* SECTION HEADINGS */
+
+.guide-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.guide-heading > p {
+    color: var(--soft-pink);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.guide-heading h2 {
+    color: var(--gold);
+    font: bold clamp(27px, 4vw, 39px) Georgia, serif;
+    margin: 8px 0 12px;
+}
+
+.guide-heading > span {
+    color: #d9c2e5;
+    font-size: 14px;
+}
+
+.guide-heading::after {
+    content: "✦ ♛ ✦";
+    display: block;
+    color: #d9ad5c;
+    font-size: 18px;
+    letter-spacing: 12px;
+    margin-top: 18px;
+}
+
+/* ACADEMY DASHBOARD */
 
 .academy-dashboard {
-    margin-top: 65px;
+    margin-top: 75px;
 }
 
 .academy-stats {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    gap: 22px;
 }
 
 .academy-stat {
+    position: relative;
+    overflow: hidden;
     min-width: 0;
-    padding: 28px 15px;
+    padding: 30px 18px;
     text-align: center;
-
-    background: linear-gradient(145deg, #3a1953, #1b0a2c);
+    background: linear-gradient(145deg,
+        #3a1953, #1b0a2c);
     border: 2px solid #d9ad5c;
-    border-radius: 15px;
+    border-radius: 17px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, .3);
+    transition: .3s;
+}
 
-    box-shadow: 0 0 18px rgba(217, 173, 92, 0.15);
+.academy-stat::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 18%;
+    right: 18%;
+    height: 3px;
+    background: linear-gradient(90deg,
+        transparent, #ffe6a0, transparent);
+}
+
+.academy-stat:hover {
+    transform: translateY(-4px);
+    border-color: var(--light-gold);
 }
 
 .academy-stat > span {
     display: block;
-    font-size: 40px;
-    margin-bottom: 10px;
+    font-size: 43px;
+    margin-bottom: 12px;
 }
 
 .academy-stat strong {
     display: block;
-    color: #ffd36d;
-    font-size: clamp(18px, 3vw, 30px);
+    color: var(--gold);
+    font-size: clamp(20px, 3vw, 31px);
     overflow-wrap: anywhere;
 }
 
@@ -169,126 +416,190 @@ body {
     color: #e9c7ec;
     font-size: 13px;
     font-weight: bold;
-    margin-bottom: 0;
 }
 
 .academy-progress-box {
-    margin-top: 22px;
-    padding: 25px;
-
-    background: #28143b;
+    margin-top: 23px;
+    padding: 27px;
+    background: linear-gradient(145deg,
+        #301744, #1d0c30);
     border: 1px solid #a65ab9;
-    border-radius: 13px;
+    border-radius: 15px;
 }
 
-.academy-progress-label {
+.academy-progress-label,
+.quiz-progress-heading {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
-
-    color: #ffda80;
+    flex-wrap: wrap;
+    gap: 12px;
+    color: var(--gold);
     font-size: 13px;
     font-weight: bold;
-    margin-bottom: 13px;
+    margin-bottom: 14px;
 }
 
-.academy-progress-track {
-    height: 17px;
+.academy-progress-track,
+.quiz-progress-track {
     background: #11071e;
     border: 1px solid #75418d;
     border-radius: 30px;
     overflow: hidden;
 }
 
-#progress-fill {
-    width: 0;
+.academy-progress-track {
+    height: 18px;
+}
+
+#progress-fill,
+#quiz-progress-fill {
     height: 100%;
-
-    background: linear-gradient(
-        90deg,
-        #8428ba,
-        #f34cda,
-        #ffd36d
-    );
-
+    width: 0;
     border-radius: 30px;
-    transition: width 0.5s ease;
+    transition: width .4s;
+}
+
+#progress-fill {
+    background: linear-gradient(90deg,
+        #8428ba, #f34cda, #ffd36d);
 }
 
 #progress-message {
     color: #d9c2e5;
     text-align: center;
     font-size: 13px;
-    margin-bottom: 0;
 }
 
-/* ==========================================
-   GAME FILTERS
-   ========================================== */
+/* SEARCH AND FILTERS */
+
+.guide-library {
+    margin-top: 85px;
+    scroll-margin-top: 25px;
+}
+
+.guide-search {
+    max-width: 700px;
+    margin: 0 auto 25px;
+    padding: 25px;
+    background: linear-gradient(145deg,
+        #321747, #211032);
+    border: 2px solid #a454b8;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.guide-search label {
+    display: block;
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 13px;
+}
+
+.guide-search input {
+    width: 100%;
+    padding: 16px;
+    color: var(--white);
+    background: #13091f;
+    border: 2px solid #a85fb9;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.guide-search input::placeholder {
+    color: #bca3c9;
+}
+
+.guide-search p {
+    color: #cdb5d9;
+    font-size: 12px;
+}
 
 .guide-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 0 0 30px;
+    margin-bottom: 35px;
 }
 
 .filter-button {
     padding: 12px 20px;
-    color: #ffda80;
-
+    color: var(--gold);
     background: #301642;
     border: 1px solid #a65ab9;
     border-radius: 30px;
-
     font-size: 13px;
     font-weight: bold;
-    cursor: pointer;
-    transition: 0.25s;
+    transition: .25s;
 }
 
 .filter-button:hover,
 .filter-button.active {
     color: white;
-    background: linear-gradient(135deg, #8e1fba, #e333cb);
+    background: linear-gradient(135deg,
+        #8e1fba, #e333cb);
     border-color: #ff9bea;
-    box-shadow: 0 0 18px rgba(233, 59, 209, 0.4);
+    box-shadow: 0 0 18px rgba(233, 59, 209, .4);
 }
 
-/* ==========================================
-   MORE VIVID GAME CARDS
-   ========================================== */
+/* GAME CARDS */
+
+.guide-game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
 
 .guide-game-card {
-    position: relative;
-    border-width: 2px;
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(145deg,
+        #301344, #1a0b2c);
+    border: 2px solid #d64cd5;
+    border-radius: 19px;
+    box-shadow:
+        0 0 20px rgba(220, 55, 210, .25),
+        0 12px 30px rgba(0, 0, 0, .35);
+    transition: .3s;
 }
 
-.guide-game-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    border-radius: inherit;
-    box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.025);
+.guide-game-card:hover {
+    transform: translateY(-6px);
+    border-color: #ff9bea;
+    box-shadow: 0 0 30px rgba(235, 65, 215, .5);
 }
 
 .guide-game-art {
     position: relative;
     min-height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+    border-bottom: 1px solid #71328b;
+}
+
+.guide-game-art::after {
+    content: "";
+    position: absolute;
+    width: 155px;
+    height: 155px;
+    border: 2px solid rgba(255, 211, 109, .25);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
 .guide-game-art > span {
     position: relative;
     z-index: 1;
     font-size: 83px;
-    transition: transform 0.3s ease;
+    line-height: 1.2;
+    filter: drop-shadow(0 0 16px
+        rgba(255, 211, 109, .3));
+    transition: transform .3s;
 }
 
 .guide-game-card:hover .guide-game-art > span {
-    transform: scale(1.13) rotate(-5deg);
+    transform: scale(1.12) rotate(-5deg);
 }
 
 .game-art-suits {
@@ -296,52 +607,97 @@ body {
     bottom: 12px;
     left: 0;
     right: 0;
-
-    color: rgba(255, 235, 175, 0.75);
-    font-size: 17px;
+    text-align: center;
+    color: rgba(255, 235, 175, .8);
+    font-size: 18px;
     font-weight: bold;
-    letter-spacing: 8px;
+    letter-spacing: 7px;
 }
 
-/* INDIVIDUAL GAME COLORS */
-
 .blackjack-card .guide-game-art {
-    background: radial-gradient(circle, #75442a, #251025 78%);
+    background: radial-gradient(circle,
+        #75442a, #251025 78%);
 }
 
 .roulette-card .guide-game-art {
-    background: radial-gradient(circle, #9b284e, #2a0a31 78%);
+    background: radial-gradient(circle,
+        #9b284e, #2a0a31 78%);
 }
 
 .poker-card .guide-game-art {
-    background: radial-gradient(circle, #375d75, #1c103a 78%);
+    background: radial-gradient(circle,
+        #375d75, #1c103a 78%);
 }
 
 .craps-card .guide-game-art {
-    background: radial-gradient(circle, #7045a5, #1a0c35 78%);
+    background: radial-gradient(circle,
+        #7045a5, #1a0c35 78%);
 }
 
 .baccarat-card .guide-game-art {
-    background: radial-gradient(circle, #9b7032, #2a123c 78%);
+    background: radial-gradient(circle,
+        #9b7032, #2a123c 78%);
 }
 
 .threecard-card .guide-game-art {
-    background: radial-gradient(circle, #9c376d, #260d37 78%);
+    background: radial-gradient(circle,
+        #9c376d, #260d37 78%);
 }
 
-.guide-game-card:hover {
-    box-shadow:
-        0 0 28px rgba(233, 59, 209, 0.5),
-        0 15px 35px rgba(0, 0, 0, 0.4);
+.guide-game-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 25px;
+    text-align: center;
+}
+
+.guide-category {
+    align-self: center;
+    color: #f59ae7;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 5px 11px;
+    border: 1px solid rgba(255, 155, 234, .2);
+    border-radius: 20px;
+}
+
+.guide-game-content h3 {
+    color: var(--gold);
+    font: bold 25px Georgia, serif;
+    margin: 13px 0;
+}
+
+.guide-game-content > p {
+    flex: 1;
+    color: #e5d0ed;
+    font-size: 13px;
+}
+
+.guide-details {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.guide-details span {
+    background: #4c205f;
+    border: 1px solid #9b4eac;
+    border-radius: 20px;
+    padding: 7px 11px;
+    color: #f3d6f2;
+    font-size: 10px;
 }
 
 .guide-completion {
     display: block;
-    margin: 5px 0 17px;
-
     color: #e9a4e6;
     font-size: 12px;
     font-weight: bold;
+    margin: 5px 0 17px;
 }
 
 .guide-completion.completed {
@@ -349,57 +705,83 @@ body {
 }
 
 .guide-open-button {
-    min-height: 50px;
+    width: 100%;
+    min-height: 52px;
+    margin-top: auto;
 }
 
-/* ==========================================
-   MANUAL HERO
-   ========================================== */
+#no-results {
+    text-align: center;
+    color: var(--gold);
+    padding: 25px;
+}
+
+/* MANUAL */
+
+.manual-section {
+    margin-top: 50px;
+    scroll-margin-top: 25px;
+}
+
+.manual-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.manual-top > span {
+    color: var(--soft-pink);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
 
 .manual-hero {
+    padding: 45px 25px;
+    text-align: center;
     background:
-        radial-gradient(
-            circle at center,
-            rgba(181, 60, 215, 0.3),
-            transparent 70%
-        ),
+        radial-gradient(circle at 50% 20%,
+            rgba(181, 60, 215, .3), transparent 70%),
         linear-gradient(145deg, #3b1c55, #180a2a);
+    border: 2px solid #d9ad5c;
+    border-radius: 20px;
+}
+
+.manual-icon {
+    font-size: 85px;
+}
+
+.manual-hero h2 {
+    color: var(--gold);
+    font: bold clamp(30px, 5vw, 45px) Georgia, serif;
+    margin: 12px 0;
+}
+
+.manual-hero > p:last-of-type {
+    max-width: 700px;
+    margin: 10px auto;
+    color: var(--text);
 }
 
 .manual-hero-tags {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
     margin-top: 25px;
 }
-
-.manual-hero-tags span {
-    background: #452050;
-    color: #ffda80;
-    border: 1px solid #a65ab9;
-    border-radius: 20px;
-    padding: 8px 13px;
-    font-size: 11px;
-    font-weight: bold;
-}
-
-/* TABLE OF CONTENTS */
 
 .manual-toc {
-    margin-top: 25px;
-    padding: 25px;
-
-    background: linear-gradient(145deg, #321747, #1b0b2d);
+    margin-top: 27px;
+    padding: 28px;
+    background: linear-gradient(145deg,
+        #321747, #1b0b2d);
     border: 1px solid #d9ad5c;
-    border-radius: 15px;
+    border-radius: 16px;
 }
 
 .manual-toc h3 {
-    color: #ffd36d;
-    font-family: Georgia, serif;
-    font-size: 25px;
-    margin-top: 0;
+    color: var(--gold);
+    font: bold 26px Georgia, serif;
 }
 
 .manual-toc p {
@@ -410,105 +792,151 @@ body {
 .manual-toc-links {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    margin-top: 20px;
+    gap: 12px;
 }
 
 .manual-toc-links button {
-    padding: 13px 15px;
+    padding: 14px 16px;
     text-align: left;
-
-    color: #ffe09a;
+    color: var(--light-gold);
     background: #452050;
     border: 1px solid #9752ab;
-    border-radius: 9px;
-
+    border-radius: 10px;
     font-size: 13px;
     font-weight: bold;
-    cursor: pointer;
 }
 
 .manual-toc-links button:hover {
     background: #702b87;
-    border-color: #ffd36d;
+    border-color: var(--gold);
 }
 
-/* MANUAL PANELS */
+.manual-content {
+    margin-top: 30px;
+}
 
 .manual-panel {
+    background: linear-gradient(145deg,
+        rgba(44, 17, 64, .98),
+        rgba(20, 7, 35, .98));
+    border: 1px solid #8943a2;
     border-left: 4px solid #d9ad5c;
-    transition: border-color 0.25s;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 25px;
     scroll-margin-top: 25px;
 }
 
-.manual-panel:hover {
-    border-color: #ff9bea;
-}
-
 .manual-panel h3 {
-    text-shadow: 0 0 12px rgba(255, 211, 109, 0.15);
+    color: var(--gold);
+    font: bold 26px Georgia, serif;
+    margin: 0 0 18px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid #75418d;
 }
 
-.manual-example {
-    background: linear-gradient(145deg, #38204f, #241137);
-    border-left: 4px solid #ffd36d;
+.manual-panel h4 {
+    color: var(--light-gold);
+    font-size: 17px;
+}
+
+.manual-panel p,
+.manual-panel li {
+    color: #e5d0ed;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.manual-panel li {
+    margin-bottom: 12px;
 }
 
 .manual-panel li::marker {
-    color: #ff9bea;
+    color: var(--soft-pink);
 }
 
-/* ==========================================
-   MARK GUIDE COMPLETED
-   ========================================== */
+.manual-panel strong {
+    color: var(--light-gold);
+}
+
+.manual-example {
+    background: linear-gradient(145deg,
+        #38204f, #241137);
+    border-left: 4px solid var(--gold);
+    border-radius: 10px;
+    padding: 22px;
+    margin-top: 20px;
+}
+
+.manual-table-wrap {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.manual-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #28143b;
+}
+
+.manual-table th {
+    background: #55226e;
+    color: var(--light-gold);
+    text-align: left;
+    padding: 15px;
+}
+
+.manual-table td {
+    color: var(--text);
+    padding: 14px;
+    border-bottom: 1px solid #593366;
+}
+
+.manual-table tr:hover {
+    background: #3a1b50;
+}
+
+.manual-note {
+    color: #cdb5d9;
+    font-size: 12px;
+}
+
+/* COMPLETION */
 
 .manual-complete-box {
-    padding: 30px;
-    margin: 30px 0;
+    padding: 35px 25px;
+    margin: 35px 0;
     text-align: center;
-
-    background: linear-gradient(145deg, #3b1c55, #1b0b2c);
+    background: linear-gradient(145deg,
+        #3b1c55, #1b0b2c);
     border: 2px solid #d9ad5c;
-    border-radius: 16px;
+    border-radius: 17px;
 }
 
 .manual-complete-box h3 {
-    color: #ffd36d;
-    font-family: Georgia, serif;
-    font-size: 26px;
+    color: var(--gold);
+    font: bold 27px Georgia, serif;
 }
 
 .manual-complete-box p {
-    color: #ead8ef;
+    color: var(--text);
     font-size: 14px;
 }
 
 #completion-message {
     color: #9cf0b8;
     font-weight: bold;
-    margin-top: 18px;
 }
 
-/* ==========================================
-   ROYAL KNOWLEDGE QUIZ
-   ========================================== */
+/* QUIZ */
 
 .royal-quiz {
     margin: 40px 0;
-    padding: 35px;
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(160, 48, 210, 0.25),
-            transparent 70%
-        ),
-        linear-gradient(145deg, #301344, #170a29);
-
+    padding: 38px;
+    background: linear-gradient(145deg,
+        #301344, #170a29);
     border: 2px solid #d9ad5c;
     border-radius: 20px;
-
-    box-shadow: 0 0 30px rgba(217, 173, 92, 0.15);
 }
 
 .quiz-heading {
@@ -517,78 +945,59 @@ body {
 }
 
 .quiz-heading > p {
-    color: #ff9bea;
+    color: var(--soft-pink);
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 3px;
 }
 
 .quiz-heading h2 {
-    color: #ffd36d;
-    font-family: Georgia, serif;
-    font-size: clamp(25px, 4vw, 34px);
-    margin: 10px 0;
+    color: var(--gold);
+    font: bold clamp(25px, 4vw, 35px) Georgia, serif;
 }
 
 .quiz-heading > span {
-    color: #e5d0ed;
+    color: var(--text);
     font-size: 14px;
 }
 
 .quiz-start-screen,
 #quiz-result-screen {
     text-align: center;
-    padding: 25px;
+    padding: 30px;
     background: #28143b;
-    border-radius: 13px;
+    border: 1px solid #75418d;
+    border-radius: 14px;
 }
 
 .quiz-trophy {
-    font-size: 65px;
-    margin-bottom: 12px;
+    font-size: 70px;
 }
 
 .quiz-start-screen h3,
 #quiz-result-title {
-    color: #ffd36d;
-    font-family: Georgia, serif;
-    font-size: 26px;
+    color: var(--gold);
+    font: bold 27px Georgia, serif;
 }
 
 .quiz-start-screen p,
 #quiz-result-description {
-    color: #ead8ef;
-    font-size: 14px;
-}
-
-.quiz-progress-heading {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-    color: #ffda80;
-    font-size: 13px;
-    font-weight: bold;
+    color: var(--text);
 }
 
 .quiz-progress-track {
     height: 12px;
-    background: #12091d;
-    border-radius: 20px;
-    overflow: hidden;
     margin: 15px 0 30px;
 }
 
 #quiz-progress-fill {
-    width: 0;
-    height: 100%;
-    background: linear-gradient(90deg, #8e1fba, #ff9bea);
-    transition: width 0.3s;
+    background: linear-gradient(90deg,
+        #8e1fba, #ff9bea);
 }
 
 #quiz-question {
-    color: #ffe09a;
-    font-size: 23px;
+    color: var(--light-gold);
+    font: bold 23px Georgia, serif;
     margin-bottom: 25px;
 }
 
@@ -600,17 +1009,14 @@ body {
 
 .quiz-answer {
     min-height: 75px;
-    padding: 16px;
-
-    color: #f5e8ff;
+    padding: 17px;
+    color: var(--white);
     background: #452050;
     border: 2px solid #9752ab;
     border-radius: 11px;
-
     text-align: left;
     font-size: 15px;
-    cursor: pointer;
-    transition: 0.25s;
+    transition: .25s;
 }
 
 .quiz-answer:hover:not(:disabled) {
@@ -637,7 +1043,7 @@ body {
 #quiz-feedback {
     min-height: 30px;
     margin: 20px 0;
-    color: #ffda80;
+    color: var(--gold);
     font-weight: bold;
 }
 
@@ -648,103 +1054,228 @@ body {
 
 #quiz-final-score {
     display: block;
-    color: #ffd36d;
-    font-size: 36px;
+    color: var(--gold);
+    font-size: 38px;
     margin: 20px 0;
 }
 
-.quiz-result-actions {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
+.quiz-result-actions,
+.manual-bottom,
+.guide-navigation {
+    margin-top: 30px;
+}
+
+/* NOTICE AND FOOTER */
+
+.guide-notice {
+    margin-top: 75px;
+    padding: 35px;
+    text-align: center;
+    background: linear-gradient(145deg,
+        #2b123f, #180a2a);
+    border: 1px solid #d9ad5c;
+    border-radius: 17px;
+}
+
+.guide-notice h2 {
+    color: var(--gold);
+    font: bold 28px Georgia, serif;
+}
+
+.guide-notice p {
+    color: #d9c2e5;
+    max-width: 800px;
+    margin: 12px auto;
+}
+
+.guide-footer {
+    background: #10061c;
+    border-top: 2px solid #a13bb1;
+    padding: 40px 20px;
+    margin-top: 55px;
+    text-align: center;
+}
+
+.guide-footer h2 {
+    color: var(--gold);
+    font: bold 27px Georgia, serif;
+    letter-spacing: 2px;
+}
+
+.guide-footer p {
+    color: #c9afd5;
+    font-size: 13px;
+}
+
+.guide-copyright {
     margin-top: 25px;
+    font-size: 11px !important;
 }
 
-/* ==========================================
-   RESPONSIVE UPGRADES
-   ========================================== */
+/* ANIMATIONS */
 
-@media (max-width: 800px) {
-
-    .academy-stats {
-        gap: 12px;
+@keyframes crownFloat {
+    0%, 100% {
+        transform: translateY(0);
     }
-
-    .academy-stat {
-        padding: 20px 10px;
-    }
-
-    .academy-stat > span {
-        font-size: 30px;
-    }
-
-    .royal-quiz {
-        padding: 25px 18px;
+    50% {
+        transform: translateY(-9px);
     }
 }
 
-@media (max-width: 600px) {
+@keyframes sparkle {
+    from {
+        opacity: .55;
+        text-shadow: 0 0 5px #ffd36d;
+    }
+    to {
+        opacity: 1;
+        text-shadow: 0 0 22px #ffd36d;
+    }
+}
 
-    .academy-stats {
-        grid-template-columns: 1fr;
+/* TABLET */
+
+@media (max-width: 1100px) {
+    .guide-header-inner {
+        justify-content: center;
     }
 
-    .academy-stat {
-        padding: 18px;
+    .guide-game-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .guide-container {
+        padding: 22px 12px;
     }
 
-    .academy-stat > span {
-        font-size: 32px;
+    .guide-header {
+        padding: 18px 12px;
     }
 
-    .manual-toc-links {
-        grid-template-columns: 1fr;
+    .guide-hero {
+        padding: 38px 18px;
     }
 
+    .guide-crown {
+        font-size: 65px;
+    }
+
+    .royal-sparkles {
+        letter-spacing: 8px;
+    }
+
+    .guide-hero h1 {
+        font-size: 31px;
+    }
+
+    .guide-heading h2 {
+        font-size: 29px;
+    }
+
+    .guide-game-grid,
+    .academy-stats,
+    .manual-toc-links,
     .quiz-answers {
         grid-template-columns: 1fr;
     }
 
-    .guide-filters {
-        gap: 8px;
+    .guide-game-art {
+        min-height: 165px;
+    }
+
+    .guide-game-art > span {
+        font-size: 70px;
+    }
+
+    .academy-stat {
+        padding: 20px;
+    }
+
+    .manual-panel {
+        padding: 23px 17px;
+    }
+
+    .manual-panel h3 {
+        font-size: 22px;
+    }
+
+    .manual-toc {
+        padding: 22px 16px;
+    }
+
+    .royal-quiz {
+        padding: 25px 15px;
+    }
+
+    .quiz-start-screen,
+    #quiz-result-screen {
+        padding: 20px 15px;
+    }
+
+    .manual-table th,
+    .manual-table td {
+        padding: 11px 9px;
+        font-size: 12px;
+    }
+
+    .guide-wallet {
+        width: 100%;
     }
 
     .filter-button {
         padding: 10px 13px;
         font-size: 12px;
     }
+}
 
-    .royal-sparkles {
-        letter-spacing: 10px;
+/* SMALL PHONES */
+
+@media (max-width: 430px) {
+    .guide-logo span {
+        font-size: 23px;
     }
 
-    .guide-hero h1 {
-        font-size: 30px;
+    .guide-nav a {
+        font-size: 11px;
+        padding: 8px;
     }
 
-    .guide-hero h1 span {
-        font-size: 29px;
+    .guide-primary-button,
+    .guide-secondary-button {
+        max-width: 100%;
+    }
+
+    .manual-top {
+        justify-content: center;
     }
 }
 
-/* ==========================================
-   ACCESSIBILITY
-   ========================================== */
+/* ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 
     .guide-crown,
     .royal-sparkles {
         animation: none;
     }
 
-    #progress-fill,
-    #quiz-progress-fill,
+    .guide-game-card,
     .guide-game-art > span,
-    .manual-panel,
-    .filter-button,
-    .quiz-answer {
+    .guide-primary-button,
+    .guide-secondary-button,
+    .guide-open-button,
+    .academy-stat,
+    .quiz-answer,
+    #progress-fill,
+    #quiz-progress-fill {
         transition: none;
     }
 }
